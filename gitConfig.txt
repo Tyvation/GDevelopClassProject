@@ -1,2 +1,2 @@
-git config --global user.name kfhwang
-git config --global user.email kfhwang@nutc.edut.tw
+git config --global user.name tyvation
+git config --global user.email daniel300068@gmail.com
