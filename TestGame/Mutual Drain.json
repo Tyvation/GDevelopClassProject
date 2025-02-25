@@ -85,6 +85,28 @@
           "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Animated Robots/b800d4aba45b55e5e6863f4e0ce07459bc0ccc5b427ea9612afb2018c3b5d86e_Leela.glb",
           "name": "Leela.glb"
         }
+      },
+      {
+        "file": "assets/blockLarge.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "blockLarge.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Platformer Kit/ground/8e259e29aa7864cf3b88279f078dc061b8788bb97be490f7f2e378f7286b26af_blockLarge.glb",
+          "name": "blockLarge.glb"
+        }
+      },
+      {
+        "file": "assets/Crate.glb",
+        "kind": "model3D",
+        "metadata": "",
+        "name": "Crate.glb",
+        "userAdded": false,
+        "origin": {
+          "identifier": "https://asset-resources.gdevelop.io/public-resources/3D Fantasy RTS/78b40130d1da2ccf7669a2ac8309dea45e153b96f2c4c9172291b66482c90e20_Crate.glb",
+          "name": "Crate.glb"
+        }
       }
     ],
     "resourceFolders": []
@@ -94,7 +116,20 @@
     "folderName": "__ROOT"
   },
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "folded": true,
+      "name": "PlayerWalkSpeed",
+      "type": "number",
+      "value": 200
+    },
+    {
+      "folded": true,
+      "name": "PlayerSprintSpeed",
+      "type": "number",
+      "value": 250
+    }
+  ],
   "layouts": [
     {
       "b": 209,
@@ -116,7 +151,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.6040838749988867,
+        "zoomFactor": 0.5843784410740929,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -131,26 +166,68 @@
           "name": "Leela",
           "persistentUuid": "c272fbcf-cd54-4145-9e64-b246d1fde97d",
           "width": 0,
-          "x": 630,
-          "y": 448,
+          "x": 830,
+          "y": 498,
+          "z": 50,
           "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 30,
+          "height": 939,
+          "keepRatio": true,
+          "layer": "",
+          "name": "BlockLarge",
+          "persistentUuid": "40ea20bf-97e6-45e0-a185-2172a5293380",
+          "width": 1020,
+          "x": 876,
+          "y": 525,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 115,
+          "height": 130,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Crate",
+          "persistentUuid": "a4069b9a-8b4c-4729-b812-093f863d294b",
+          "width": 130,
+          "x": 1053,
+          "y": 336,
+          "z": 161,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 39,
+          "customSize": true,
+          "depth": 132,
+          "height": 149,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Crate",
+          "persistentUuid": "34ada963-19c8-489b-aafa-3537f8ec8e3b",
+          "width": 149,
+          "x": 1023,
+          "y": 691,
+          "zOrder": 5,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
         }
       ],
       "objects": [
-        {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "",
-          "name": "NewSprite",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
-          "variables": [],
-          "effects": [],
-          "behaviors": [],
-          "animations": []
-        },
         {
           "assetStoreId": "04a98cd20ab3872167a6dadc5617c4bca0b7678c431f69ecf4bab3ccd13d91d4",
           "name": "FemalAdventurer",
@@ -300,7 +377,27 @@
           "type": "Scene3D::Model3DObject",
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Jump3D",
+              "type": "Jump3D::Jump3D",
+              "Object3D": "Object3D",
+              "JumpHeight": 150,
+              "MaxFallingSpeed": 700,
+              "Gravity": 1000,
+              "JumpSpeed": 600,
+              "JumpSustainDurationMax": 0.2,
+              "State": "Idle",
+              "CurrentJumpSpeed": 0.19999992847454,
+              "CurrentFallSpeed": 0.19999992847454,
+              "PreviousJumpSpeed": 0.19999992847454,
+              "PreviousFallSpeed": 0.19999992847454,
+              "HasPressedJumpKey": false,
+              "CanJump": true,
+              "ShouldStopAtZero": true,
+              "PreviousState": "Idle"
+            }
+          ],
           "content": {
             "centerLocation": "ModelOrigin",
             "depth": 158,
@@ -396,23 +493,114 @@
               }
             ]
           }
+        },
+        {
+          "assetStoreId": "5aee4a060be9f7eca97e9dee9b0b41b093d3c2dfe7cfdac7fceef7ab49926f8e",
+          "name": "BlockLarge",
+          "type": "Scene3D::Model3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Platform",
+              "type": "PlatformBehavior::PlatformBehavior",
+              "canBeGrabbed": true,
+              "platformType": "NormalPlatform",
+              "yGrabOffset": 0
+            }
+          ],
+          "content": {
+            "centerLocation": "ModelOrigin",
+            "depth": 68,
+            "height": 68,
+            "keepAspectRatio": true,
+            "materialType": "StandardWithoutMetalness",
+            "modelResourceName": "blockLarge.glb",
+            "originLocation": "ModelOrigin",
+            "rotationX": 90,
+            "rotationY": 0,
+            "rotationZ": -90,
+            "width": 68,
+            "animations": []
+          }
+        },
+        {
+          "assetStoreId": "2342cb3c0edd59b1774698603669a107722c3aa475699c1e301b870a9e45c147",
+          "name": "Crate",
+          "type": "Scene3D::Model3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [
+            {
+              "name": "Physics2",
+              "type": "Physics2::Physics2Behavior",
+              "bodyType": "Dynamic",
+              "bullet": false,
+              "fixedRotation": false,
+              "canSleep": true,
+              "shape": "Box",
+              "shapeDimensionA": 0,
+              "shapeDimensionB": 0,
+              "shapeOffsetX": 0,
+              "shapeOffsetY": 0,
+              "polygonOrigin": "Center",
+              "vertices": [],
+              "density": 1,
+              "friction": 0.3,
+              "restitution": 0.1,
+              "linearDamping": 0.1,
+              "angularDamping": 0.1,
+              "gravityScale": 1,
+              "layers": 1,
+              "masks": 1
+            }
+          ],
+          "content": {
+            "centerLocation": "ModelOrigin",
+            "depth": 12,
+            "height": 12,
+            "keepAspectRatio": true,
+            "materialType": "StandardWithoutMetalness",
+            "modelResourceName": "Crate.glb",
+            "originLocation": "ModelOrigin",
+            "rotationX": 90,
+            "rotationY": 0,
+            "rotationZ": 0,
+            "width": 12,
+            "animations": []
+          }
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "NewSprite"
-          },
-          {
             "objectName": "FemalAdventurer"
           },
           {
             "objectName": "Leela"
+          },
+          {
+            "objectName": "BlockLarge"
+          },
+          {
+            "objectName": "Crate"
           }
         ]
       },
       "events": [
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Initial State"
+        },
         {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
@@ -449,6 +637,129 @@
           ]
         },
         {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Camera"
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "SystemInfo::IsMobile"
+              },
+              "parameters": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "Left"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MousePointerLock::RequestPointerLock"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MousePointerLock::isPointerLocked"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "KeyPressed"
+                      },
+                      "parameters": [
+                        "",
+                        "Escape"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::ExitPointerLock"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "FirstPersonCamera::LookFromObjectEyes"
+              },
+              "parameters": [
+                "",
+                "Leela",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Movement"
+        },
+        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -469,7 +780,7 @@
               "parameters": [
                 "Leela",
                 "Leela.Angle()",
-                "50",
+                "PlayerWalkSpeed",
                 ""
               ]
             }
@@ -496,34 +807,7 @@
               "parameters": [
                 "Leela",
                 "Leela.Angle()-180",
-                "50",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "s"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "AddForceAL"
-              },
-              "parameters": [
-                "Leela",
-                "Leela.Angle()-180",
-                "50",
+                "PlayerWalkSpeed",
                 ""
               ]
             }
@@ -545,13 +829,12 @@
           "actions": [
             {
               "type": {
-                "value": "AddForceAL"
+                "value": "Rotate"
               },
               "parameters": [
                 "Leela",
-                "Leela.Angle()-90",
-                "50",
-                ""
+                "-PlayerWalkSpeed",
+                "50"
               ]
             }
           ]
@@ -572,40 +855,12 @@
           "actions": [
             {
               "type": {
-                "value": "AddForceAL"
+                "value": "Rotate"
               },
               "parameters": [
                 "Leela",
-                "Leela.Angle()+90",
-                "50",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "MouseButtonPressed"
-              },
-              "parameters": [
-                "",
-                "Left"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "RotateTowardAngle"
-              },
-              "parameters": [
-                "Leela",
-                "CursorX()",
-                "50",
-                ""
+                "PlayerWalkSpeed",
+                "50"
               ]
             }
           ]
@@ -663,20 +918,28 @@
           "type": "AnimatableCapability::AnimatableBehavior"
         },
         {
-          "name": "Effect",
-          "type": "EffectCapability::EffectBehavior"
-        },
-        {
           "name": "Flippable",
           "type": "FlippableCapability::FlippableBehavior"
+        },
+        {
+          "name": "Jump3D",
+          "type": "Jump3D::Jump3D"
         },
         {
           "name": "Object3D",
           "type": "Scene3D::Base3DBehavior"
         },
         {
-          "name": "Opacity",
-          "type": "OpacityCapability::OpacityBehavior"
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "gravityX": 0,
+          "gravityY": 9.8,
+          "scaleX": 100,
+          "scaleY": 100
+        },
+        {
+          "name": "Platform",
+          "type": "PlatformBehavior::PlatformBehavior"
         },
         {
           "name": "Resizable",
@@ -690,7 +953,5052 @@
     }
   ],
   "externalEvents": [],
-  "eventsFunctionsExtensions": [],
+  "eventsFunctionsExtensions": [
+    {
+      "author": "",
+      "category": "Camera",
+      "extensionNamespace": "",
+      "fullName": "First person 3D camera",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQoJLnN0MXtmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjcsMTZjMCwwLTQuOSw3LTExLDdTNSwxNiw1LDE2czQuOS03LDExLTdTMjcsMTYsMjcsMTZ6Ii8+DQo8Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSIxNiIgY3k9IjE2IiByPSIzIi8+DQo8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSIzLDkgMywzIDksMyAiLz4NCjxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjksMjkgMywyOSAzLDIzICIvPg0KPHBvbHlsaW5lIGNsYXNzPSJzdDAiIHBvaW50cz0iMjksMjMgMjksMjkgMjMsMjkgIi8+DQo8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSIyMywzIDI5LDMgMjksOSAiLz4NCjwvc3ZnPg0K",
+      "name": "FirstPersonCamera",
+      "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/Line Hero Pack/Master/SVG/Security and Protection/e8248ffd504c314e6a9d9d560c3a0fdad3398a5f125ae6a4c0654d4e68c86376_Security and Protection_security_protection_eye_scan_lock.svg",
+      "shortDescription": "Move the camera to look though objects eyes.",
+      "version": "1.0.2",
+      "description": [
+        "Move the camera to look though objects eyes.",
+        "",
+        "This extension can be used with the \"Mouse pointer lock\" or \"Gamepad\" extension to build a first person camera."
+      ],
+      "origin": {
+        "identifier": "FirstPersonCamera",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "3d",
+        "camera",
+        "fps"
+      ],
+      "authorIds": [
+        "IWykYNRvhCZBN3vEgKEbBPOR3Oc2"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [
+        {
+          "description": "Move the camera to look though _PARAM1_ eyes. The object must look to the right when all its angles are 0 and the top of its head be toward Z+.",
+          "fullName": "Look through object eyes",
+          "functionType": "Action",
+          "group": "Layers and cameras",
+          "name": "LookFromObjectEyes",
+          "sentence": "Move the camera of _PARAM2_ to look though _PARAM1_ eyes",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "CentreCamera"
+                  },
+                  "parameters": [
+                    "",
+                    "Object",
+                    "",
+                    "Layer",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::SetCameraZ"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "Object.Z()",
+                    "Layer",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::SetCameraZ"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "Object.Z()",
+                    "Layer",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::SetCameraRotationX"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "- Object.RotationY() + 90",
+                    "Layer",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::SetCameraRotationY"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "Object.RotationX()",
+                    "Layer",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetCameraAngle"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "Object.Angle() + 90",
+                    "Layer",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "supplementaryInformation": "Scene3D::Model3DObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Layer",
+              "name": "Layer",
+              "type": "layer"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": []
+    },
+    {
+      "author": "PANDAKO-GitHub",
+      "category": "Input",
+      "extensionNamespace": "",
+      "fullName": "Mouse Pointer Lock",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPHBvbHlsaW5lIGNsYXNzPSJzdDAiIHBvaW50cz0iMTksMTkgMjQsMTkgMjQsMjQgIi8+DQo8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSI2LDIzIDExLDIzIDExLDE4ICIvPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTI0LDE5LjRjLTAuNywwLjgtMS40LDEuNi0yLjIsMi40Yy03LDctMTUuMywxMC4yLTE4LjUsN3MtMC4xLTExLjUsNy0xOC41czE1LjMtMTAuMiwxOC41LTcNCgljMS40LDEuNCwxLjYsMy42LDAuOCw2LjMiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSwyMi41Yy0wLjMtMC4yLTAuNS0wLjUtMC44LTAuOGMtNy03LTEwLjItMTUuMy03LTE4LjVzMTEuNS0wLjEsMTguNSw3czEwLjIsMTUuMyw3LDE4LjUNCgljLTEuNywxLjctNC44LDEuNi04LjQsMC4xIi8+DQo8L3N2Zz4NCg==",
+      "name": "MousePointerLock",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/Line Hero Pack/Master/SVG/Virtual Reality/Virtual Reality_360_rotate_vr_movement.svg",
+      "shortDescription": "This behavior removes the limit on the distance the mouse can move and hides the cursor.",
+      "version": "0.2.1",
+      "description": [
+        "This behavior removes the limit on the distance the mouse can move and hides the cursor.",
+        "",
+        "For example, a user can rotate or continue to manipulate an object by moving the mouse endlessly ([open the project online](https://editor.gdevelop.io/?project=example://mouse-pointer-lock)).",
+        "Without the pointer lock, the rotation or operation will stop the moment the pointer reaches the edge of the browser or screen.",
+        "",
+        "Game players don't have to worry about leaving the gameplay area or accidentally clicking on another application that moves the mouse focus away from the game.",
+        "",
+        "Locking the pointer locks `CursorX()` and `CursorY()` expressions.",
+        "Use `MovementX()` and `MovementY()` instead.",
+        ""
+      ],
+      "origin": {
+        "identifier": "MousePointerLock",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "mouse",
+        "lock",
+        "cursor",
+        "pointer"
+      ],
+      "authorIds": [
+        "Zu55H5hcb9YmZTltIVOTAFDJQyB2",
+        "IWykYNRvhCZBN3vEgKEbBPOR3Oc2"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onFirstSceneLoaded",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "class PointerLockHandler {",
+                "    movementX = 0;",
+                "    movementY = 0;",
+                "    retried = false;",
+                "    /**",
+                "     * @type {gdjs.RuntimeGame}",
+                "     */",
+                "    game;",
+                "",
+                "    /**",
+                "     * @param {gdjs.RuntimeGame} game",
+                "     */",
+                "    constructor(game) {",
+                "        this.game = game;",
+                "        const canvas = game.getRenderer().getCanvas();",
+                "",
+                "        canvas.addEventListener(\"pointermove\", event => {",
+                "            if (!!document.pointerLockElement) {",
+                "                this.movementX += event.movementX || 0;",
+                "                this.movementY += event.movementY || 0;",
+                "            }",
+                "        }, false);",
+                "",
+                "        document.addEventListener(\"pointerlockerror\", event => {",
+                "            if (!this.retried) {",
+                "                canvas.requestPointerLock();",
+                "                this.retried = true;",
+                "            }",
+                "        });",
+                "    }",
+                "",
+                "    requestPointerLock() {",
+                "        const canvas = this.game.getRenderer().getCanvas();",
+                "        if (canvas.requestPointerLock && !document.pointerLockElement) {",
+                "            this.retried = false;",
+                "            canvas.requestPointerLock({ unadjustedMovement: true });",
+                "        }",
+                "    }",
+                "",
+                "    exitPointerLock() {",
+                "        if (document.exitPointerLock) {",
+                "            document.exitPointerLock();",
+                "        }",
+                "    }",
+                "",
+                "    isPointerLocked() {",
+                "        return !!document.pointerLockElement;",
+                "    }",
+                "",
+                "    resetMovement() {",
+                "        this.movementX = 0;",
+                "        this.movementY = 0;",
+                "    }",
+                "};",
+                "",
+                "gdjs._MousePointerLockExtension = { handler: new PointerLockHandler(runtimeScene.getGame()) };",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onScenePostEvents",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const { handler } = gdjs._MousePointerLockExtension;\r",
+                "\r",
+                "handler.resetMovement();\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MousePointerLock::isEmulatingPointerLock"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "MousePointerLock::SetMovementX"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "(MousePointerLock::TouchX(TouchId) - OldX) * TouchSpeedFactor",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MousePointerLock::SetMovementY"
+                  },
+                  "parameters": [
+                    "",
+                    "=",
+                    "(MousePointerLock::TouchY(TouchId) - OldY) * TouchSpeedFactor",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "OldX",
+                    "=",
+                    "MousePointerLock::TouchX(TouchId)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "OldY",
+                    "=",
+                    "MousePointerLock::TouchY(TouchId)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "HasTouchEnded"
+                  },
+                  "parameters": [
+                    "",
+                    "TouchId"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TouchId",
+                    "=",
+                    "-1"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Lock the mouse pointer to hide it.",
+          "fullName": "Request Pointer Lock",
+          "functionType": "Action",
+          "name": "RequestPointerLock",
+          "sentence": "Request Pointer Lock",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "HasAnyTouchOrMouseStarted"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "TouchId",
+                    "=",
+                    "-1"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TouchId",
+                    "=",
+                    "StartedTouchOrMouseId(0)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "OldX",
+                    "=",
+                    "MousePointerLock::TouchX(TouchId)"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "OldY",
+                    "=",
+                    "MousePointerLock::TouchY(TouchId)"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const { handler } = gdjs._MousePointerLockExtension;\r",
+                "\r",
+                "handler.requestPointerLock();\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Unlocks the mouse pointer and show it.",
+          "fullName": "Exit pointer lock",
+          "functionType": "Action",
+          "name": "ExitPointerLock",
+          "sentence": "Exit pointer lock",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TouchId",
+                    "=",
+                    "-1"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "const { handler } = gdjs._MousePointerLockExtension;\r",
+                "\r",
+                "handler.exitPointerLock();\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if the mouse pointer is locked.",
+          "fullName": "Pointer is locked",
+          "functionType": "Condition",
+          "name": "isPointerLocked",
+          "sentence": "The mouse pointer is locked",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "TouchId",
+                    ">=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "TouchId",
+                    "<",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "MousePointerLock::isPointerActuallyLocked"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if the mouse pointer is actually locked.",
+          "fullName": "Pointer is actually locked",
+          "functionType": "Condition",
+          "name": "isPointerActuallyLocked",
+          "private": true,
+          "sentence": "The mouse pointer actually is locked",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "const { handler } = gdjs._MousePointerLockExtension;\r",
+                "\r",
+                "eventsFunctionContext.returnValue = handler.isPointerLocked();\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if the mouse pointer lock is emulated.",
+          "fullName": "Pointer lock is emulated",
+          "functionType": "Condition",
+          "name": "isEmulatingPointerLock",
+          "private": true,
+          "sentence": "The mouse pointer is lock is emulated",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "MousePointerLock::isPointerActuallyLocked"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "TouchId",
+                    ">=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if the locked pointer is moving.",
+          "fullName": "Locked pointer is moving",
+          "functionType": "Condition",
+          "name": "IsMoving",
+          "sentence": "Locked pointer is moving",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "BuiltinCommonInstructions::Or"
+                  },
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::MovementX"
+                      },
+                      "parameters": [
+                        "",
+                        "!=",
+                        "0",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MousePointerLock::MovementY"
+                      },
+                      "parameters": [
+                        "",
+                        "!=",
+                        "0",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "the movement of the locked pointer on the X axis.",
+          "fullName": "Pointer X movement",
+          "functionType": "ExpressionAndCondition",
+          "name": "MovementX",
+          "sentence": "the movement of the locked pointer on the X axis",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._MousePointerLockExtension.handler.movementX || 0;\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "the movement of the locked pointer on the X axis.",
+          "fullName": "Pointer X movement",
+          "functionType": "ActionWithOperator",
+          "getterName": "MovementX",
+          "name": "SetMovementX",
+          "private": true,
+          "sentence": "the movement of the locked pointer on the X axis",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "const value = eventsFunctionContext.getArgument(\"Value\");\r",
+                "gdjs._MousePointerLockExtension.handler.movementX = value;\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "the movement of the pointer on the Y axis.",
+          "fullName": "Pointer Y movement",
+          "functionType": "ExpressionAndCondition",
+          "name": "MovementY",
+          "sentence": "the movement of the pointer on the Y axis",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._MousePointerLockExtension.handler.movementY || 0;\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "the movement of the locked pointer on the X axis.",
+          "fullName": "Pointer X movement",
+          "functionType": "ActionWithOperator",
+          "getterName": "MovementY",
+          "name": "SetMovementY",
+          "private": true,
+          "sentence": "the movement of the locked pointer on the X axis",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "const value = eventsFunctionContext.getArgument(\"Value\");\r",
+                "gdjs._MousePointerLockExtension.handler.movementY = value;\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the X position of a specific touch",
+          "fullName": "Touch X position",
+          "functionType": "Expression",
+          "name": "TouchX",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const touchId = eventsFunctionContext.getArgument(\"NewTouchId\");",
+                "eventsFunctionContext.returnValue = runtimeScene.getGame().getInputManager().getTouchX(touchId);",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Touch identifier",
+              "name": "NewTouchId",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the Y position of a specific touch",
+          "fullName": "Touch Y position",
+          "functionType": "Expression",
+          "name": "TouchY",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const touchId = eventsFunctionContext.getArgument(\"NewTouchId\");",
+                "eventsFunctionContext.returnValue = runtimeScene.getGame().getInputManager().getTouchY(touchId);",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Touch identifier",
+              "name": "NewTouchId",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "the speed factor for touch movement.",
+          "fullName": "Speed factor for touch movement",
+          "functionType": "ExpressionAndCondition",
+          "name": "TouchSpeedFactor",
+          "sentence": "the speed factor for touch movement",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnNumber"
+                  },
+                  "parameters": [
+                    "TouchSpeedFactor"
+                  ]
+                }
+              ]
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "ActionWithOperator",
+          "getterName": "TouchSpeedFactor",
+          "name": "SetTouchSpeedFactor",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "TouchSpeedFactor",
+                    "=",
+                    "Value"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [
+        {
+          "description": "Control camera rotations with a mouse.",
+          "fullName": "First person camera mouse mapper",
+          "name": "FirstPersonPointerMapper",
+          "objectType": "",
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPreEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "TODO It's probably a bad idea to rotate the object around Y."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::isPointerLocked"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetAngle"
+                      },
+                      "parameters": [
+                        "Object",
+                        "+",
+                        "MousePointerLock::MovementX() * HorizontalSpeed / SceneWindowWidth()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetRotationY"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Object3D",
+                        "+",
+                        "MousePointerLock::MovementY() * VerticalSpeed / SceneWindowHeight()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetRotationY"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Object3D",
+                        "=",
+                        "clamp(Object.Object3D::RotationY(), VerticalAngleMin, VerticalAngleMax)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MousePointerLock::FirstPersonPointerMapper::LookFromObjectEyes"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "MouseButtonReleased"
+                      },
+                      "parameters": [
+                        "",
+                        "Left"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "MousePointerLock::FirstPersonPointerMapper::PropertyShouldLock"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "MousePointerLock::isPointerLocked"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::RequestPointerLock"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Move the camera to look though _PARAM1_ eyes. The object must look to the right when all its angles are 0 and the top of its head be toward Z+.",
+              "fullName": "Look through object eyes",
+              "functionType": "Action",
+              "group": "Layers and cameras",
+              "name": "LookFromObjectEyes",
+              "private": true,
+              "sentence": "Move the camera to look though _PARAM0_ eyes",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "CentreCamera"
+                      },
+                      "parameters": [
+                        "",
+                        "Object",
+                        "",
+                        "Object.Layer()",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::SetCameraZ"
+                      },
+                      "parameters": [
+                        "",
+                        "=",
+                        "Object.Object3D::Z() + Object.Object3D::Depth() + OffsetZ",
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::SetCameraRotationX"
+                      },
+                      "parameters": [
+                        "",
+                        "=",
+                        "- Object.Object3D::RotationY() + 90",
+                        "GetArgumentAsString(\"Layer\")",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::SetCameraRotationY"
+                      },
+                      "parameters": [
+                        "",
+                        "=",
+                        "Object.Object3D::RotationX()",
+                        "GetArgumentAsString(\"Layer\")",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetCameraAngle"
+                      },
+                      "parameters": [
+                        "",
+                        "=",
+                        "Object.Angle() + 90",
+                        "Object.Layer()",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the horizontal rotation speed factor of the object.",
+              "fullName": "Horizontal rotation speed factor",
+              "functionType": "ExpressionAndCondition",
+              "group": "First person camera mouse mapper configuration",
+              "name": "HorizontalSpeed",
+              "sentence": "the horizontal rotation speed factor",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "HorizontalSpeed"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "HorizontalSpeed",
+              "name": "SetHorizontalSpeed",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::FirstPersonPointerMapper::SetPropertyHorizontalSpeed"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the vertical rotation speed factor of the object.",
+              "fullName": "Vertical rotation speed factor",
+              "functionType": "ExpressionAndCondition",
+              "group": "First person camera mouse mapper configuration",
+              "name": "VerticalSpeed",
+              "sentence": "the vertical rotation speed factor",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "VerticalSpeed"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "VerticalSpeed",
+              "name": "SetVerticalSpeed",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::FirstPersonPointerMapper::SetPropertyVerticalSpeed"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the minimum vertical camera angle of the object.",
+              "fullName": "Minimum vertical camera angle",
+              "functionType": "ExpressionAndCondition",
+              "group": "First person camera mouse mapper configuration",
+              "name": "VerticalAngleMin",
+              "sentence": "the minimum vertical camera angle",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "VerticalAngleMin"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "VerticalAngleMin",
+              "name": "SetVerticalAngleMin",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::FirstPersonPointerMapper::SetPropertyVerticalAngleMin"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the maximum vertical camera angle of the object.",
+              "fullName": "Maximum vertical camera angle",
+              "functionType": "ExpressionAndCondition",
+              "group": "First person camera mouse mapper configuration",
+              "name": "VerticalAngleMax",
+              "sentence": "the maximum vertical camera angle",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "VerticalAngleMax"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "VerticalAngleMax",
+              "name": "SetVerticalAngleMax",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::FirstPersonPointerMapper::SetPropertyVerticalAngleMax"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the z position offset of the object.",
+              "fullName": "Z position offset",
+              "functionType": "ExpressionAndCondition",
+              "group": "First person camera mouse mapper configuration",
+              "name": "OffsetZ",
+              "sentence": "the z position offset",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "OffsetZ"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "OffsetZ",
+              "name": "SetOffsetZ",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MousePointerLock::FirstPersonPointerMapper::SetPropertyOffsetZ"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "MousePointerLock::FirstPersonPointerMapper",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [
+            {
+              "value": "",
+              "type": "Behavior",
+              "label": "3D capability",
+              "description": "",
+              "group": "",
+              "extraInformation": [
+                "Scene3D::Base3DBehavior"
+              ],
+              "name": "Object3D"
+            },
+            {
+              "value": "200",
+              "type": "Number",
+              "unit": "Dimensionless",
+              "label": "Horizontal rotation speed factor",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "HorizontalSpeed"
+            },
+            {
+              "value": "100",
+              "type": "Number",
+              "unit": "Dimensionless",
+              "label": "Vertical rotation speed factor",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "VerticalSpeed"
+            },
+            {
+              "value": "-90",
+              "type": "Number",
+              "unit": "DegreeAngle",
+              "label": "Minimum vertical camera angle",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "VerticalAngleMin"
+            },
+            {
+              "value": "90",
+              "type": "Number",
+              "unit": "DegreeAngle",
+              "label": "Maximum vertical camera angle",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "VerticalAngleMax"
+            },
+            {
+              "value": "0",
+              "type": "Number",
+              "unit": "Pixel",
+              "label": "Z position offset",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "OffsetZ"
+            },
+            {
+              "value": "true",
+              "type": "Boolean",
+              "label": "Lock the pointer on click",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "ShouldLock"
+            }
+          ],
+          "sharedPropertyDescriptors": []
+        }
+      ],
+      "eventsBasedObjects": []
+    },
+    {
+      "author": "",
+      "category": "Movement",
+      "extensionNamespace": "",
+      "fullName": "3D jump (deprecated)",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTI3LDI4aC04LjFjLTEuMiwwLTIuMy0wLjUtMy4yLTEuM0wzLDE0bDctOHYwYzAsMy45LDQuMSw4LDgsOGgxdjBjLTAuMSw0LjUsMS42LDcuOCw2LDkuMg0KCWMwLjMsMC4xLDAuNSwwLjIsMC44LDAuMmwwLDBjMS4yLDAuMywyLDEuNiwxLjcsMi44TDI3LDI4eiIvPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTEsMTZsMTMuNywxMy43YzAuOCwwLjgsMiwxLjMsMy4yLDEuM0gyNyIvPg0KPGNpcmNsZSBjbGFzcz0ic3QwIiBjeD0iMTAuNSIgY3k9IjE1LjUiIHI9IjEuNSIvPg0KPGxpbmUgY2xhc3M9InN0MCIgeDE9IjE1IiB5MT0iMTkiIHgyPSIxOS41IiB5Mj0iMTkiLz4NCjxsaW5lIGNsYXNzPSJzdDAiIHgxPSIxNyIgeTE9IjIyIiB4Mj0iMjIuNSIgeTI9IjIyIi8+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjgsMWwtNy4zLDcuM0MxOSwxMCwxOC40LDEyLjQsMTksMTQuN2wwLDAiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMCw3TDEwLDdjMS45LTAuNiwzLjYtMiw0LjYtMy43TDE2LDEiLz4NCjwvc3ZnPg0K",
+      "name": "Jump3D",
+      "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/Line Hero Pack/Master/SVG/Sports and Fitness/29b5c1893f81031cca98c9a1c447464b433717bdf3569ce5fac7c7cb0a8a2b82_Sports and Fitness_gym_running_foot_run.svg",
+      "shortDescription": "Jump and fall along Z axis.",
+      "version": "0.2.0",
+      "description": [
+        "It handles basic collisions with 3D boxes but rotations around X and Y axes are not supported.",
+        "",
+        "This extension is deprecated. The [3D physics engine](https://wiki.gdevelop.io/gdevelop5/behaviors/physics3d) should be used instead."
+      ],
+      "origin": {
+        "identifier": "Jump3D",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "3d",
+        "jump",
+        "platform",
+        "platformer",
+        "collision"
+      ],
+      "authorIds": [
+        "IWykYNRvhCZBN3vEgKEbBPOR3Oc2",
+        "toILhIv6WWNwz59xMtlGMijOZ1t2",
+        "PEzPAaWHgYgk5UwIPppsL6f2ugp2"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [
+        {
+          "description": "the top of the object on Z axis",
+          "fullName": "Top on Z axis",
+          "functionType": "ExpressionAndCondition",
+          "group": "Position",
+          "name": "TopZ",
+          "private": true,
+          "sentence": "the top on Z axis of _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if (objects.length === 0) {",
+                "    return;",
+                "}",
+                "const object = objects[0];",
+                "eventsFunctionContext.returnValue = object.getDrawableZ ? object.getDrawableZ() + object.getDepth() : 0;",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "ActionWithOperator",
+          "getterName": "TopZ",
+          "name": "SetTopZ",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if (objects.length === 0) {",
+                "    return;",
+                "}",
+                "const object = objects[0];",
+                "if (!object.getDrawableZ) {",
+                "    return;",
+                "}",
+                "const newTop = eventsFunctionContext.getArgument(\"Value\");",
+                "const oldTop = object.getDrawableZ() + object.getDepth();",
+                "object.setZ(object.getZ() - oldTop + newTop);",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "the bottom of the object on Z axis",
+          "fullName": "Bottom on Z axis",
+          "functionType": "ExpressionAndCondition",
+          "group": "Position",
+          "name": "BottomZ",
+          "private": true,
+          "sentence": "the bottom on Z axis of _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if (objects.length === 0) {",
+                "    return;",
+                "}",
+                "const object = objects[0];",
+                "eventsFunctionContext.returnValue = object.getDrawableZ ? object.getDrawableZ() : 0;",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "ActionWithOperator",
+          "getterName": "BottomZ",
+          "name": "SetBottomZ",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if (objects.length === 0) {",
+                "    return;",
+                "}",
+                "const object = objects[0];",
+                "if (!object.getDrawableZ) {",
+                "    return;",
+                "}",
+                "const newBottom = eventsFunctionContext.getArgument(\"Value\");",
+                "const oldBottom = object.getDrawableZ();",
+                "object.setZ(object.getZ() - oldBottom + newBottom);",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if an object is overlapping a range on Z axis.",
+          "fullName": "Overlap Z range",
+          "functionType": "Condition",
+          "group": "Collision",
+          "name": "IsWithinZ",
+          "private": true,
+          "sentence": "_PARAM1_ overlap the range from _PARAM3_ to _PARAM4_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const bottom = eventsFunctionContext.getArgument(\"BottomZ\");",
+                "const top = eventsFunctionContext.getArgument(\"TopZ\");",
+                "",
+                "if (top <= bottom) {",
+                "    return false;",
+                "}",
+                "",
+                "let isAnyObjectPicked = false;",
+                "for (const object of objects) {",
+                "    object.pick = object.getZ() < top && object.getZ() + object.getDepth() > bottom;",
+                "    isAnyObjectPicked = isAnyObjectPicked || object.pick;",
+                "}",
+                "",
+                "const objectsLists = eventsFunctionContext.getObjectsLists(\"Object\");",
+                "for (const name in objectsLists.items) {",
+                "    if (objectsLists.items.hasOwnProperty(name)) {",
+                "        const objectsList = objectsLists.items[name];",
+                "        gdjs.evtTools.object.filterPickedObjectsList(objectsList);",
+                "    }",
+                "}",
+                "eventsFunctionContext.returnValue = isAnyObjectPicked;",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "3D capability",
+              "name": "Object3D",
+              "supplementaryInformation": "Scene3D::Base3DBehavior",
+              "type": "behavior"
+            },
+            {
+              "description": "Bottom Z",
+              "name": "BottomZ",
+              "type": "expression"
+            },
+            {
+              "description": "Top Z",
+              "name": "TopZ",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [
+        {
+          "description": "Jump and fall along Z axis.",
+          "fullName": "3D jump (deprecated)",
+          "name": "Jump3D",
+          "objectType": "",
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "onCreated",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Jump3D::Jump3D::SetJumpHeight"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "JumpHeight",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "Jump height",
+              "functionType": "ActionWithOperator",
+              "getterName": "JumpHeight",
+              "name": "SetJumpHeight",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "JumpHeight",
+                        "=",
+                        "Value"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "JumpSpeed",
+                        "=",
+                        "Object.Behavior::JumpSpeedToReach(Value)"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                },
+                {
+                  "description": "Jump height",
+                  "name": "Value",
+                  "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the jump height of the object. Its value is always positive.",
+              "fullName": "Jump height",
+              "functionType": "ExpressionAndCondition",
+              "group": "3D jump configuration",
+              "name": "JumpHeight",
+              "sentence": "the jump height",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "JumpHeight"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Return the jump speed to reach a given height.",
+              "fullName": "Jump height",
+              "functionType": "Expression",
+              "name": "JumpSpeedToReach",
+              "private": true,
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "// Formulas used in this extension were generated from a math model.",
+                    "// They are probably not understandable on their own.",
+                    "// If you need to modify them or need to write new feature,",
+                    "// please take a look to the platformer extension documentation:",
+                    "// https://github.com/4ian/GDevelop/tree/master/Extensions/PlatformBehavior#readme",
+                    "",
+                    "const behaviorName = eventsFunctionContext.getBehaviorName(\"Behavior\");",
+                    "const behavior = objects[0].getBehavior(behaviorName);",
+                    "/** @type {float} */",
+                    "const jumpHeight = -Math.abs(eventsFunctionContext.getArgument(\"JumpHeight\"));",
+                    "",
+                    "/** @type {float} */",
+                    "const gravity = behavior._getGravity();",
+                    "/** @type {float} */",
+                    "const maxFallingSpeed = behavior._getMaxFallingSpeed();",
+                    "/** @type {float} */",
+                    "const jumpSustainTime = behavior._getJumpSustainDurationMax();",
+                    "",
+                    "const maxFallingSpeedReachedTime = maxFallingSpeed / gravity;",
+                    "",
+                    "// The implementation jumps from one quadratic resolution to another",
+                    "// to find the right formula to use as the time is unknown.",
+                    "",
+                    "const sustainCase = (jumpHeight) => Math.sqrt(-jumpHeight * gravity * 2);",
+                    "const maxFallingCase = (jumpHeight) => -gravity * jumpSustainTime + maxFallingSpeed",
+                    "    + Math.sqrt(gravity * gravity * jumpSustainTime * jumpSustainTime - 2 * jumpHeight * gravity - maxFallingSpeed * maxFallingSpeed);",
+                    "",
+                    "let jumpSpeed = 0;",
+                    "let peakTime = 0;",
+                    "if (maxFallingSpeedReachedTime > jumpSustainTime) {",
+                    "    // common case",
+                    "    jumpSpeed = -gravity * jumpSustainTime + Math.sqrt(2 * gravity * gravity * jumpSustainTime * jumpSustainTime - 4 * jumpHeight * gravity);",
+                    "    peakTime = (gravity * jumpSustainTime + jumpSpeed) / (2 * gravity);",
+                    "    if (peakTime < jumpSustainTime) {",
+                    "        jumpSpeed = sustainCase(jumpHeight);",
+                    "    }",
+                    "    else if (peakTime > maxFallingSpeedReachedTime) {",
+                    "        jumpSpeed = maxFallingCase(jumpHeight);",
+                    "    }",
+                    "}",
+                    "else {",
+                    "    // affine case can't have a maximum",
+                    "",
+                    "    // sustain case",
+                    "    jumpSpeed = sustainCase(jumpHeight);",
+                    "    peakTime = jumpSpeed / gravity;",
+                    "    if (peakTime > maxFallingSpeedReachedTime) {",
+                    "        jumpSpeed = maxFallingCase(jumpHeight);",
+                    "    }",
+                    "}",
+                    "",
+                    "eventsFunctionContext.returnValue = jumpSpeed;",
+                    ""
+                  ],
+                  "parameterObjects": "Object",
+                  "useStrict": true,
+                  "eventsSheetExpanded": true
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                },
+                {
+                  "description": "Jump height",
+                  "name": "JumpHeight",
+                  "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPreEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "name": "Start to jump",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "HasPressedJumpKey",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [],
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "BooleanVariable"
+                              },
+                              "parameters": [
+                                "CanJump",
+                                "True",
+                                ""
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "CurrentFallSpeed",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "ResetObjectTimer"
+                              },
+                              "parameters": [
+                                "Object",
+                                "\"_Jump3DExtension.SustainJump\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetStringVariable"
+                              },
+                              "parameters": [
+                                "State",
+                                "=",
+                                "\"InTheAir\""
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "CurrentJumpSpeed",
+                                "=",
+                                "JumpSpeed"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "CurrentFallSpeed",
+                                "=",
+                                "0"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "SetBooleanVariable"
+                              },
+                              "parameters": [
+                                "CanJump",
+                                "False",
+                                ""
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "value": "CompareObjectTimer"
+                              },
+                              "parameters": [
+                                "Object",
+                                "\"_Jump3DExtension.SustainJump\"",
+                                ">",
+                                "JumpSustainDurationMax"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "RemoveObjectTimer"
+                              },
+                              "parameters": [
+                                "Object",
+                                "\"_Jump3DExtension.SustainJump\""
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": true,
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "HasPressedJumpKey",
+                            "True",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "RemoveObjectTimer"
+                          },
+                          "parameters": [
+                            "Object",
+                            "\"_Jump3DExtension.SustainJump\""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetBooleanVariable"
+                          },
+                          "parameters": [
+                            "HasPressedJumpKey",
+                            "False",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "parameters": []
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "PreviousJumpSpeed",
+                        "=",
+                        "CurrentJumpSpeed"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "PreviousFallSpeed",
+                        "=",
+                        "CurrentFallSpeed"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "PreviousState",
+                        "=",
+                        "State"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Make the object fall every frame to check the floor."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Jump3D::Jump3D::CurrentVerticalSpeed"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "0",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Jump3D::Jump3D::Fall"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "State",
+                        "!=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Jump speed",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [
+                            {
+                              "type": {
+                                "inverted": true,
+                                "value": "CompareObjectTimer"
+                              },
+                              "parameters": [
+                                "Object",
+                                "\"_Jump3DExtension.SustainJump\"",
+                                ">=",
+                                "0"
+                              ]
+                            }
+                          ],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "CurrentJumpSpeed",
+                                "=",
+                                "max(0, CurrentJumpSpeed - Gravity * TimeDelta())"
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Verlet integration"
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "Scene3D::Base3DBehavior::SetZ"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Object3D",
+                                "+",
+                                "(PreviousJumpSpeed + CurrentJumpSpeed) / 2 * TimeDelta()"
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    },
+                    {
+                      "colorB": 228,
+                      "colorG": 176,
+                      "colorR": 74,
+                      "creationTime": 0,
+                      "name": "Fall speed",
+                      "source": "",
+                      "type": "BuiltinCommonInstructions::Group",
+                      "events": [
+                        {
+                          "type": "BuiltinCommonInstructions::Comment",
+                          "color": {
+                            "b": 109,
+                            "g": 230,
+                            "r": 255,
+                            "textB": 0,
+                            "textG": 0,
+                            "textR": 0
+                          },
+                          "comment": "Verlet integration"
+                        },
+                        {
+                          "type": "BuiltinCommonInstructions::Standard",
+                          "conditions": [],
+                          "actions": [
+                            {
+                              "type": {
+                                "value": "SetNumberVariable"
+                              },
+                              "parameters": [
+                                "CurrentFallSpeed",
+                                "=",
+                                "min(CurrentFallSpeed + Gravity * TimeDelta(), MaxFallingSpeed)"
+                              ]
+                            },
+                            {
+                              "type": {
+                                "value": "Scene3D::Base3DBehavior::SetZ"
+                              },
+                              "parameters": [
+                                "Object",
+                                "Object3D",
+                                "-",
+                                "(PreviousFallSpeed + CurrentFallSpeed) / 2 * TimeDelta()"
+                              ]
+                            }
+                          ]
+                        }
+                      ],
+                      "parameters": []
+                    }
+                  ]
+                },
+                {
+                  "colorB": 228,
+                  "colorG": 176,
+                  "colorR": 74,
+                  "creationTime": 0,
+                  "name": "Fall on the floor",
+                  "source": "",
+                  "type": "BuiltinCommonInstructions::Group",
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "BooleanVariable"
+                          },
+                          "parameters": [
+                            "ShouldStopAtZero",
+                            "True",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Jump3D::BottomZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            "<",
+                            "0",
+                            "Object",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Jump3D::Jump3D::Land"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Behavior",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Jump3D::SetBottomZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            "=",
+                            "0",
+                            "Object",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ],
+                  "parameters": []
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Simulate a press of the jump key.",
+              "fullName": "Simulate jump key press",
+              "functionType": "Action",
+              "group": "3D jump state",
+              "name": "SimulateJumpKey",
+              "sentence": "Simulate pressing Jump key for _PARAM0_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "HasPressedJumpKey",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Separate from walls and land on platforms. 3D boxes rotated around X and Y axes are not supported.",
+              "fullName": "Separate from platforms",
+              "functionType": "Action",
+              "group": "3D jump state",
+              "name": "SeparateFromPlatforms",
+              "sentence": "Separate _PARAM0_ from platform _PARAM2_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Check platforms to land on."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "CollisionNP"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Platform",
+                        "",
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "Platform",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Jump3D::TopZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            ">",
+                            "Jump3D::BottomZ(Platform)",
+                            "Object",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Jump3D::TopZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            "<",
+                            "Jump3D::BottomZ(Platform) + Object.Behavior::VerticalSpeed() * TimeDelta()",
+                            "Object",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Jump3D::Jump3D::AbortJump"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Behavior",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Jump3D::SetTopZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            "=",
+                            "Jump3D::BottomZ(Platform)",
+                            "Object",
+                            ""
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::ForEach",
+                      "object": "Platform",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "Jump3D::BottomZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            "<",
+                            "Jump3D::TopZ(Platform)",
+                            "Object",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Jump3D::BottomZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            ">",
+                            "Jump3D::TopZ(Platform) + Object.Behavior::VerticalSpeed() * TimeDelta()",
+                            "Object",
+                            ""
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Jump3D::Jump3D::Land"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Behavior",
+                            ""
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Jump3D::SetBottomZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            "=",
+                            "Jump3D::TopZ(Platform)",
+                            "Object",
+                            ""
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Separate from walls"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Jump3D::IsWithinZ"
+                      },
+                      "parameters": [
+                        "",
+                        "Platform",
+                        "Object3D",
+                        "Jump3D::BottomZ(Object)",
+                        "Jump3D::TopZ(Object)",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SeparateFromObjects"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Platform",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                },
+                {
+                  "description": "Platform",
+                  "name": "Platform",
+                  "type": "objectList"
+                },
+                {
+                  "description": "3D capability",
+                  "name": "Object3D",
+                  "supplementaryInformation": "Scene3D::Base3DBehavior",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Stop the object from falling and land on the floor. The object will start falling again the next frame.",
+              "fullName": "Land on the floor",
+              "functionType": "Action",
+              "group": "3D jump state",
+              "name": "Land",
+              "sentence": "Make _PARAM0_ land on the floor",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "State",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentJumpSpeed",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentFallSpeed",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "CanJump",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Make the object fall from the floor.",
+              "fullName": "Fall from the floor",
+              "functionType": "Action",
+              "group": "3D jump state",
+              "name": "Fall",
+              "private": true,
+              "sentence": "Make _PARAM0_ fall from the floor",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Add a 1-frame delay in case collision checks are done after the simulate jump action."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "State",
+                        "!=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "CanJump",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetStringVariable"
+                      },
+                      "parameters": [
+                        "State",
+                        "=",
+                        "\"InTheAir\""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentJumpSpeed",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Abort the current jump and stop the object vertically. This action doesn't have any effect when the character is not jumping.",
+              "fullName": "Abort jump",
+              "functionType": "Action",
+              "group": "3D jump state",
+              "name": "AbortJump",
+              "sentence": "Abort the current jump of _PARAM0_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentJumpSpeed",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentFallSpeed",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "When this action is executed, the object is able to jump again, even if it is in the air: this can be useful to allow a double jump for example. This is not a permanent effect: you must call again this action everytime you want to allow the object to jump (apart if it's on the floor).",
+              "fullName": "Allow jumping again",
+              "functionType": "Action",
+              "group": "3D jump state",
+              "name": "SetCanJump",
+              "sentence": "Allow _PARAM0_ to jump again",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "CanJump",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the object can jump.",
+              "fullName": "Can jump",
+              "functionType": "Condition",
+              "group": "3D jump state",
+              "name": "CanJump",
+              "sentence": "_PARAM0_ can jump",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "CanJump",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the object is falling.\\nNote that the object can be flagged as jumping and falling at the same time: at the end of a jump, the fall speed becomes higher than the jump speed.",
+              "fullName": "Is falling",
+              "functionType": "Condition",
+              "group": "3D jump state",
+              "name": "IsFalling",
+              "sentence": "_PARAM0_ is falling",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Jump3D::Jump3D::CurrentVerticalSpeed"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "<",
+                        "0",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the object is jumping.",
+              "fullName": "Is jumping",
+              "functionType": "Condition",
+              "group": "3D jump state",
+              "name": "IsJumping",
+              "sentence": "_PARAM0_ is jumping",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentJumpSpeed",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the object is on a platform.",
+              "fullName": "Is on floor",
+              "functionType": "Condition",
+              "group": "3D jump state",
+              "name": "IsOnFloor",
+              "sentence": "_PARAM0_ is on floor",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Return the state from the previous frame because the actual state may change during the current frame according to collision."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "PreviousState",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the current jump speed of the object. Its value is always positive.",
+              "fullName": "Current jump speed",
+              "functionType": "ExpressionAndCondition",
+              "group": "3D jump state",
+              "name": "CurrentJumpSpeed",
+              "sentence": "the current jump speed",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Return the speed from the previous frame because the actual speed may change during the current frame according to collision."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "PreviousJumpSpeed"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "CurrentJumpSpeed",
+              "name": "SetCurrentJumpSpeed",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "State",
+                        "!=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentJumpSpeed",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the current falling speed of the object. Its value is always positive.",
+              "fullName": "Current falling speed",
+              "functionType": "ExpressionAndCondition",
+              "group": "3D jump state",
+              "name": "CurrentFallSpeed",
+              "sentence": "the current falling speed",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Return the speed from the previous frame because the actual speed may change during the current frame according to collision."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "PreviousFallSpeed"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "CurrentFallSpeed",
+              "name": "SetCurrentFallSpeed",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "StringVariable"
+                      },
+                      "parameters": [
+                        "State",
+                        "!=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "CurrentFallSpeed",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the current speed of the object on Z axis. Its value is negative when the object falls.",
+              "fullName": "Current vertical speed",
+              "functionType": "ExpressionAndCondition",
+              "group": "3D jump state",
+              "name": "CurrentVerticalSpeed",
+              "sentence": "the current vertical speed",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Return the speed from the previous frame because the actual speed may change during the current frame according to collision."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "PreviousJumpSpeed - PreviousFallSpeed"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the current speed of the object on Z axis. Its value is negative when the object falls.",
+              "fullName": "Actual current vertical speed",
+              "functionType": "ExpressionAndCondition",
+              "group": "3D jump state",
+              "name": "VerticalSpeed",
+              "private": true,
+              "sentence": "the actual current vertical speed",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "CurrentJumpSpeed - CurrentFallSpeed"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the maximum falling speed of the object. Its value is always positive.",
+              "fullName": "Maximum falling speed",
+              "functionType": "ExpressionAndCondition",
+              "group": "3D jump configuration",
+              "name": "MaxFallingSpeed",
+              "sentence": "the maximum falling speed",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "MaxFallingSpeed"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "MaxFallingSpeed",
+              "name": "SetMaxFallingSpeed",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "MaxFallingSpeed",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the gravity of the object. Its value is always positive.",
+              "fullName": "Gravity",
+              "functionType": "ExpressionAndCondition",
+              "group": "3D jump configuration",
+              "name": "Gravity",
+              "sentence": "the gravity",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "Gravity"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "Gravity",
+              "name": "SetGravity",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Gravity",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the jump sustain time of the object. Maximum time (in seconds) during which the jump strength is sustained if the jump key is held - allowing variable height jumps.",
+              "fullName": "Jump sustain time",
+              "functionType": "ExpressionAndCondition",
+              "group": "3D jump configuration",
+              "name": "JumpSustainDurationMax",
+              "sentence": "the jump sustain time",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "JumpSustainDurationMax"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "JumpSustainDurationMax",
+              "name": "SetJumpSustainDurationMax",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "JumpSustainDurationMax",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if stop falling when Z equals 0.",
+              "fullName": "Stop falling when Z equals 0",
+              "functionType": "Condition",
+              "group": "3D jump configuration",
+              "name": "ShouldStopAtZero",
+              "sentence": "_PARAM0_ stop falling when Z equals 0",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "ShouldStopAtZero",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Change if stop falling when Z equals 0.",
+              "fullName": "Stop falling when Z equals 0",
+              "functionType": "Action",
+              "group": "3D jump configuration",
+              "name": "SetShouldStopAtZero",
+              "sentence": "_PARAM0_ stop falling when Z equals 0: _PARAM2_",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Value",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ShouldStopAtZero",
+                        "False",
+                        ""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "Value",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetBooleanVariable"
+                      },
+                      "parameters": [
+                        "ShouldStopAtZero",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "Jump3D::Jump3D",
+                  "type": "behavior"
+                },
+                {
+                  "defaultValue": "yes",
+                  "description": "StopAtZero",
+                  "name": "Value",
+                  "optional": true,
+                  "type": "yesorno"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [
+            {
+              "value": "",
+              "type": "Behavior",
+              "label": "3D capability",
+              "description": "",
+              "group": "",
+              "extraInformation": [
+                "Scene3D::Base3DBehavior"
+              ],
+              "name": "Object3D"
+            },
+            {
+              "value": "150",
+              "type": "Number",
+              "label": "Jump height",
+              "description": "Its value is always positive.",
+              "group": "",
+              "extraInformation": [],
+              "name": "JumpHeight"
+            },
+            {
+              "value": "700",
+              "type": "Number",
+              "unit": "PixelSpeed",
+              "label": "Maximum falling speed",
+              "description": "Its value is always positive.",
+              "group": "",
+              "extraInformation": [],
+              "name": "MaxFallingSpeed"
+            },
+            {
+              "value": "1000",
+              "type": "Number",
+              "unit": "PixelAcceleration",
+              "label": "Gravity",
+              "description": "Its value is always positive.",
+              "group": "",
+              "extraInformation": [],
+              "name": "Gravity"
+            },
+            {
+              "value": "600",
+              "type": "Number",
+              "label": "Jump speed",
+              "description": "Its value is always positive.",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "JumpSpeed"
+            },
+            {
+              "value": "0.2",
+              "type": "Number",
+              "unit": "Second",
+              "label": "Jump sustain time",
+              "description": "Maximum time (in seconds) during which the jump strength is sustained if the jump key is held - allowing variable height jumps.",
+              "group": "",
+              "extraInformation": [],
+              "name": "JumpSustainDurationMax"
+            },
+            {
+              "value": "Idle",
+              "type": "Choice",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [
+                "Idle",
+                "SustainJump",
+                "InTheAir"
+              ],
+              "hidden": true,
+              "name": "State"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "unit": "PixelSpeed",
+              "label": "Current jump speed",
+              "description": "Its value is always positive.",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "CurrentJumpSpeed"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "unit": "PixelSpeed",
+              "label": "Current falling speed",
+              "description": "Its value is always positive.",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "CurrentFallSpeed"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "unit": "PixelSpeed",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "PreviousJumpSpeed"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "unit": "PixelSpeed",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "PreviousFallSpeed"
+            },
+            {
+              "value": "",
+              "type": "Boolean",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "HasPressedJumpKey"
+            },
+            {
+              "value": "true",
+              "type": "Boolean",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "CanJump"
+            },
+            {
+              "value": "true",
+              "type": "Boolean",
+              "label": "Stop falling when Z equals 0",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "ShouldStopAtZero"
+            },
+            {
+              "value": "Idle",
+              "type": "String",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "PreviousState"
+            }
+          ],
+          "sharedPropertyDescriptors": []
+        }
+      ],
+      "eventsBasedObjects": []
+    },
+    {
+      "author": "add_, @Jurfix",
+      "category": "Advanced",
+      "extensionNamespace": "",
+      "fullName": "Extended math support",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWZ1bmN0aW9uLXZhcmlhbnQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIuNDIsNS4yOUMxMS4zMiw1LjE5IDEwLjM1LDYgMTAuMjUsNy4xMUwxMCwxMEgxMi44MlYxMkg5LjgyTDkuMzgsMTcuMDdDOS4xOCwxOS4yNyA3LjI0LDIwLjkgNS4wNCwyMC43QzMuNzksMjAuNTkgMi42NiwxOS45IDIsMTguODNMMy41LDE3LjMzQzMuODMsMTguMzggNC45NiwxOC45NyA2LDE4LjYzQzYuNzgsMTguMzkgNy4zMywxNy43IDcuNCwxNi44OUw3LjgyLDEySDQuODJWMTBIOEw4LjI3LDYuOTNDOC40Niw0LjczIDEwLjM5LDMuMSAxMi42LDMuMjhDMTMuODYsMy4zOSAxNSw0LjA5IDE1LjY2LDUuMTdMMTQuMTYsNi42N0MxMy45MSw1LjkgMTMuMjMsNS4zNiAxMi40Miw1LjI5TTIyLDEzLjY1TDIwLjU5LDEyLjI0TDE3Ljc2LDE1LjA3TDE0LjkzLDEyLjI0TDEzLjUsMTMuNjVMMTYuMzUsMTYuNUwxMy41LDE5LjMxTDE0LjkzLDIwLjcyTDE3Ljc2LDE3Ljg5TDIwLjU5LDIwLjcyTDIyLDE5LjMxTDE5LjE3LDE2LjVMMjIsMTMuNjVaIiAvPjwvc3ZnPg==",
+      "name": "ExtendedMath",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/function-variant.svg",
+      "shortDescription": "Additional math functions and constants as expressions and conditions.",
+      "version": "1.1.1",
+      "description": [
+        "Expressions:",
+        " - Mathematical constants",
+        " - Greatest common factor/Lowest common multiple",
+        " - Factorial",
+        " - Coordinates conversion for polar and isometric systems",
+        " - ToFixedString: Formats a number into a string with the specified number of decimal places",
+        " - ToFixed: (Deprecated) Formats a number to use the specified number of decimal places",
+        "",
+        "Conditions:",
+        "- IsEven: Check if the number is even (divisible by 2)",
+        "",
+        "Release Notes:",
+        "",
+        "Version 1.0.7",
+        "- Added ToFixedString()",
+        "- Deprecated ToFixed() because it does not show any trailing zeros for whole numbers. Prefer using ToFixedString() to set values in text objects.",
+        ""
+      ],
+      "origin": {
+        "identifier": "ExtendedMath",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "math",
+        "constants",
+        "conversion",
+        "coordinates",
+        "convert",
+        "format",
+        "modulus"
+      ],
+      "authorIds": [
+        "AlZ3D1xkH0QDao7T37VZZUeYNpn1",
+        "dt0tRnf2kHWJnjkrpnzTzNj9Yc63"
+      ],
+      "dependencies": [],
+      "eventsFunctions": [
+        {
+          "description": "Returns a term from the Fibonacci sequence.",
+          "fullName": "Fibonacci numbers",
+          "functionType": "Expression",
+          "name": "Fibonacci",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "function fibonacci(n) {",
+                "    let initial = 0;",
+                "    let final = 1;",
+                "    let sum = 0;",
+                "",
+                "    let i = 0;",
+                "    for(i = 2; i <= n; i++) {",
+                "        sum = initial + final;",
+                "",
+                "        initial = final;",
+                "        final = sum;",
+                "    }",
+                "    return n ? final : initial;",
+                "}",
+                "",
+                "const n = eventsFunctionContext.getArgument(\"n\");",
+                "",
+                "eventsFunctionContext.returnValue = fibonacci(n);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "The desired term in the sequence",
+              "name": "n",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Calculates the steepness of a line between two points.",
+          "fullName": "Slope",
+          "functionType": "Expression",
+          "name": "Slope",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const x1 = eventsFunctionContext.getArgument(\"x1\");\r",
+                "const y1 = eventsFunctionContext.getArgument(\"y1\");\r",
+                "const x2 = eventsFunctionContext.getArgument(\"x2\");\r",
+                "const y2 = eventsFunctionContext.getArgument(\"y2\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = (y2 - y1) / (x2 - x1);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "X value of the first point",
+              "name": "x1",
+              "type": "expression"
+            },
+            {
+              "description": "Y value of the first point",
+              "name": "y1",
+              "type": "expression"
+            },
+            {
+              "description": "X value of the second point",
+              "name": "x2",
+              "type": "expression"
+            },
+            {
+              "description": "Y value of the second point",
+              "name": "y2",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Converts a number of one range e.g. 0-1 to another 0-255.",
+          "fullName": "Map",
+          "functionType": "Expression",
+          "name": "Map",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const n = eventsFunctionContext.getArgument(\"n\");",
+                "const min1 = eventsFunctionContext.getArgument(\"min1\");",
+                "const max1 = eventsFunctionContext.getArgument(\"max1\");",
+                "const min2 = eventsFunctionContext.getArgument(\"min2\");",
+                "const max2 = eventsFunctionContext.getArgument(\"max2\");",
+                "",
+                "eventsFunctionContext.returnValue = (n - min1) * (max2 - min2) / (max1 - min1) + min2;"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "The value to convert",
+              "name": "n",
+              "type": "expression"
+            },
+            {
+              "description": "The lowest value of the first range",
+              "name": "min1",
+              "type": "expression"
+            },
+            {
+              "description": "The highest value of the first range",
+              "name": "max1",
+              "type": "expression"
+            },
+            {
+              "description": "The lowest value of the second range",
+              "name": "min2",
+              "type": "expression"
+            },
+            {
+              "description": "The highest value of the second range",
+              "name": "max2",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the value of the length of the hypotenuse.",
+          "fullName": "Hypotenuse length",
+          "functionType": "Expression",
+          "name": "Hypot",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const a = eventsFunctionContext.getArgument(\"a\");\r",
+                "const b = eventsFunctionContext.getArgument(\"b\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "First side of the triangle",
+              "name": "a",
+              "type": "expression"
+            },
+            {
+              "description": "Second side of the triangle",
+              "name": "b",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the greatest common factor of two numbers.",
+          "fullName": "Greatest common factor (gcf)",
+          "functionType": "Expression",
+          "name": "Gcf",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "//uses Euclid's algorithm",
+                "function gcf(a, b) {",
+                "    while (a != b) {",
+                "        if (a > b) {",
+                "            a = a - b;",
+                "        } else {",
+                "            b = b - a;",
+                "        }",
+                "    }",
+                "    return a;",
+                "}",
+                "",
+                "const a = eventsFunctionContext.getArgument(\"a\");",
+                "const b = eventsFunctionContext.getArgument(\"b\");",
+                "",
+                "if (Number.isInteger(a) === false || Number.isInteger(b) === false) {",
+                "    eventsFunctionContext.returnValue = 0;",
+                "} ",
+                "else if (a === 0) {",
+                "    eventsFunctionContext.returnValue = b;",
+                "} ",
+                "else if (b === 0) {",
+                "    eventsFunctionContext.returnValue = a;",
+                "} else {",
+                "    eventsFunctionContext.returnValue = gcf(a, b);",
+                "}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Any integer",
+              "name": "a",
+              "type": "expression"
+            },
+            {
+              "description": "Any integer",
+              "name": "b",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the lowest common multiple of two numbers.",
+          "fullName": "Lowest common multiple (lcm)",
+          "functionType": "Expression",
+          "name": "Lcm",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "function gcf(a, b) {\r",
+                "    while (a != b) {\r",
+                "        if (a > b) {\r",
+                "            a = a - b;\r",
+                "        } else {\r",
+                "            b = b - a;\r",
+                "        }\r",
+                "    }\r",
+                "    return a;\r",
+                "}\r",
+                "\r",
+                "function lcm(a, b) {\r",
+                "    return Math.abs(a * b) / gcf(a, b);\r",
+                "}\r",
+                "\r",
+                "const a = eventsFunctionContext.getArgument(\"a\");\r",
+                "const b = eventsFunctionContext.getArgument(\"b\");\r",
+                "\r",
+                "if (Number.isInteger(a) === false || Number.isInteger(b) === false) {\r",
+                "    eventsFunctionContext.returnValue = 0;\r",
+                "} \r",
+                "else if (a === 0) {\r",
+                "    eventsFunctionContext.returnValue = b;\r",
+                "} \r",
+                "else if (b === 0) {\r",
+                "    eventsFunctionContext.returnValue = a;\r",
+                "} else {\r",
+                "    eventsFunctionContext.returnValue = lcm(a, b);\r",
+                "}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Any integer",
+              "name": "a",
+              "type": "expression"
+            },
+            {
+              "description": "Any integer",
+              "name": "b",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the input multiplied by all the previous whole numbers.",
+          "fullName": "Factorial",
+          "functionType": "Expression",
+          "name": "Factorial",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "function factorial(n) {\r",
+                "    let result = 1;\r",
+                "\r",
+                "    let i = 1;\r",
+                "    for (i = 1; i <= n; i++) {\r",
+                "        result *= i;\r",
+                "    }\r",
+                "\r",
+                "    return result;\r",
+                "}\r",
+                "\r",
+                "const n = eventsFunctionContext.getArgument(\"n\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = factorial(n);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Any positive integer",
+              "name": "n",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Converts a polar coordinate into the Cartesian x value.",
+          "fullName": "Polar coordinate to Cartesian X value",
+          "functionType": "Expression",
+          "name": "PolarToCartesianX",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const r = eventsFunctionContext.getArgument(\"r\");",
+                "const theta = eventsFunctionContext.getArgument(\"theta\");",
+                "",
+                "eventsFunctionContext.returnValue = r * Math.cos(theta);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Radius",
+              "name": "r",
+              "type": "expression"
+            },
+            {
+              "description": "Angle or theta in radians",
+              "name": "theta",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Converts a polar coordinate into the Cartesian y value.",
+          "fullName": "Polar coordinate to Cartesian Y value",
+          "functionType": "Expression",
+          "name": "PolarToCartesianY",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const r = eventsFunctionContext.getArgument(\"r\");",
+                "const theta = eventsFunctionContext.getArgument(\"theta\");",
+                "",
+                "eventsFunctionContext.returnValue = r * Math.sin(theta);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Radius ",
+              "name": "r",
+              "type": "expression"
+            },
+            {
+              "description": "Angle or theta in radians",
+              "name": "theta",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Converts a isometric coordinate into the Cartesian x value.",
+          "fullName": "Isometric coordinate to Cartesian X value",
+          "functionType": "Expression",
+          "name": "IsoToCartesianX",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const x = eventsFunctionContext.getArgument(\"x\");",
+                "const y = eventsFunctionContext.getArgument(\"y\");",
+                "",
+                "eventsFunctionContext.returnValue = (2 * y + x) * 0.5;"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Position on the x axis",
+              "name": "x",
+              "type": "expression"
+            },
+            {
+              "description": "Position on the y axis",
+              "name": "y",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Converts a isometric coordinate into the Cartesian y value.",
+          "fullName": "Isometric coordinate to Cartesian Y value",
+          "functionType": "Expression",
+          "name": "IisoToCartesianY",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const x = eventsFunctionContext.getArgument(\"x\");",
+                "const y = eventsFunctionContext.getArgument(\"y\");",
+                "",
+                "eventsFunctionContext.returnValue = (2 * y - x) * 0.5;"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Position on the x axis",
+              "name": "x",
+              "type": "expression"
+            },
+            {
+              "description": "Position on the y axis",
+              "name": "y",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the golden ratio.",
+          "fullName": "Golden ratio",
+          "functionType": "Expression",
+          "name": "GoldenRatio",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnNumber"
+                  },
+                  "parameters": [
+                    "1.618033988749894"
+                  ]
+                }
+              ]
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns Pi (π).",
+          "fullName": "Pi (π)",
+          "functionType": "Expression",
+          "name": "Pi",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.PI;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns half Pi.",
+          "fullName": "Half Pi",
+          "functionType": "Expression",
+          "name": "HalfPi",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.PI / 2;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the natural logarithm of e. (Euler's number).",
+          "fullName": "Natural logarithm of e",
+          "functionType": "Expression",
+          "name": "E",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.E;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the natural logarithm of 2.",
+          "fullName": "Natural logarithm of 2",
+          "functionType": "Expression",
+          "name": "Ln2",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.LN2;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the natural logarithm of 10.",
+          "fullName": "Natural logarithm of 10",
+          "functionType": "Expression",
+          "name": "Ln10",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.LN10;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the base 2 logarithm of e. (Euler's number).",
+          "fullName": "Base 2 logarithm of e",
+          "functionType": "Expression",
+          "name": "Log2e",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.LOG10E;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns the base 10 logarithm of e. (Euler's number).",
+          "fullName": "Base 10 logarithm of e",
+          "functionType": "Expression",
+          "name": "Log10e",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.LOG10E;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns square root of 2.",
+          "fullName": "Square root of 2",
+          "functionType": "Expression",
+          "name": "Sqrt2",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.SQRT2;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns square root of 1/2.",
+          "fullName": "Square root of 1/2",
+          "functionType": "Expression",
+          "name": "Sqrt1_2",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.SQRT1_2;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Returns quarter Pi.",
+          "fullName": "Quarter Pi",
+          "functionType": "Expression",
+          "name": "QuarterPi",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = Math.PI / 4;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Formats a number to use the specified number of decimal places (Deprecated).",
+          "fullName": "ToFixed",
+          "functionType": "Expression",
+          "name": "ToFixed",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const valueToBeRounded = eventsFunctionContext.getArgument(\"ValueToBeRounded\");",
+                "const numberOfDecimalPlaces = eventsFunctionContext.getArgument(\"NumberOfDecimalPlaces\");",
+                "eventsFunctionContext.returnValue = Number(valueToBeRounded.toFixed(numberOfDecimalPlaces));"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "The value to be rounded",
+              "name": "ValueToBeRounded",
+              "type": "expression"
+            },
+            {
+              "description": "Number of decimal places",
+              "name": "NumberOfDecimalPlaces",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Formats a number to a string with the specified number of decimal places.",
+          "fullName": "ToFixed",
+          "functionType": "StringExpression",
+          "name": "ToFixedString",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const valueToBeRounded = eventsFunctionContext.getArgument(\"ValueToBeRounded\");",
+                "const numberOfDecimalPlaces = eventsFunctionContext.getArgument(\"NumberOfDecimalPlaces\");",
+                "eventsFunctionContext.returnValue = valueToBeRounded.toFixed(numberOfDecimalPlaces);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "string"
+          },
+          "parameters": [
+            {
+              "description": "The value to be rounded",
+              "name": "ValueToBeRounded",
+              "type": "expression"
+            },
+            {
+              "description": "Number of decimal places",
+              "name": "NumberOfDecimalPlaces",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check if the number is even (divisible by 2).  To check for odd numbers, invert this condition.",
+          "fullName": "Is even?",
+          "functionType": "Condition",
+          "name": "IsEven",
+          "sentence": "_PARAM1_ is even",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Egal"
+                  },
+                  "parameters": [
+                    "mod(Value,2)",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetReturnBoolean"
+                  },
+                  "parameters": [
+                    "True"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Value",
+              "name": "Value",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": []
+    }
+  ],
   "externalLayouts": [],
   "externalSourceFiles": []
 }
