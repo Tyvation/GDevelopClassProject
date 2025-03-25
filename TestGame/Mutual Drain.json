@@ -955,6 +955,7 @@
           "comment": "Camera"
         },
         {
+          "folded": true,
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1092,14 +1093,70 @@
           "conditions": [
             {
               "type": {
-                "value": "AnyKeyReleased"
+                "value": "KeyFromTextReleased"
               },
               "parameters": [
-                ""
+                "",
+                "\"w\""
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"s\""
               ]
             }
           ],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Input[1]",
+                "=",
+                "0"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"a\""
+              ]
+            },
+            {
+              "type": {
+                "value": "KeyFromTextReleased"
+              },
+              "parameters": [
+                "",
+                "\"d\""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "Input[0]",
+                "=",
+                "0"
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1133,18 +1190,6 @@
                 "Leela",
                 "PhysicsCharacter3D"
               ]
-            },
-            {
-              "type": {
-                "value": "RotateTowardPosition"
-              },
-              "parameters": [
-                "Leela",
-                "Camera.X()",
-                "Camera.Y()",
-                "0",
-                ""
-              ]
             }
           ]
         },
@@ -1174,14 +1219,11 @@
             },
             {
               "type": {
-                "value": "RotateTowardPosition"
+                "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
               },
               "parameters": [
                 "Leela",
-                "Leela.X()",
-                "Camera.Y()",
-                "0",
-                ""
+                "PhysicsCharacter3D"
               ]
             }
           ]
@@ -1212,12 +1254,11 @@
             },
             {
               "type": {
-                "value": "Rotate"
+                "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
               },
               "parameters": [
                 "Leela",
-                "PlayerWalkSpeed",
-                "50"
+                "PhysicsCharacter3D"
               ]
             }
           ]
@@ -1248,12 +1289,11 @@
             },
             {
               "type": {
-                "value": "Rotate"
+                "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
               },
               "parameters": [
                 "Leela",
-                "-PlayerWalkSpeed",
-                "50"
+                "PhysicsCharacter3D"
               ]
             }
           ]
