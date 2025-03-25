@@ -1092,6 +1092,20 @@
           "conditions": [
             {
               "type": {
+                "value": "AnyKeyReleased"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ],
+          "actions": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
                 "value": "KeyPressed"
               },
               "parameters": [
@@ -1106,9 +1120,9 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input",
+                "Input[1]",
                 "=",
-                ""
+                "1"
               ]
             },
             {
@@ -1153,7 +1167,7 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "YInput",
+                "Input[1]",
                 "=",
                 "-1"
               ]
@@ -1191,7 +1205,7 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input",
+                "Input[0]",
                 "=",
                 "1"
               ]
@@ -1227,7 +1241,7 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input",
+                "Input[0]",
                 "=",
                 "-1"
               ]
