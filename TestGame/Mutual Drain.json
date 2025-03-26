@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 226,
+    "build": 224,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -25,10 +25,38 @@
     "windowWidth": 1920,
     "windowHeight": 1080,
     "latestCompilationDirectory": "",
-    "maxFPS": 60,
+    "maxFPS": 0,
     "minFPS": 20,
     "verticalSync": false,
-    "platformSpecificAssets": {},
+    "platformSpecificAssets": {
+      "android-icon-144": "",
+      "android-icon-192": "",
+      "android-icon-36": "",
+      "android-icon-48": "",
+      "android-icon-72": "",
+      "android-icon-96": "",
+      "android-windowSplashScreenAnimatedIcon": "",
+      "desktop-icon-512": "",
+      "ios-icon-100": "",
+      "ios-icon-1024": "",
+      "ios-icon-114": "",
+      "ios-icon-120": "",
+      "ios-icon-144": "",
+      "ios-icon-152": "",
+      "ios-icon-167": "",
+      "ios-icon-180": "",
+      "ios-icon-20": "",
+      "ios-icon-29": "",
+      "ios-icon-40": "",
+      "ios-icon-50": "",
+      "ios-icon-57": "",
+      "ios-icon-58": "",
+      "ios-icon-60": "",
+      "ios-icon-72": "",
+      "ios-icon-76": "",
+      "ios-icon-80": "",
+      "ios-icon-87": ""
+    },
     "loadingScreen": {
       "backgroundColor": 0,
       "backgroundFadeInDuration": 0.2,
@@ -169,19 +197,14 @@
       "value": 250
     },
     {
-      "folded": true,
-      "name": "Input",
-      "type": "array",
-      "children": [
-        {
-          "type": "number",
-          "value": 0
-        },
-        {
-          "type": "number",
-          "value": 0
-        }
-      ]
+      "name": "InputX",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "InputY",
+      "type": "number",
+      "value": 0
     },
     {
       "name": "PlayerFacingAngle",
@@ -193,12 +216,12 @@
     {
       "b": 209,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Untitled_32scene",
-      "name": "Untitled scene",
+      "mangledName": "Test_32scene",
+      "name": "Test scene",
       "r": 209,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
-      "title": "",
+      "title": "Resident Not Evil",
       "v": 209,
       "uiSettings": {
         "grid": false,
@@ -210,7 +233,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.5468750000000002,
+        "zoomFactor": 0.448197804541036,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -225,9 +248,9 @@
           "name": "Leela",
           "persistentUuid": "c272fbcf-cd54-4145-9e64-b246d1fde97d",
           "width": 0,
-          "x": 830,
-          "y": 498,
-          "z": 166,
+          "x": 673,
+          "y": 506,
+          "z": 111,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -310,7 +333,7 @@
           "height": 0,
           "keepRatio": true,
           "layer": "",
-          "name": "FemalAdventurer",
+          "name": "Player",
           "persistentUuid": "b3308c36-34b2-47a7-bb68-a238a39ec8dc",
           "width": 0,
           "x": 877,
@@ -320,19 +343,75 @@
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "NewBBText2",
+          "persistentUuid": "7210aa4c-e7bc-4466-a99c-7880ef13e71c",
+          "width": 0,
+          "x": 1671,
+          "y": 946,
+          "zOrder": 8,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
         }
       ],
       "objects": [
         {
           "assetStoreId": "04a98cd20ab3872167a6dadc5617c4bca0b7678c431f69ecf4bab3ccd13d91d4",
-          "name": "FemalAdventurer",
+          "name": "Player",
           "type": "Scene3D::Model3DObject",
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "Physics3D",
+              "type": "Physics3D::Physics3DBehavior",
+              "object3D": "Object3D",
+              "bodyType": "Dynamic",
+              "bullet": false,
+              "fixedRotation": false,
+              "shape": "Box",
+              "shapeOrientation": "Z",
+              "shapeDimensionA": 0,
+              "shapeDimensionB": 0,
+              "shapeDimensionC": 0,
+              "density": 1,
+              "friction": 0.3,
+              "restitution": 0.1,
+              "linearDamping": 0.1,
+              "angularDamping": 0.1,
+              "gravityScale": 1,
+              "layers": 17,
+              "masks": 17
+            },
+            {
+              "name": "PhysicsCharacter3D",
+              "type": "Physics3D::PhysicsCharacter3D",
+              "physics3D": "Physics3D",
+              "jumpHeight": 200,
+              "jumpSustainTime": 0.2,
+              "gravity": 1000,
+              "fallingSpeedMax": 700,
+              "forwardAcceleration": 1800,
+              "forwardDeceleration": 1800,
+              "forwardSpeedMax": 150,
+              "sidewaysAcceleration": 800,
+              "sidewaysDeceleration": 800,
+              "sidewaysSpeedMax": 400,
+              "slopeMaxAngle": 50,
+              "stairHeightMax": 20,
+              "shouldBindObjectAndForwardAngle": true,
+              "canBePushed": true
+            }
+          ],
           "content": {
             "centerLocation": "ModelOrigin",
-            "crossfadeDuration": 0,
             "depth": 141,
             "height": 141,
             "keepAspectRatio": true,
@@ -471,7 +550,23 @@
           "assetStoreId": "383897af1a5e724f4905405eae4f5250b50a0b8fa1111d8861efd53bebc1c2df",
           "name": "Leela",
           "type": "Scene3D::Model3DObject",
-          "variables": [],
+          "variables": [
+            {
+              "name": "moveDirX",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "moveDirY",
+              "type": "number",
+              "value": 0
+            },
+            {
+              "name": "moveLength",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [
             {
@@ -484,7 +579,7 @@
               "fixedRotation": false,
               "shape": "Box",
               "shapeOrientation": "Z",
-              "shapeDimensionA": 0,
+              "shapeDimensionA": 2,
               "shapeDimensionB": 0,
               "shapeDimensionC": 0,
               "density": 1,
@@ -505,7 +600,7 @@
               "jumpSustainTime": 0.2,
               "gravity": 1000,
               "fallingSpeedMax": 700,
-              "forwardAcceleration": 1200,
+              "forwardAcceleration": 800,
               "forwardDeceleration": 1200,
               "forwardSpeedMax": 600,
               "sidewaysAcceleration": 800,
@@ -519,7 +614,6 @@
           ],
           "content": {
             "centerLocation": "ModelOrigin",
-            "crossfadeDuration": 0,
             "depth": 158,
             "height": 158,
             "keepAspectRatio": true,
@@ -645,7 +739,6 @@
           ],
           "content": {
             "centerLocation": "ModelOrigin",
-            "crossfadeDuration": 0,
             "depth": 68,
             "height": 68,
             "keepAspectRatio": true,
@@ -690,7 +783,6 @@
           ],
           "content": {
             "centerLocation": "ModelOrigin",
-            "crossfadeDuration": 0,
             "depth": 12,
             "height": 12,
             "keepAspectRatio": true,
@@ -740,134 +832,53 @@
           }
         },
         {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "81ef73931d8d566af131ed4c0de52cfdccdba5665769e0833bc5814204e9e765",
-          "name": "IsometricPlatformerDarkBrick",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
+          "assetStoreId": "",
+          "name": "NewBBText",
+          "type": "BBText::BBText",
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": true,
-                  "timeBetweenFrames": 0.025,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "Isometric Platformer Dark Brick.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 111,
-                            "y": 0
-                          },
-                          {
-                            "x": 111,
-                            "y": 128
-                          },
-                          {
-                            "x": 0,
-                            "y": 128
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "content": {
+            "text": "[b]bold[/b] [i]italic[/i] [size=15]smaller[/size] [font=times]times[/font] font\n[spacing=12]spaced out[/spacing]\n[outline=yellow]outlined[/outline] [shadow=red]DropShadow[/shadow] ",
+            "opacity": 255,
+            "fontSize": 20,
+            "visible": true,
+            "color": "0;0;0",
+            "fontFamily": "Arial",
+            "align": "left",
+            "wordWrap": true
+          }
         },
         {
-          "adaptCollisionMaskAutomatically": true,
-          "assetStoreId": "dd0bb1a744af75bf91b835d9f2f27a89b39f6388641d1ba8ab5a5d3086764573",
-          "name": "IsometricPlatformerDarkRoof",
-          "type": "Sprite",
-          "updateIfNotVisible": false,
+          "assetStoreId": "",
+          "name": "NewBBText2",
+          "type": "BBText::BBText",
           "variables": [],
           "effects": [],
           "behaviors": [],
-          "animations": [
-            {
-              "name": "",
-              "useMultipleDirections": false,
-              "directions": [
-                {
-                  "looping": true,
-                  "timeBetweenFrames": 0.025,
-                  "sprites": [
-                    {
-                      "hasCustomCollisionMask": true,
-                      "image": "Isometric Platformer Dark Roof.png",
-                      "points": [],
-                      "originPoint": {
-                        "name": "origine",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "centerPoint": {
-                        "automatic": true,
-                        "name": "centre",
-                        "x": 0,
-                        "y": 0
-                      },
-                      "customCollisionMask": [
-                        [
-                          {
-                            "x": 0,
-                            "y": 0
-                          },
-                          {
-                            "x": 111,
-                            "y": 0
-                          },
-                          {
-                            "x": 111,
-                            "y": 128
-                          },
-                          {
-                            "x": 0,
-                            "y": 128
-                          }
-                        ]
-                      ]
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
+          "content": {
+            "text": "What : ",
+            "opacity": 255,
+            "fontSize": 20,
+            "visible": true,
+            "color": "0;0;0",
+            "fontFamily": "Arial",
+            "align": "left",
+            "wordWrap": true
+          }
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "FemalAdventurer"
+            "objectName": "Player"
           },
           {
             "objectName": "Leela"
+          },
+          {
+            "objectName": "NewBBText"
           },
           {
             "objectName": "BlockLarge"
@@ -879,10 +890,7 @@
             "objectName": "Camera"
           },
           {
-            "objectName": "IsometricPlatformerDarkBrick"
-          },
-          {
-            "objectName": "IsometricPlatformerDarkRoof"
+            "objectName": "NewBBText2"
           }
         ]
       },
@@ -926,7 +934,7 @@
               },
               "parameters": [
                 "",
-                "Leela",
+                "Player",
                 "",
                 "",
                 ""
@@ -1058,7 +1066,7 @@
               },
               "parameters": [
                 "",
-                "Leela",
+                "Player",
                 "",
                 "",
                 ""
@@ -1090,68 +1098,24 @@
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"w\""
-              ]
-            },
-            {
-              "type": {
-                "value": "KeyFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"s\""
-              ]
-            }
-          ],
+          "conditions": [],
           "actions": [
             {
               "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input[1]",
+                "InputX",
                 "=",
                 "0"
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"a\""
-              ]
             },
-            {
-              "type": {
-                "value": "KeyFromTextReleased"
-              },
-              "parameters": [
-                "",
-                "\"d\""
-              ]
-            }
-          ],
-          "actions": [
             {
               "type": {
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input[0]",
+                "InputY",
                 "=",
                 "0"
               ]
@@ -1177,7 +1141,7 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input[1]",
+                "InputY",
                 "=",
                 "1"
               ]
@@ -1187,7 +1151,7 @@
                 "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
               },
               "parameters": [
-                "Leela",
+                "Player",
                 "PhysicsCharacter3D"
               ]
             }
@@ -1212,17 +1176,17 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input[1]",
+                "InputY",
                 "=",
                 "-1"
               ]
             },
             {
               "type": {
-                "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
+                "value": "Physics3D::PhysicsCharacter3D::SimulateBackwardKey"
               },
               "parameters": [
-                "Leela",
+                "Player",
                 "PhysicsCharacter3D"
               ]
             }
@@ -1247,18 +1211,19 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input[0]",
+                "InputX",
                 "=",
                 "1"
               ]
             },
             {
               "type": {
-                "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
+                "value": "Rotate"
               },
               "parameters": [
-                "Leela",
-                "PhysicsCharacter3D"
+                "Player",
+                "InputX * 300",
+                ""
               ]
             }
           ]
@@ -1282,18 +1247,19 @@
                 "value": "SetNumberVariable"
               },
               "parameters": [
-                "Input[0]",
+                "InputX",
                 "=",
                 "-1"
               ]
             },
             {
               "type": {
-                "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
+                "value": "Rotate"
               },
               "parameters": [
-                "Leela",
-                "PhysicsCharacter3D"
+                "Player",
+                "InputX * 300",
+                ""
               ]
             }
           ]
@@ -1331,7 +1297,7 @@
                 "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
               },
               "parameters": [
-                "Leela",
+                "Player",
                 "PhysicsCharacter3D"
               ]
             }
@@ -1342,10 +1308,10 @@
                 "value": "AnimatableCapability::AnimatableBehavior::SetName"
               },
               "parameters": [
-                "Leela",
+                "Player",
                 "Animation",
                 "=",
-                "\"Walk\""
+                "\"Run\""
               ]
             }
           ]
@@ -1359,7 +1325,7 @@
                 "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
               },
               "parameters": [
-                "Leela",
+                "Player",
                 "PhysicsCharacter3D"
               ]
             }
@@ -1370,10 +1336,67 @@
                 "value": "AnimatableCapability::AnimatableBehavior::SetName"
               },
               "parameters": [
-                "Leela",
+                "Player",
                 "Animation",
                 "=",
                 "\"Idle\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "value": "BBText::SetBBText"
+              },
+              "parameters": [
+                "NewBBText2",
+                "=",
+                "\"Angle : \"+ToString(Player.Angle())"
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::Z"
+              },
+              "parameters": [
+                "Player",
+                "Object3D",
+                "<",
+                "-20"
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "MettreXY"
+              },
+              "parameters": [
+                "Player",
+                "=",
+                "673",
+                "=",
+                "506"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene3D::Base3DBehavior::SetZ"
+              },
+              "parameters": [
+                "Player",
+                "Object3D",
+                "=",
+                "111"
               ]
             }
           ]
@@ -1406,6 +1429,39 @@
               "width": 0
             }
           ],
+          "effects": [
+            {
+              "effectType": "Scene3D::HemisphereLight",
+              "name": "3D Light",
+              "doubleParameters": {
+                "elevation": 45,
+                "intensity": 1,
+                "rotation": 0
+              },
+              "stringParameters": {
+                "groundColor": "64;64;64",
+                "skyColor": "255;255;255",
+                "top": "Y-"
+              },
+              "booleanParameters": {}
+            }
+          ]
+        },
+        {
+          "ambientLightColorB": 200,
+          "ambientLightColorG": 200,
+          "ambientLightColorR": 200,
+          "camera3DFarPlaneDistance": 10000,
+          "camera3DFieldOfView": 45,
+          "camera3DNearPlaneDistance": 3,
+          "cameraType": "",
+          "followBaseLayerCamera": false,
+          "isLightingLayer": false,
+          "isLocked": false,
+          "name": "Game UI",
+          "renderingType": "",
+          "visibility": true,
+          "cameras": [],
           "effects": [
             {
               "effectType": "Scene3D::HemisphereLight",
@@ -1476,7 +1532,6 @@
       "category": "Camera",
       "extensionNamespace": "",
       "fullName": "First person 3D camera",
-      "gdevelopVersion": "",
       "helpPath": "",
       "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQoJLnN0MXtmaWxsOm5vbmU7c3Ryb2tlOiMwMDAwMDA7c3Ryb2tlLXdpZHRoOjI7c3Ryb2tlLWxpbmVqb2luOnJvdW5kO3N0cm9rZS1taXRlcmxpbWl0OjEwO30NCjwvc3R5bGU+DQo8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjcsMTZjMCwwLTQuOSw3LTExLDdTNSwxNiw1LDE2czQuOS03LDExLTdTMjcsMTYsMjcsMTZ6Ii8+DQo8Y2lyY2xlIGNsYXNzPSJzdDAiIGN4PSIxNiIgY3k9IjE2IiByPSIzIi8+DQo8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSIzLDkgMywzIDksMyAiLz4NCjxwb2x5bGluZSBjbGFzcz0ic3QwIiBwb2ludHM9IjksMjkgMywyOSAzLDIzICIvPg0KPHBvbHlsaW5lIGNsYXNzPSJzdDAiIHBvaW50cz0iMjksMjMgMjksMjkgMjMsMjkgIi8+DQo8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSIyMywzIDI5LDMgMjksOSAiLz4NCjwvc3ZnPg0K",
       "name": "FirstPersonCamera",
@@ -1615,7 +1670,6 @@
       "category": "Input",
       "extensionNamespace": "",
       "fullName": "Mouse Pointer Lock",
-      "gdevelopVersion": "",
       "helpPath": "",
       "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyMy4wLjMsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iSWNvbnMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgMzIgMzIiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDMyIDMyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDpub25lO3N0cm9rZTojMDAwMDAwO3N0cm9rZS13aWR0aDoyO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2UtbWl0ZXJsaW1pdDoxMDt9DQo8L3N0eWxlPg0KPHBvbHlsaW5lIGNsYXNzPSJzdDAiIHBvaW50cz0iMTksMTkgMjQsMTkgMjQsMjQgIi8+DQo8cG9seWxpbmUgY2xhc3M9InN0MCIgcG9pbnRzPSI2LDIzIDExLDIzIDExLDE4ICIvPg0KPHBhdGggY2xhc3M9InN0MCIgZD0iTTI0LDE5LjRjLTAuNywwLjgtMS40LDEuNi0yLjIsMi40Yy03LDctMTUuMywxMC4yLTE4LjUsN3MtMC4xLTExLjUsNy0xOC41czE1LjMtMTAuMiwxOC41LTcNCgljMS40LDEuNCwxLjYsMy42LDAuOCw2LjMiLz4NCjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik0xMSwyMi41Yy0wLjMtMC4yLTAuNS0wLjUtMC44LTAuOGMtNy03LTEwLjItMTUuMy03LTE4LjVzMTEuNS0wLjEsMTguNSw3czEwLjIsMTUuMyw3LDE4LjUNCgljLTEuNywxLjctNC44LDEuNi04LjQsMC4xIi8+DQo8L3N2Zz4NCg==",
       "name": "MousePointerLock",
@@ -3091,7 +3145,6 @@
       "category": "Advanced",
       "extensionNamespace": "",
       "fullName": "Extended math support",
-      "gdevelopVersion": "",
       "helpPath": "",
       "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWZ1bmN0aW9uLXZhcmlhbnQiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTIuNDIsNS4yOUMxMS4zMiw1LjE5IDEwLjM1LDYgMTAuMjUsNy4xMUwxMCwxMEgxMi44MlYxMkg5LjgyTDkuMzgsMTcuMDdDOS4xOCwxOS4yNyA3LjI0LDIwLjkgNS4wNCwyMC43QzMuNzksMjAuNTkgMi42NiwxOS45IDIsMTguODNMMy41LDE3LjMzQzMuODMsMTguMzggNC45NiwxOC45NyA2LDE4LjYzQzYuNzgsMTguMzkgNy4zMywxNy43IDcuNCwxNi44OUw3LjgyLDEySDQuODJWMTBIOEw4LjI3LDYuOTNDOC40Niw0LjczIDEwLjM5LDMuMSAxMi42LDMuMjhDMTMuODYsMy4zOSAxNSw0LjA5IDE1LjY2LDUuMTdMMTQuMTYsNi42N0MxMy45MSw1LjkgMTMuMjMsNS4zNiAxMi40Miw1LjI5TTIyLDEzLjY1TDIwLjU5LDEyLjI0TDE3Ljc2LDE1LjA3TDE0LjkzLDEyLjI0TDEzLjUsMTMuNjVMMTYuMzUsMTYuNUwxMy41LDE5LjMxTDE0LjkzLDIwLjcyTDE3Ljc2LDE3Ljg5TDIwLjU5LDIwLjcyTDIyLDE5LjMxTDE5LjE3LDE2LjVMMjIsMTMuNjVaIiAvPjwvc3ZnPg==",
       "name": "ExtendedMath",
@@ -4006,6 +4059,3747 @@
         }
       ],
       "eventsBasedBehaviors": [],
+      "eventsBasedObjects": []
+    },
+    {
+      "author": "",
+      "category": "General",
+      "extensionNamespace": "",
+      "fullName": "3D collision",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXZlY3Rvci1pbnRlcnNlY3Rpb24iIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMy4xNCwxQTIuMTQsMi4xNCAwIDAsMCAxLDMuMTRWNUgzVjNINVYxSDMuMTRNNywxVjNIMTBWMUg3TTEyLDFWM0gxNFY1SDE2VjMuMTRDMTYsMS45NiAxNS4wNCwxIDEzLjg2LDFIMTJNMSw3VjEwSDNWN0gxTTksN0M3Ljg5LDcgNyw3Ljg5IDcsOUM3LDExLjMzIDcsMTYgNywxNkM3LDE2IDExLjU3LDE2IDEzLjg2LDE2QTIuMTQsMi4xNCAwIDAsMCAxNiwxMy44NkMxNiwxMS41NyAxNiw3IDE2LDdDMTYsNyAxMS4zMyw3IDksN00xOCw3VjlIMjBWMTFIMjJWOUMyMiw3Ljg5IDIxLjExLDcgMjAsN0gxOE05LDlIMTRWMTRIOVY5TTEsMTJWMTMuODZDMSwxNS4wNCAxLjk2LDE2IDMuMTQsMTZINVYxNEgzVjEySDFNMjAsMTNWMTZIMjJWMTNIMjBNNywxOFYyMEM3LDIxLjExIDcuODksMjIgOSwyMkgxMVYyMEg5VjE4SDdNMjAsMThWMjBIMThWMjJIMjBDMjEuMTEsMjIgMjIsMjEuMTEgMjIsMjBWMThIMjBNMTMsMjBWMjJIMTZWMjBIMTNaIiAvPjwvc3ZnPg==",
+      "name": "Collision3D",
+      "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/7a5696a515bf40813692e118147568392a854f65f5b50750c9b9aaa967aba7df_vector-intersection.svg",
+      "shortDescription": "Check collision and distance between 3D objects.",
+      "version": "0.2.0",
+      "description": "Check collision and distance between 3D objects and separate them from each other.",
+      "origin": {
+        "identifier": "Collision3D",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "3d",
+        "collision"
+      ],
+      "authorIds": [
+        "IWykYNRvhCZBN3vEgKEbBPOR3Oc2",
+        "PEzPAaWHgYgk5UwIPppsL6f2ugp2"
+      ],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [
+        {
+          "description": "Define helper classes JavaScript code.",
+          "fullName": "Define helper classes",
+          "functionType": "Action",
+          "name": "DefineHelperClasses",
+          "private": true,
+          "sentence": "Define helper classes JavaScript code",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if (gdjs._collision3DExtension) {",
+                "    return;",
+                "}",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @param {boolean} shouldUseCustomCenter",
+                " * @return {number}",
+                " */",
+                "const getCenterX = (object, shouldUseCustomCenter) =>",
+                "    shouldUseCustomCenter ?",
+                "        object.getCenterXInScene() :",
+                "        object.getDrawableX() + object.getWidth() / 2",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @param {boolean} shouldUseCustomCenter",
+                " * @return {number}",
+                " */",
+                "const getCenterY = (object, shouldUseCustomCenter) =>",
+                "    shouldUseCustomCenter ?",
+                "        object.getCenterYInScene() :",
+                "        object.getDrawableY() + object.getHeight() / 2",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject3D} object",
+                " * @param {boolean} shouldUseCustomCenter",
+                " * @return {number}",
+                " */",
+                "const getCenterZ = (object, shouldUseCustomCenter) =>",
+                "    !object.getCenterZInScene ? 0 :",
+                "    shouldUseCustomCenter ?",
+                "        object.getCenterZInScene() :",
+                "        object.getDrawableZ() + object.getDepth() / 2",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @param {float} x",
+                " * @param {float} y",
+                " * @param {float} z",
+                " * @param {boolean} shouldUseCustomCenter",
+                " * @return {number}",
+                " */",
+                "const getSqDistanceToPosition = (object, x, y, z, shouldUseCustomCenter = true) => {",
+                "    const deltaX = getCenterX(object, shouldUseCustomCenter) - x;",
+                "    const deltaY = getCenterY(object, shouldUseCustomCenter) - y;",
+                "    const deltaZ = getCenterZ(object, shouldUseCustomCenter) - z;",
+                "    return deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ;",
+                "};",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @param {float} x",
+                " * @param {float} y",
+                " * @param {float} z",
+                " * @return {number}",
+                " */",
+                "const getDistanceToPosition = (object, x, y, z) => Math.sqrt(getSqDistanceToPosition(object, x, y, z));",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @param {gdjs.RuntimeObject} otherObject",
+                " * @param {boolean} shouldUseCustomCenter",
+                " * @return {number}",
+                " */",
+                "const getSqDistanceToObject = (object, otherObject, shouldUseCustomCenter = true) => {",
+                "    return getSqDistanceToPosition(",
+                "        object,",
+                "        getCenterX(otherObject, shouldUseCustomCenter),",
+                "        getCenterY(otherObject, shouldUseCustomCenter),",
+                "        getCenterZ(otherObject, shouldUseCustomCenter)",
+                "    );",
+                "};",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @param {gdjs.RuntimeObject} otherObject",
+                " * @return {number}",
+                " */",
+                "const getDistanceToObject = (object, otherObject) => Math.sqrt(getSqDistanceToObject(object, otherObject));",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @param {gdjs.RuntimeObject} otherObject",
+                " * @param {{distanceSq: number, shouldUseCustomCenter: boolean}} distanceSettings",
+                " * @return {boolean}",
+                " */",
+                "const areObjectsWithinDistance = (object, otherObject, distanceSettings) => {",
+                "    return getSqDistanceToObject(",
+                "        object, otherObject, distanceSettings.shouldUseCustomCenter) <= distanceSettings.distanceSq;",
+                "};",
+                "",
+                "const distanceSettings = {distanceSq: 0, shouldUseCustomCenter: true};",
+                "",
+                "/**",
+                " * @param {Hashtable<gdjs.RuntimeObject[]>} objectsLists1",
+                " * @param {Hashtable<gdjs.RuntimeObject[]>} objectsLists2",
+                " * @param {number} distance",
+                " * @param {boolean} shouldUseCustomCenter",
+                " * @param {boolean} inverted",
+                " * @return {boolean}",
+                " */",
+                "const pickObjectsWithinDistance = (objectsLists1, objectsLists2, distance, shouldUseCustomCenter, inverted) => {",
+                "    distanceSettings.distanceSq = distance * distance;",
+                "    distanceSettings.shouldUseCustomCenter = shouldUseCustomCenter;",
+                "    return gdjs.evtTools.object.twoListsTest(",
+                "        areObjectsWithinDistance,",
+                "        objectsLists1,",
+                "        objectsLists2,",
+                "        inverted,",
+                "        distanceSettings",
+                "    );",
+                "}",
+                "",
+                "/**",
+                " * @param {Hashtable<gdjs.RuntimeObject[]>} objectsLists",
+                " * @param {number} x",
+                " * @param {number} y",
+                " * @param {number} z",
+                " * @param {boolean} inverted",
+                " * @return {boolean}",
+                " */",
+                "const pickNearestObject = function (objectsLists, x, y, z, inverted) {",
+                "    let bestObject = null;",
+                "    let best = 0;",
+                "    let first = true;",
+                "    const lists = gdjs.staticArray(gdjs._collision3DExtension.pickNearestObject);",
+                "    objectsLists.values(lists);",
+                "    for (let i = 0, len = lists.length; i < len; ++i) {",
+                "        const list = lists[i];",
+                "        for (let j = 0; j < list.length; ++j) {",
+                "            const object = list[j];",
+                "            const distance = getSqDistanceToPosition(object, x, y, z);",
+                "            // @ts-ignore",
+                "            if (first || (distance < best) ^ inverted) {",
+                "                best = distance;",
+                "                bestObject = object;",
+                "            }",
+                "            first = false;",
+                "        }",
+                "    }",
+                "    if (bestObject) {",
+                "        gdjs.evtTools.object.pickOnly(objectsLists, bestObject);",
+                "    }",
+                "    return !!bestObject;",
+                "}",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @return {float}",
+                " */",
+                "const getObjectMinZ = (object) =>",
+                "    object.getDrawableZ ? object.getDrawableZ() : 0",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @return {float}",
+                " */",
+                "const getObjectMaxZ = (object) =>",
+                "    object.getDrawableZ ? object.getDrawableZ() + object.getDepth() : 0;",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} object1",
+                " * @param {gdjs.RuntimeObject} object2",
+                " * @param {boolean} ignoreTouchingEdges If true, then edges that are touching each other, without the hitbox polygons actually overlapping, won't be considered in collision.",
+                " * @return {boolean}",
+                " */",
+                "const areObjectsInCollision = (",
+                "    object1,",
+                "    object2,",
+                "    ignoreTouchingEdges,",
+                ") => {",
+                "    const object1MinZ = getObjectMinZ(object1);",
+                "    const object1MaxZ = getObjectMaxZ(object1);",
+                "    const object2MinZ = getObjectMinZ(object2);",
+                "    const object2MaxZ = getObjectMaxZ(object2);",
+                "",
+                "    const canObjectsOverlapOnZ = ignoreTouchingEdges ?",
+                "        (object1MinZ < object2MaxZ && object1MaxZ > object2MinZ) :",
+                "        (object1MinZ <= object2MaxZ && object1MaxZ >= object2MinZ);",
+                "",
+                "    return canObjectsOverlapOnZ &&",
+                "        gdjs.RuntimeObject.collisionTest(",
+                "            object1,",
+                "            object2,",
+                "            ignoreTouchingEdges",
+                "        );",
+                "}",
+                "",
+                "/**",
+                " * @param {Hashtable<gdjs.RuntimeObject[]>} objectsLists1",
+                " * @param {Hashtable<gdjs.RuntimeObject[]>} objectsLists2",
+                " * @param {boolean} inverted",
+                " * @return {boolean}",
+                " */",
+                "const pickObjectsInCollision = (",
+                "    objectsLists1,",
+                "    objectsLists2,",
+                "    inverted,",
+                ") => {",
+                "    return gdjs.evtTools.object.twoListsTest(",
+                "        areObjectsInCollision,",
+                "        objectsLists1,",
+                "        objectsLists2,",
+                "        inverted,",
+                "        false",
+                "    );",
+                "}",
+                "",
+                "/**",
+                " * @param {gdjs.RuntimeObject} movingObject",
+                " * @param {gdjs.RuntimeObject} object",
+                " * @return {float}",
+                " */",
+                "const getSeparationDeltaZ = (",
+                "    movingObject,",
+                "    object,",
+                ") => {",
+                "    const movingObjectMinZ = getObjectMinZ(movingObject);",
+                "    const movingObjectMaxZ = getObjectMaxZ(movingObject);",
+                "    const objectMinZ = getObjectMinZ(object);",
+                "    const objectMaxZ = getObjectMaxZ(object);",
+                "",
+                "    const downwardDeltaZ = Math.min(0, objectMinZ - movingObjectMaxZ);",
+                "    const upwardDeltaZ = Math.max(0, objectMaxZ - movingObjectMinZ);",
+                "",
+                "    return -downwardDeltaZ < upwardDeltaZ ? downwardDeltaZ : upwardDeltaZ",
+                "}",
+                "",
+                "// This function is an exact copy from GDJS/Runtime/runtimeobject.ts",
+                "/**",
+                " * Move the object using the results from collisionTest call.",
+                " * This moves the object according to the direction of the longest vector,",
+                " * and projects the others on the orthogonal vector.",
+                " *",
+                " * See {@link RuntimeObject.separateFromObjects}",
+                " *",
+                " * @param {gdjs.RuntimeObject} object The object to move.",
+                " * @param {float[]} moveXArray The X coordinates of the vectors to move the object.",
+                " * @param {float[]} moveYArray The Y coordinates of the vectors to move the object.",
+                " * @return {boolean} true if the object was moved.",
+                " */",
+                "const moveFollowingSeparatingVectors = (",
+                "    object,",
+                "    moveXArray,",
+                "    moveYArray",
+                ") => {",
+                "    if (moveXArray.length === 0) {",
+                "        moveXArray.length = 0;",
+                "        moveYArray.length = 0;",
+                "        return false;",
+                "    }",
+                "    if (moveXArray.length === 1) {",
+                "        // Move according to the results returned by the collision algorithm.",
+                "        object.setPosition(",
+                "            object.getX() + moveXArray[0],",
+                "            object.getY() + moveYArray[0]",
+                "        );",
+                "        moveXArray.length = 0;",
+                "        moveYArray.length = 0;",
+                "        return true;",
+                "    }",
+                "",
+                "    // Find the longest vector",
+                "    let squaredDistanceMax = 0;",
+                "    let distanceMaxIndex = 0;",
+                "    for (let index = 0; index < moveXArray.length; index++) {",
+                "        const moveX = moveXArray[index];",
+                "        const moveY = moveYArray[index];",
+                "",
+                "        const squaredDistance = moveX * moveX + moveY * moveY;",
+                "        if (squaredDistance > squaredDistanceMax) {",
+                "            squaredDistanceMax = squaredDistance;",
+                "            distanceMaxIndex = index;",
+                "        }",
+                "    }",
+                "",
+                "    const distanceMax = Math.sqrt(squaredDistanceMax);",
+                "    // unit vector of the longest vector",
+                "    const uX = moveXArray[distanceMaxIndex] / distanceMax;",
+                "    const uY = moveYArray[distanceMaxIndex] / distanceMax;",
+                "",
+                "    // normal vector of the longest vector",
+                "    const vX = -uY;",
+                "    const vY = uX;",
+                "",
+                "    // Project other vectors on the normal",
+                "    let scalarProductMin = 0;",
+                "    let scalarProductMax = 0;",
+                "    for (let index = 0; index < moveXArray.length; index++) {",
+                "        const moveX = moveXArray[index];",
+                "        const moveY = moveYArray[index];",
+                "",
+                "        const scalarProduct = moveX * vX + moveY * vY;",
+                "        scalarProductMin = Math.min(scalarProductMin, scalarProduct);",
+                "        scalarProductMax = Math.max(scalarProductMax, scalarProduct);",
+                "    }",
+                "",
+                "    // Apply the longest vector",
+                "    let deltaX = moveXArray[distanceMaxIndex];",
+                "    let deltaY = moveYArray[distanceMaxIndex];",
+                "",
+                "    // Apply the longest projected vector if they all are in the same direction",
+                "    // Some projections could have rounding errors,",
+                "    // they are considered negligible under a 1 for 1,000,000 ratio.",
+                "    const scalarProductMinIsNegligible =",
+                "        -scalarProductMin < scalarProductMax / 1048576;",
+                "    const scalarProductMaxIsNegligible =",
+                "        scalarProductMax < -scalarProductMin / 1048576;",
+                "    if (scalarProductMinIsNegligible !== scalarProductMaxIsNegligible) {",
+                "        if (scalarProductMaxIsNegligible) {",
+                "            deltaX += scalarProductMin * vX;",
+                "            deltaY += scalarProductMin * vY;",
+                "        } else {",
+                "            deltaX += scalarProductMax * vX;",
+                "            deltaY += scalarProductMax * vY;",
+                "        }",
+                "    }",
+                "    object.setPosition(object.getX() + deltaX, object.getY() + deltaY);",
+                "    moveXArray.length = 0;",
+                "    moveYArray.length = 0;",
+                "    return true;",
+                "};",
+                "",
+                "/**",
+                " * Arrays and data structure that are (re)used by",
+                " * {@link separateFromObjects} to avoid any allocation.",
+                " * @type {{moveXArray: float[], moveYArray: float[], moveZArray: float[]}}",
+                " */",
+                "const separateFromObjectsStatics = {",
+                "    moveXArray: [],",
+                "    moveYArray: [],",
+                "    moveZArray: [],",
+                "};",
+                "",
+                "/**",
+                " * Separate the object from others objects, using their hitboxes.",
+                " * @param {gdjs.RuntimeObject} object The object that moves.",
+                " * @param {gdjs.RuntimeObject[]} objects The objects that stay still.",
+                " * @return {boolean} true if the object was moved",
+                " */",
+                "const separateFromObjects = (",
+                "    object,",
+                "    objects",
+                ") => {",
+                "    const moveXArray = separateFromObjectsStatics.moveXArray;",
+                "    const moveYArray = separateFromObjectsStatics.moveYArray;",
+                "    moveXArray.length = 0;",
+                "    moveYArray.length = 0;",
+                "    let moveZMax = 0;",
+                "",
+                "    // We can assume that the moving object is not grid based,",
+                "    // so there is no need for optimization:",
+                "    // getHitBoxes can be called directly.",
+                "    const hitBoxes = object.getHitBoxes();",
+                "    /** @type {gdjs.AABB | null} */",
+                "    let aabb = null;",
+                "",
+                "    // Check if there is a collision with each object",
+                "    for (const otherObject of objects) {",
+                "        if (otherObject.id === object.id) {",
+                "            continue;",
+                "        }",
+                "        const moveZ = getSeparationDeltaZ(object, otherObject);",
+                "        if (moveZ === 0) {",
+                "            continue;",
+                "        }",
+                "        const moveZSq = moveZ * moveZ;",
+                "",
+                "        let otherHitBoxesArray = otherObject.getHitBoxes();",
+                "        /** @type {Iterable<gdjs.Polygon>} */",
+                "        let otherHitBoxes = otherHitBoxesArray;",
+                "        if (otherHitBoxesArray.length > 4) {",
+                "            // The other object has a lot of hit boxes.",
+                "            // Try to reduce the amount of hitboxes to check.",
+                "            if (!aabb) {",
+                "                aabb = object.getAABB();",
+                "            }",
+                "            otherHitBoxes = otherObject.getHitBoxesAround(",
+                "                aabb.min[0],",
+                "                aabb.min[1],",
+                "                aabb.max[0],",
+                "                aabb.max[1]",
+                "            );",
+                "        }",
+                "        for (const hitBox of hitBoxes) {",
+                "            for (const otherHitBox of otherHitBoxes) {",
+                "                const result = gdjs.Polygon.collisionTest(",
+                "                    hitBox,",
+                "                    otherHitBox,",
+                "                    true",
+                "                );",
+                "                if (result.collision) {",
+                "                    const moveX = result.move_axis[0];",
+                "                    const moveY = result.move_axis[1];",
+                "                    if (moveZSq < moveX * moveX + moveY * moveY) {",
+                "                        if (Math.abs(moveZ) > Math.abs(moveZMax)) {",
+                "                            moveZMax = moveZ;",
+                "                        }",
+                "                    }",
+                "                    else {",
+                "                        moveXArray.push(moveX);",
+                "                        moveYArray.push(moveY);",
+                "                    }",
+                "                }",
+                "            }",
+                "        }",
+                "    }",
+                "    const hasObjectMovedOnZ = moveZMax !== 0;",
+                "    if (hasObjectMovedOnZ) {",
+                "        object.setZ(object.getZ() + moveZMax);",
+                "    }",
+                "    const hasObjectMovedOnXY = moveFollowingSeparatingVectors(object, moveXArray, moveYArray);",
+                "    return hasObjectMovedOnXY || hasObjectMovedOnZ;",
+                "}",
+                "",
+                "gdjs._collision3DExtension = {",
+                "    getSqDistanceToPosition,",
+                "    getDistanceToPosition,",
+                "    getSqDistanceToObject,",
+                "    getDistanceToObject,",
+                "    pickObjectsWithinDistance,",
+                "    pickNearestObject,",
+                "    pickObjectsInCollision,",
+                "    separateFromObjects",
+                "}"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onFirstSceneLoaded",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Collision3D::DefineHelperClasses"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Compare the distance between two objects in 3D.",
+          "fullName": "Distance between two objects in 3D",
+          "functionType": "Condition",
+          "group": "Position",
+          "name": "AreWithinDistance",
+          "sentence": "_PARAM1_ distance to _PARAM2_ is below _PARAM3_ pixels",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "// TODO If condition is inverted, only objects that have a distance greater than specified to any other object will be picked.\r",
+                "const inverted = false;\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._collision3DExtension.pickObjectsWithinDistance(\r",
+                "    eventsFunctionContext.getObjectsLists(\"Object\"),\r",
+                "    eventsFunctionContext.getObjectsLists(\"OtherObject\"),\r",
+                "    eventsFunctionContext.getArgument(\"Distance\"),\r",
+                "    eventsFunctionContext.getArgument(\"ShouldUseCustomCenter\"),\r",
+                "    inverted\r",
+                ");\r",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "Other object",
+              "name": "OtherObject",
+              "type": "objectList"
+            },
+            {
+              "description": "Distance",
+              "name": "Distance",
+              "type": "expression"
+            },
+            {
+              "defaultValue": "yes",
+              "description": "Use custom center",
+              "name": "ShouldUseCustomCenter",
+              "optional": true,
+              "type": "yesorno"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Distance between two objects in 3D.",
+          "fullName": "Distance between two objects in 3D",
+          "functionType": "Expression",
+          "group": "Position",
+          "name": "Distance",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "const otherObjects = eventsFunctionContext.getObjectsLists(\"OtherObject\");\r",
+                "\r",
+                "if (objects.length > 0 && otherObjects.length > 0) {\r",
+                "    eventsFunctionContext.returnValue = gdjs._collision3DExtension.getDistanceToObject(\r",
+                "        objects[0],\r",
+                "        otherObjects[0]\r",
+                "    );\r",
+                "}\r",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "Other object",
+              "name": "OtherObject",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Square distance between two objects in 3D.",
+          "fullName": "Square distance between two objects",
+          "functionType": "Expression",
+          "group": "Position",
+          "name": "SqDistance",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "const otherObjects = eventsFunctionContext.getObjectsLists(\"OtherObject\");\r",
+                "\r",
+                "if (objects.length > 0 && otherObjects.length > 0) {\r",
+                "    eventsFunctionContext.returnValue = gdjs._collision3DExtension.getSqDistanceToObject(\r",
+                "        objects[0],\r",
+                "        otherObjects[0]\r",
+                "    );\r",
+                "}\r",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "Other object",
+              "name": "OtherObject",
+              "type": "objectList"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Distance between an object and a position in 3D.",
+          "fullName": "Distance between an object and a position",
+          "functionType": "Expression",
+          "group": "Position",
+          "name": "DistanceToPosition",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "if (objects.length > 0) {\r",
+                "    eventsFunctionContext.returnValue = gdjs._collision3DExtension.getDistanceToPosition(\r",
+                "        objects[0],\r",
+                "        eventsFunctionContext.getArgument(\"PositionX\"),\r",
+                "        eventsFunctionContext.getArgument(\"PositionY\"),\r",
+                "        eventsFunctionContext.getArgument(\"PositionZ\"),\r",
+                "    );\r",
+                "}\r",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "X position",
+              "name": "PositionX",
+              "type": "expression"
+            },
+            {
+              "description": "Y position",
+              "name": "PositionY",
+              "type": "expression"
+            },
+            {
+              "description": "Z position",
+              "name": "PositionZ",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Square distance between an object and a position in 3D.",
+          "fullName": "Square distance between an object and a position",
+          "functionType": "Expression",
+          "group": "Position",
+          "name": "SqDistanceToPosition",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "if (objects.length > 0) {\r",
+                "    eventsFunctionContext.returnValue = gdjs._collision3DExtension.getSqDistanceToPosition(\r",
+                "        objects[0],\r",
+                "        eventsFunctionContext.getArgument(\"PositionX\"),\r",
+                "        eventsFunctionContext.getArgument(\"PositionY\"),\r",
+                "        eventsFunctionContext.getArgument(\"PositionZ\"),\r",
+                "    );\r",
+                "}\r",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "X position",
+              "name": "PositionX",
+              "type": "expression"
+            },
+            {
+              "description": "Y position",
+              "name": "PositionY",
+              "type": "expression"
+            },
+            {
+              "description": "Z position",
+              "name": "PositionZ",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Pick the object of this type that is nearest to the specified position in 3D.",
+          "fullName": "Pick nearest object in 3D",
+          "functionType": "Condition",
+          "group": "Objects",
+          "name": "PickNearest",
+          "sentence": "Pick the _PARAM1_ that is nearest to _PARAM2_ ; _PARAM3_ ; _PARAM4_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "// TODO If the condition is inverted, the object farthest from the specified position is picked instead.\r",
+                "const inverted = false;\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._collision3DExtension.pickNearestObject(\r",
+                "    eventsFunctionContext.getObjectsLists(\"Object\"),\r",
+                "    eventsFunctionContext.getArgument(\"PositionX\"),\r",
+                "    eventsFunctionContext.getArgument(\"PositionY\"),\r",
+                "    eventsFunctionContext.getArgument(\"PositionZ\"),\r",
+                "    inverted\r",
+                ");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "X position",
+              "name": "PositionX",
+              "type": "expression"
+            },
+            {
+              "description": "Y position",
+              "name": "PositionY",
+              "type": "expression"
+            },
+            {
+              "description": "Z position",
+              "name": "PositionZ",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Check the collision between two objects using their collision masks. Object rotation around X and Y axes are ignored.",
+          "fullName": "Collision in 3D",
+          "functionType": "Condition",
+          "group": "Collision",
+          "name": "AreInCollision",
+          "sentence": "_PARAM1_ is in collision with _PARAM3_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "// TODO If the condition is inverted, the object farthest from the specified position is picked instead.\r",
+                "const inverted = false;\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._collision3DExtension.pickObjectsInCollision(\r",
+                "    eventsFunctionContext.getObjectsLists(\"Object\"),\r",
+                "    eventsFunctionContext.getObjectsLists(\"OtherObject\"),\r",
+                "    eventsFunctionContext.getArgument(\"IgnoreEdges\"),\r",
+                "    inverted\r",
+                ");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "3D capability",
+              "name": "Object3D",
+              "supplementaryInformation": "Scene3D::Base3DBehavior",
+              "type": "behavior"
+            },
+            {
+              "description": "Other object",
+              "name": "OtherObject",
+              "type": "objectList"
+            },
+            {
+              "description": "3D capability",
+              "name": "OtherObjectCapability",
+              "supplementaryInformation": "Scene3D::Base3DBehavior",
+              "type": "behavior"
+            },
+            {
+              "description": "Ignore objects that are touching each other on their edges, but are not overlapping (default: no)",
+              "name": "IgnoreEdges",
+              "type": "yesorno"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Move an object away from another using their collision masks. Object rotation around X and Y axes are ignored.\nBe sure to call this action on a reasonable number of objects to avoid slowing down the game.",
+          "fullName": "Separate objects in 3D",
+          "functionType": "Action",
+          "group": "Position",
+          "name": "SeparateFromObjects",
+          "sentence": "Move _PARAM1_ away from _PARAM3_ (only _PARAM1_ will move)",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "\r",
+                "const otherObjects = eventsFunctionContext.getObjects(\"OtherObject\");\r",
+                "\r",
+                "for (const object of objects) {\r",
+                "    gdjs._collision3DExtension.separateFromObjects(\r",
+                "        object,\r",
+                "        otherObjects,\r",
+                "    );\r",
+                "}"
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Object",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "3D capability",
+              "name": "Object3D",
+              "supplementaryInformation": "Scene3D::Base3DBehavior",
+              "type": "behavior"
+            },
+            {
+              "description": "Objects (won't move)",
+              "name": "OtherObject",
+              "type": "objectList"
+            },
+            {
+              "description": "3D capability",
+              "name": "OtherObject3D",
+              "supplementaryInformation": "Scene3D::Base3DBehavior",
+              "type": "behavior"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": []
+    },
+    {
+      "author": "",
+      "category": "Visual effect",
+      "extensionNamespace": "",
+      "fullName": "3D object shake",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXZlY3Rvci1kaWZmZXJlbmNlLWFiIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTMsMUMxLjg5LDEgMSwxLjg5IDEsM1Y1SDNWM0g1VjFIM003LDFWM0gxMFYxSDdNMTIsMVYzSDE0VjVIMTZWM0MxNiwxLjg5IDE1LjExLDEgMTQsMUgxMk0xLDdWMTBIM1Y3SDFNMTQsN0MxNCw3IDE0LDExLjY3IDE0LDE0QzExLjY3LDE0IDcsMTQgNywxNEM3LDE0IDcsMTggNywyMEM3LDIxLjExIDcuODksMjIgOSwyMkgyMEMyMS4xMSwyMiAyMiwyMS4xMSAyMiwyMFY5QzIyLDcuODkgMjEuMTEsNyAyMCw3QzE4LDcgMTQsNyAxNCw3TTE2LDlIMjBWMjBIOVYxNkgxNEMxNS4xMSwxNiAxNiwxNS4xMSAxNiwxNFY5TTEsMTJWMTRDMSwxNS4xMSAxLjg5LDE2IDMsMTZINVYxNEgzVjEySDFaIiAvPjwvc3ZnPg==",
+      "name": "ShakeObject3D",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/vector-difference-ab.svg",
+      "shortDescription": "Shake 3D objects.",
+      "version": "2.1.0",
+      "description": [
+        "Shake 3D objects with translation and rotation.",
+        "",
+        "The 3D racing game example uses this extension ([open the project online](https://editor.gdevelop.io/?project=example://3d-racing-game)).",
+        "",
+        "Breaking changes from 2.0.0",
+        "- The behavior for 3D box has been removed. The other behavior can be used for both models and boxes."
+      ],
+      "origin": {
+        "identifier": "ShakeObject3D",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "3d",
+        "shaking",
+        "effect",
+        "shake",
+        "translate",
+        "rotate"
+      ],
+      "authorIds": [
+        "IWykYNRvhCZBN3vEgKEbBPOR3Oc2"
+      ],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onFirstSceneLoaded",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ShakeObject3D::DefineHelperClasses"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Define helper classes JavaScript code.",
+          "fullName": "Define helper classes",
+          "functionType": "Action",
+          "name": "DefineHelperClasses",
+          "private": true,
+          "sentence": "Define helper classes JavaScript code",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "if (gdjs._shakeObjectExtension) {",
+                "    return;",
+                "}",
+                "",
+                "/** Noise generator manager. */",
+                "class NoiseManager {",
+                "    /**",
+                "     * Create the manager of noise generators.",
+                "     */",
+                "    constructor() {",
+                "        this.seed = gdjs.randomInRange(1, Number.MAX_SAFE_INTEGER);",
+                "        /** @type {Map<string, NoiseGenerator>} */",
+                "        this.generators = new Map();",
+                "    }",
+                "",
+                "    /**",
+                "     * @param name {string}",
+                "     * @return {NoiseGenerator}",
+                "     */",
+                "    getGenerator(name) {",
+                "        let generator = this.generators.get(name);",
+                "        if (!generator) {",
+                "            generator = new NoiseGenerator(name + this.seed);",
+                "            this.generators.set(name, generator);",
+                "        }",
+                "        return generator;",
+                "    }",
+                "",
+                "    /**",
+                "     * @param seed {number}",
+                "     */",
+                "    setSeed(seed) {",
+                "        this.seed = seed;",
+                "        this.generators.forEach(generator => generator.setSeed(name + this.seed));",
+                "    }",
+                "",
+                "    /**",
+                "     * @param name {string}",
+                "     */",
+                "    deleteGenerator(name) {",
+                "        this.generators.delete(name);",
+                "    }",
+                "",
+                "    /**",
+                "     */",
+                "    deleteAllGenerators() {",
+                "        this.generators.clear();",
+                "    }",
+                "}",
+                "",
+                "/** Noise generator with octaves. */",
+                "class NoiseGenerator {",
+                "    /**",
+                "     * Create a noise generator with a seed.",
+                "     * @param seed {string}",
+                "     */",
+                "    constructor(seed) {",
+                "        this.simplexNoise = new SimplexNoise(seed);",
+                "        this.frequency = 1;",
+                "        this.octaves = 1;",
+                "        this.persistence = 0.5;",
+                "        this.lacunarity = 2;",
+                "        this.xLoopPeriod = 0;",
+                "        this.yLoopPeriod = 0;",
+                "    }",
+                "",
+                "    /**",
+                "     * @param seed {string}",
+                "     */",
+                "    setSeed(seed) {",
+                "        this.simplexNoise = new SimplexNoise(seed);",
+                "    }",
+                "",
+                "    /**",
+                "     * @param x {float}",
+                "     * @param y {float}",
+                "     * @param z {float} optionnal",
+                "     * @param w {float} optionnal",
+                "     * @return {float}",
+                "     */",
+                "    noise(x, y, z, w) {",
+                "        if (this.xLoopPeriod && this.yLoopPeriod) {",
+                "            const circleRatioX = 2 * Math.PI / this.xLoopPeriod;",
+                "            const circleRatioY = 2 * Math.PI / this.yLoopPeriod;",
+                "            const angleX = circleRatioX * x;",
+                "            const angleY = circleRatioY * y;",
+                "            x = Math.cos(angleX) / circleRatioX;",
+                "            y = Math.sin(angleX) / circleRatioX;",
+                "            z = Math.cos(angleY) / circleRatioY;",
+                "            w = Math.sin(angleY) / circleRatioY;",
+                "        }",
+                "        else if (this.xLoopPeriod) {",
+                "            const circleRatio = 2 * Math.PI / this.xLoopPeriod;",
+                "            const angleX = circleRatio * x;",
+                "            w = z;",
+                "            z = y;",
+                "            x = Math.cos(angleX) / circleRatio;",
+                "            y = Math.sin(angleX) / circleRatio;",
+                "        }",
+                "        else if (this.yLoopPeriod) {",
+                "            const circleRatio = 2 * Math.PI / this.xLoopPeriod;",
+                "            const angleX = circleRatio * x;",
+                "            w = z;",
+                "            // Make the circle perimeter equals to the looping period",
+                "            // to keep the same perceived frequency with or without looping.",
+                "            y = Math.cos(angleX) / circleRatio;",
+                "            z = Math.sin(angleX) / circleRatio;",
+                "        }",
+                "        let noiseFunction = this.simplexNoise.noise4D.bind(this.simplexNoise);",
+                "        if (z === undefined) {",
+                "            noiseFunction = this.simplexNoise.noise2D.bind(this.simplexNoise);",
+                "        }",
+                "        else if (w === undefined) {",
+                "            noiseFunction = this.simplexNoise.noise3D.bind(this.simplexNoise);",
+                "        }",
+                "        let frequency = this.frequency;",
+                "        let noiseSum = 0;",
+                "        let amplitudeSum = 0;",
+                "        let amplitude = 1;",
+                "        for (let i = 0; i < this.octaves; i++) {",
+                "            noiseSum += noiseFunction(x * frequency, y * frequency, z * frequency, w * frequency) * amplitude;",
+                "            amplitudeSum += Math.abs(amplitude);",
+                "            amplitude *= this.persistence;",
+                "            frequency *= this.lacunarity;",
+                "        }",
+                "        return noiseSum / amplitudeSum;",
+                "    }",
+                "}",
+                "",
+                "/*",
+                "A fast javascript implementation of simplex noise by Jonas Wagner",
+                "https://github.com/jwagner/simplex-noise.js",
+                "",
+                "Based on a speed-improved simplex noise algorithm for 2D, 3D and 4D in Java.",
+                "Which is based on example code by Stefan Gustavson (stegu@itn.liu.se).",
+                "With Optimisations by Peter Eastman (peastman@drizzle.stanford.edu).",
+                "Better rank ordering method by Stefan Gustavson in 2012.",
+                "",
+                " Copyright (c) 2021 Jonas Wagner",
+                "",
+                " Permission is hereby granted, free of charge, to any person obtaining a copy",
+                " of this software and associated documentation files (the \"Software\"), to deal",
+                " in the Software without restriction, including without limitation the rights",
+                " to use, copy, modify, merge, publish, distribute, sublicense, and/or sell",
+                " copies of the Software, and to permit persons to whom the Software is",
+                " furnished to do so, subject to the following conditions:",
+                "",
+                " The above copyright notice and this permission notice shall be included in all",
+                " copies or substantial portions of the Software.",
+                "",
+                " THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR",
+                " IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,",
+                " FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE",
+                " AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER",
+                " LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,",
+                " OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE",
+                " SOFTWARE.",
+                " */",
+                "",
+                "const F2 = 0.5 * (Math.sqrt(3.0) - 1.0);",
+                "const G2 = (3.0 - Math.sqrt(3.0)) / 6.0;",
+                "const F3 = 1.0 / 3.0;",
+                "const G3 = 1.0 / 6.0;",
+                "const F4 = (Math.sqrt(5.0) - 1.0) / 4.0;",
+                "const G4 = (5.0 - Math.sqrt(5.0)) / 20.0;",
+                "const grad3 = new Float32Array([1, 1, 0,",
+                "    -1, 1, 0,",
+                "    1, -1, 0,",
+                "    -1, -1, 0,",
+                "    1, 0, 1,",
+                "    -1, 0, 1,",
+                "    1, 0, -1,",
+                "    -1, 0, -1,",
+                "    0, 1, 1,",
+                "    0, -1, 1,",
+                "    0, 1, -1,",
+                "    0, -1, -1]);",
+                "const grad4 = new Float32Array([0, 1, 1, 1, 0, 1, 1, -1, 0, 1, -1, 1, 0, 1, -1, -1,",
+                "    0, -1, 1, 1, 0, -1, 1, -1, 0, -1, -1, 1, 0, -1, -1, -1,",
+                "    1, 0, 1, 1, 1, 0, 1, -1, 1, 0, -1, 1, 1, 0, -1, -1,",
+                "    -1, 0, 1, 1, -1, 0, 1, -1, -1, 0, -1, 1, -1, 0, -1, -1,",
+                "    1, 1, 0, 1, 1, 1, 0, -1, 1, -1, 0, 1, 1, -1, 0, -1,",
+                "    -1, 1, 0, 1, -1, 1, 0, -1, -1, -1, 0, 1, -1, -1, 0, -1,",
+                "    1, 1, 1, 0, 1, 1, -1, 0, 1, -1, 1, 0, 1, -1, -1, 0,",
+                "    -1, 1, 1, 0, -1, 1, -1, 0, -1, -1, 1, 0, -1, -1, -1, 0]);",
+                "",
+                "",
+                "/**",
+                " * Builds a random permutation table.",
+                " * This is exported only for (internal) testing purposes.",
+                " * Do not rely on this export.",
+                " * @param {() => number} random",
+                " * @private",
+                " */",
+                "function buildPermutationTable(random) {",
+                "    const p = new Uint8Array(256);",
+                "    for (let i = 0; i < 256; i++) {",
+                "        p[i] = i;",
+                "    }",
+                "    for (let i = 0; i < 255; i++) {",
+                "        const r = i + ~~(random() * (256 - i));",
+                "        const aux = p[i];",
+                "        p[i] = p[r];",
+                "        p[r] = aux;",
+                "    }",
+                "    return p;",
+                "}",
+                "",
+                "/*",
+                "The ALEA PRNG and masher code used by simplex-noise.js",
+                "is based on code by Johannes Baagøe, modified by Jonas Wagner.",
+                "See alea.md for the full license.",
+                "@param {string|number} seed",
+                "*/",
+                "function alea(seed) {",
+                "    let s0 = 0;",
+                "    let s1 = 0;",
+                "    let s2 = 0;",
+                "    let c = 1;",
+                "    const mash = masher();",
+                "    s0 = mash(' ');",
+                "    s1 = mash(' ');",
+                "    s2 = mash(' ');",
+                "    s0 -= mash(seed);",
+                "    if (s0 < 0) {",
+                "        s0 += 1;",
+                "    }",
+                "    s1 -= mash(seed);",
+                "    if (s1 < 0) {",
+                "        s1 += 1;",
+                "    }",
+                "    s2 -= mash(seed);",
+                "    if (s2 < 0) {",
+                "        s2 += 1;",
+                "    }",
+                "    return function () {",
+                "        const t = 2091639 * s0 + c * 2.3283064365386963e-10; // 2^-32",
+                "        s0 = s1;",
+                "        s1 = s2;",
+                "        return s2 = t - (c = t | 0);",
+                "    };",
+                "}",
+                "",
+                "function masher() {",
+                "    let n = 0xefc8249d;",
+                "    return function (data) {",
+                "        data = data.toString();",
+                "        for (let i = 0; i < data.length; i++) {",
+                "            n += data.charCodeAt(i);",
+                "            let h = 0.02519603282416938 * n;",
+                "            n = h >>> 0;",
+                "            h -= n;",
+                "            h *= n;",
+                "            n = h >>> 0;",
+                "            h -= n;",
+                "            n += h * 0x100000000; // 2^32",
+                "        }",
+                "        return (n >>> 0) * 2.3283064365386963e-10; // 2^-32",
+                "    };",
+                "}",
+                "",
+                "/** Deterministic simplex noise generator suitable for 2D, 3D and 4D spaces. */",
+                "class SimplexNoise {",
+                "    /**",
+                "     * Creates a new `SimplexNoise` instance.",
+                "     * This involves some setup. You can save a few cpu cycles by reusing the same instance.",
+                "     * @param {(() => number)|string|number} randomOrSeed A random number generator or a seed (string|number).",
+                "     * Defaults to Math.random (random irreproducible initialization).",
+                "     */",
+                "    constructor(randomOrSeed) {",
+                "        if (randomOrSeed === void 0) { randomOrSeed = Math.random; }",
+                "        const random = typeof randomOrSeed == 'function' ? randomOrSeed : alea(randomOrSeed);",
+                "        this.p = buildPermutationTable(random);",
+                "        this.perm = new Uint8Array(512);",
+                "        this.permMod12 = new Uint8Array(512);",
+                "        for (let i = 0; i < 512; i++) {",
+                "            this.perm[i] = this.p[i & 255];",
+                "            this.permMod12[i] = this.perm[i] % 12;",
+                "        }",
+                "    }",
+                "",
+                "    /**",
+                "     * Samples the noise field in 2 dimensions",
+                "     * @param {number} x",
+                "     * @param {number} y",
+                "     * @returns a number in the interval [-1, 1]",
+                "     */",
+                "    noise2D(x, y) {",
+                "        const permMod12 = this.permMod12;",
+                "        const perm = this.perm;",
+                "        let n0 = 0; // Noise contributions from the three corners",
+                "        let n1 = 0;",
+                "        let n2 = 0;",
+                "        // Skew the input space to determine which simplex cell we're in",
+                "        const s = (x + y) * F2; // Hairy factor for 2D",
+                "        const i = Math.floor(x + s);",
+                "        const j = Math.floor(y + s);",
+                "        const t = (i + j) * G2;",
+                "        const X0 = i - t; // Unskew the cell origin back to (x,y) space",
+                "        const Y0 = j - t;",
+                "        const x0 = x - X0; // The x,y distances from the cell origin",
+                "        const y0 = y - Y0;",
+                "        // For the 2D case, the simplex shape is an equilateral triangle.",
+                "        // Determine which simplex we are in.",
+                "        let i1, j1; // Offsets for second (middle) corner of simplex in (i,j) coords",
+                "        if (x0 > y0) {",
+                "            i1 = 1;",
+                "            j1 = 0;",
+                "        } // lower triangle, XY order: (0,0)->(1,0)->(1,1)",
+                "        else {",
+                "            i1 = 0;",
+                "            j1 = 1;",
+                "        } // upper triangle, YX order: (0,0)->(0,1)->(1,1)",
+                "        // A step of (1,0) in (i,j) means a step of (1-c,-c) in (x,y), and",
+                "        // a step of (0,1) in (i,j) means a step of (-c,1-c) in (x,y), where",
+                "        // c = (3-sqrt(3))/6",
+                "        const x1 = x0 - i1 + G2; // Offsets for middle corner in (x,y) unskewed coords",
+                "        const y1 = y0 - j1 + G2;",
+                "        const x2 = x0 - 1.0 + 2.0 * G2; // Offsets for last corner in (x,y) unskewed coords",
+                "        const y2 = y0 - 1.0 + 2.0 * G2;",
+                "        // Work out the hashed gradient indices of the three simplex corners",
+                "        const ii = i & 255;",
+                "        const jj = j & 255;",
+                "        // Calculate the contribution from the three corners",
+                "        let t0 = 0.5 - x0 * x0 - y0 * y0;",
+                "        if (t0 >= 0) {",
+                "            const gi0 = permMod12[ii + perm[jj]] * 3;",
+                "            t0 *= t0;",
+                "            n0 = t0 * t0 * (grad3[gi0] * x0 + grad3[gi0 + 1] * y0); // (x,y) of grad3 used for 2D gradient",
+                "        }",
+                "        let t1 = 0.5 - x1 * x1 - y1 * y1;",
+                "        if (t1 >= 0) {",
+                "            const gi1 = permMod12[ii + i1 + perm[jj + j1]] * 3;",
+                "            t1 *= t1;",
+                "            n1 = t1 * t1 * (grad3[gi1] * x1 + grad3[gi1 + 1] * y1);",
+                "        }",
+                "        let t2 = 0.5 - x2 * x2 - y2 * y2;",
+                "        if (t2 >= 0) {",
+                "            const gi2 = permMod12[ii + 1 + perm[jj + 1]] * 3;",
+                "            t2 *= t2;",
+                "            n2 = t2 * t2 * (grad3[gi2] * x2 + grad3[gi2 + 1] * y2);",
+                "        }",
+                "        // Add contributions from each corner to get the final noise value.",
+                "        // The result is scaled to return values in the interval [-1,1].",
+                "        return 70.0 * (n0 + n1 + n2);",
+                "    }",
+                "",
+                "    /**",
+                "     * Samples the noise field in 3 dimensions",
+                "     * @param {number} x",
+                "     * @param {number} y",
+                "     * @param {number} z",
+                "     * @returns a number in the interval [-1, 1]",
+                "     */",
+                "    noise3D(x, y, z) {",
+                "        const permMod12 = this.permMod12;",
+                "        const perm = this.perm;",
+                "        let n0, n1, n2, n3; // Noise contributions from the four corners",
+                "        // Skew the input space to determine which simplex cell we're in",
+                "        const s = (x + y + z) * F3; // Very nice and simple skew factor for 3D",
+                "        const i = Math.floor(x + s);",
+                "        const j = Math.floor(y + s);",
+                "        const k = Math.floor(z + s);",
+                "        const t = (i + j + k) * G3;",
+                "        const X0 = i - t; // Unskew the cell origin back to (x,y,z) space",
+                "        const Y0 = j - t;",
+                "        const Z0 = k - t;",
+                "        const x0 = x - X0; // The x,y,z distances from the cell origin",
+                "        const y0 = y - Y0;",
+                "        const z0 = z - Z0;",
+                "        // For the 3D case, the simplex shape is a slightly irregular tetrahedron.",
+                "        // Determine which simplex we are in.",
+                "        let i1, j1, k1; // Offsets for second corner of simplex in (i,j,k) coords",
+                "        let i2, j2, k2; // Offsets for third corner of simplex in (i,j,k) coords",
+                "        if (x0 >= y0) {",
+                "            if (y0 >= z0) {",
+                "                i1 = 1;",
+                "                j1 = 0;",
+                "                k1 = 0;",
+                "                i2 = 1;",
+                "                j2 = 1;",
+                "                k2 = 0;",
+                "            } // X Y Z order",
+                "            else if (x0 >= z0) {",
+                "                i1 = 1;",
+                "                j1 = 0;",
+                "                k1 = 0;",
+                "                i2 = 1;",
+                "                j2 = 0;",
+                "                k2 = 1;",
+                "            } // X Z Y order",
+                "            else {",
+                "                i1 = 0;",
+                "                j1 = 0;",
+                "                k1 = 1;",
+                "                i2 = 1;",
+                "                j2 = 0;",
+                "                k2 = 1;",
+                "            } // Z X Y order",
+                "        }",
+                "        else { // x0<y0",
+                "            if (y0 < z0) {",
+                "                i1 = 0;",
+                "                j1 = 0;",
+                "                k1 = 1;",
+                "                i2 = 0;",
+                "                j2 = 1;",
+                "                k2 = 1;",
+                "            } // Z Y X order",
+                "            else if (x0 < z0) {",
+                "                i1 = 0;",
+                "                j1 = 1;",
+                "                k1 = 0;",
+                "                i2 = 0;",
+                "                j2 = 1;",
+                "                k2 = 1;",
+                "            } // Y Z X order",
+                "            else {",
+                "                i1 = 0;",
+                "                j1 = 1;",
+                "                k1 = 0;",
+                "                i2 = 1;",
+                "                j2 = 1;",
+                "                k2 = 0;",
+                "            } // Y X Z order",
+                "        }",
+                "        // A step of (1,0,0) in (i,j,k) means a step of (1-c,-c,-c) in (x,y,z),",
+                "        // a step of (0,1,0) in (i,j,k) means a step of (-c,1-c,-c) in (x,y,z), and",
+                "        // a step of (0,0,1) in (i,j,k) means a step of (-c,-c,1-c) in (x,y,z), where",
+                "        // c = 1/6.",
+                "        const x1 = x0 - i1 + G3; // Offsets for second corner in (x,y,z) coords",
+                "        const y1 = y0 - j1 + G3;",
+                "        const z1 = z0 - k1 + G3;",
+                "        const x2 = x0 - i2 + 2.0 * G3; // Offsets for third corner in (x,y,z) coords",
+                "        const y2 = y0 - j2 + 2.0 * G3;",
+                "        const z2 = z0 - k2 + 2.0 * G3;",
+                "        const x3 = x0 - 1.0 + 3.0 * G3; // Offsets for last corner in (x,y,z) coords",
+                "        const y3 = y0 - 1.0 + 3.0 * G3;",
+                "        const z3 = z0 - 1.0 + 3.0 * G3;",
+                "        // Work out the hashed gradient indices of the four simplex corners",
+                "        const ii = i & 255;",
+                "        const jj = j & 255;",
+                "        const kk = k & 255;",
+                "        // Calculate the contribution from the four corners",
+                "        let t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0;",
+                "        if (t0 < 0)",
+                "            n0 = 0.0;",
+                "        else {",
+                "            const gi0 = permMod12[ii + perm[jj + perm[kk]]] * 3;",
+                "            t0 *= t0;",
+                "            n0 = t0 * t0 * (grad3[gi0] * x0 + grad3[gi0 + 1] * y0 + grad3[gi0 + 2] * z0);",
+                "        }",
+                "        let t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1;",
+                "        if (t1 < 0)",
+                "            n1 = 0.0;",
+                "        else {",
+                "            const gi1 = permMod12[ii + i1 + perm[jj + j1 + perm[kk + k1]]] * 3;",
+                "            t1 *= t1;",
+                "            n1 = t1 * t1 * (grad3[gi1] * x1 + grad3[gi1 + 1] * y1 + grad3[gi1 + 2] * z1);",
+                "        }",
+                "        let t2 = 0.6 - x2 * x2 - y2 * y2 - z2 * z2;",
+                "        if (t2 < 0)",
+                "            n2 = 0.0;",
+                "        else {",
+                "            const gi2 = permMod12[ii + i2 + perm[jj + j2 + perm[kk + k2]]] * 3;",
+                "            t2 *= t2;",
+                "            n2 = t2 * t2 * (grad3[gi2] * x2 + grad3[gi2 + 1] * y2 + grad3[gi2 + 2] * z2);",
+                "        }",
+                "        let t3 = 0.6 - x3 * x3 - y3 * y3 - z3 * z3;",
+                "        if (t3 < 0)",
+                "            n3 = 0.0;",
+                "        else {",
+                "            const gi3 = permMod12[ii + 1 + perm[jj + 1 + perm[kk + 1]]] * 3;",
+                "            t3 *= t3;",
+                "            n3 = t3 * t3 * (grad3[gi3] * x3 + grad3[gi3 + 1] * y3 + grad3[gi3 + 2] * z3);",
+                "        }",
+                "        // Add contributions from each corner to get the final noise value.",
+                "        // The result is scaled to stay just inside [-1,1]",
+                "        return 32.0 * (n0 + n1 + n2 + n3);",
+                "    }",
+                "",
+                "    /**",
+                "     * Samples the noise field in 4 dimensions",
+                "     * @param {number} x",
+                "     * @param {number} y",
+                "     * @param {number} z",
+                "     * @returns a number in the interval [-1, 1]",
+                "     */",
+                "    noise4D(x, y, z, w) {",
+                "        const perm = this.perm;",
+                "        let n0, n1, n2, n3, n4; // Noise contributions from the five corners",
+                "        // Skew the (x,y,z,w) space to determine which cell of 24 simplices we're in",
+                "        const s = (x + y + z + w) * F4; // Factor for 4D skewing",
+                "        const i = Math.floor(x + s);",
+                "        const j = Math.floor(y + s);",
+                "        const k = Math.floor(z + s);",
+                "        const l = Math.floor(w + s);",
+                "        const t = (i + j + k + l) * G4; // Factor for 4D unskewing",
+                "        const X0 = i - t; // Unskew the cell origin back to (x,y,z,w) space",
+                "        const Y0 = j - t;",
+                "        const Z0 = k - t;",
+                "        const W0 = l - t;",
+                "        const x0 = x - X0; // The x,y,z,w distances from the cell origin",
+                "        const y0 = y - Y0;",
+                "        const z0 = z - Z0;",
+                "        const w0 = w - W0;",
+                "        // For the 4D case, the simplex is a 4D shape I won't even try to describe.",
+                "        // To find out which of the 24 possible simplices we're in, we need to",
+                "        // determine the magnitude ordering of x0, y0, z0 and w0.",
+                "        // Six pair-wise comparisons are performed between each possible pair",
+                "        // of the four coordinates, and the results are used to rank the numbers.",
+                "        let rankx = 0;",
+                "        let ranky = 0;",
+                "        let rankz = 0;",
+                "        let rankw = 0;",
+                "        if (x0 > y0)",
+                "            rankx++;",
+                "        else",
+                "            ranky++;",
+                "        if (x0 > z0)",
+                "            rankx++;",
+                "        else",
+                "            rankz++;",
+                "        if (x0 > w0)",
+                "            rankx++;",
+                "        else",
+                "            rankw++;",
+                "        if (y0 > z0)",
+                "            ranky++;",
+                "        else",
+                "            rankz++;",
+                "        if (y0 > w0)",
+                "            ranky++;",
+                "        else",
+                "            rankw++;",
+                "        if (z0 > w0)",
+                "            rankz++;",
+                "        else",
+                "            rankw++;",
+                "        // simplex[c] is a 4-vector with the numbers 0, 1, 2 and 3 in some order.",
+                "        // Many values of c will never occur, since e.g. x>y>z>w makes x<z, y<w and x<w",
+                "        // impossible. Only the 24 indices which have non-zero entries make any sense.",
+                "        // We use a thresholding to set the coordinates in turn from the largest magnitude.",
+                "        // Rank 3 denotes the largest coordinate.",
+                "        // Rank 2 denotes the second largest coordinate.",
+                "        // Rank 1 denotes the second smallest coordinate.",
+                "        // The integer offsets for the second simplex corner",
+                "        const i1 = rankx >= 3 ? 1 : 0;",
+                "        const j1 = ranky >= 3 ? 1 : 0;",
+                "        const k1 = rankz >= 3 ? 1 : 0;",
+                "        const l1 = rankw >= 3 ? 1 : 0;",
+                "        // The integer offsets for the third simplex corner",
+                "        const i2 = rankx >= 2 ? 1 : 0;",
+                "        const j2 = ranky >= 2 ? 1 : 0;",
+                "        const k2 = rankz >= 2 ? 1 : 0;",
+                "        const l2 = rankw >= 2 ? 1 : 0;",
+                "        // The integer offsets for the fourth simplex corner",
+                "        const i3 = rankx >= 1 ? 1 : 0;",
+                "        const j3 = ranky >= 1 ? 1 : 0;",
+                "        const k3 = rankz >= 1 ? 1 : 0;",
+                "        const l3 = rankw >= 1 ? 1 : 0;",
+                "        // The fifth corner has all coordinate offsets = 1, so no need to compute that.",
+                "        const x1 = x0 - i1 + G4; // Offsets for second corner in (x,y,z,w) coords",
+                "        const y1 = y0 - j1 + G4;",
+                "        const z1 = z0 - k1 + G4;",
+                "        const w1 = w0 - l1 + G4;",
+                "        const x2 = x0 - i2 + 2.0 * G4; // Offsets for third corner in (x,y,z,w) coords",
+                "        const y2 = y0 - j2 + 2.0 * G4;",
+                "        const z2 = z0 - k2 + 2.0 * G4;",
+                "        const w2 = w0 - l2 + 2.0 * G4;",
+                "        const x3 = x0 - i3 + 3.0 * G4; // Offsets for fourth corner in (x,y,z,w) coords",
+                "        const y3 = y0 - j3 + 3.0 * G4;",
+                "        const z3 = z0 - k3 + 3.0 * G4;",
+                "        const w3 = w0 - l3 + 3.0 * G4;",
+                "        const x4 = x0 - 1.0 + 4.0 * G4; // Offsets for last corner in (x,y,z,w) coords",
+                "        const y4 = y0 - 1.0 + 4.0 * G4;",
+                "        const z4 = z0 - 1.0 + 4.0 * G4;",
+                "        const w4 = w0 - 1.0 + 4.0 * G4;",
+                "        // Work out the hashed gradient indices of the five simplex corners",
+                "        const ii = i & 255;",
+                "        const jj = j & 255;",
+                "        const kk = k & 255;",
+                "        const ll = l & 255;",
+                "        // Calculate the contribution from the five corners",
+                "        let t0 = 0.6 - x0 * x0 - y0 * y0 - z0 * z0 - w0 * w0;",
+                "        if (t0 < 0)",
+                "            n0 = 0.0;",
+                "        else {",
+                "            const gi0 = (perm[ii + perm[jj + perm[kk + perm[ll]]]] % 32) * 4;",
+                "            t0 *= t0;",
+                "            n0 = t0 * t0 * (grad4[gi0] * x0 + grad4[gi0 + 1] * y0 + grad4[gi0 + 2] * z0 + grad4[gi0 + 3] * w0);",
+                "        }",
+                "        let t1 = 0.6 - x1 * x1 - y1 * y1 - z1 * z1 - w1 * w1;",
+                "        if (t1 < 0)",
+                "            n1 = 0.0;",
+                "        else {",
+                "            const gi1 = (perm[ii + i1 + perm[jj + j1 + perm[kk + k1 + perm[ll + l1]]]] % 32) * 4;",
+                "            t1 *= t1;",
+                "            n1 = t1 * t1 * (grad4[gi1] * x1 + grad4[gi1 + 1] * y1 + grad4[gi1 + 2] * z1 + grad4[gi1 + 3] * w1);",
+                "        }",
+                "        let t2 = 0.6 - x2 * x2 - y2 * y2 - z2 * z2 - w2 * w2;",
+                "        if (t2 < 0)",
+                "            n2 = 0.0;",
+                "        else {",
+                "            const gi2 = (perm[ii + i2 + perm[jj + j2 + perm[kk + k2 + perm[ll + l2]]]] % 32) * 4;",
+                "            t2 *= t2;",
+                "            n2 = t2 * t2 * (grad4[gi2] * x2 + grad4[gi2 + 1] * y2 + grad4[gi2 + 2] * z2 + grad4[gi2 + 3] * w2);",
+                "        }",
+                "        let t3 = 0.6 - x3 * x3 - y3 * y3 - z3 * z3 - w3 * w3;",
+                "        if (t3 < 0)",
+                "            n3 = 0.0;",
+                "        else {",
+                "            const gi3 = (perm[ii + i3 + perm[jj + j3 + perm[kk + k3 + perm[ll + l3]]]] % 32) * 4;",
+                "            t3 *= t3;",
+                "            n3 = t3 * t3 * (grad4[gi3] * x3 + grad4[gi3 + 1] * y3 + grad4[gi3 + 2] * z3 + grad4[gi3 + 3] * w3);",
+                "        }",
+                "        let t4 = 0.6 - x4 * x4 - y4 * y4 - z4 * z4 - w4 * w4;",
+                "        if (t4 < 0)",
+                "            n4 = 0.0;",
+                "        else {",
+                "            const gi4 = (perm[ii + 1 + perm[jj + 1 + perm[kk + 1 + perm[ll + 1]]]] % 32) * 4;",
+                "            t4 *= t4;",
+                "            n4 = t4 * t4 * (grad4[gi4] * x4 + grad4[gi4 + 1] * y4 + grad4[gi4 + 2] * z4 + grad4[gi4 + 3] * w4);",
+                "        }",
+                "        // Sum up and scale the result to cover the range [-1,1]",
+                "        return 27.0 * (n0 + n1 + n2 + n3 + n4);",
+                "    };",
+                "}",
+                "",
+                "gdjs._shakeObjectExtension = {",
+                "    noiseManager: new NoiseManager(),",
+                "};",
+                ""
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Generate a number from 2 dimensional simplex noise.",
+          "fullName": "2D noise",
+          "functionType": "Expression",
+          "name": "Noise2d",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "const x = eventsFunctionContext.getArgument(\"X\");\r",
+                "const y = eventsFunctionContext.getArgument(\"Y\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._shakeObjectExtension.noiseManager.getGenerator(name).noise(x, y);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            },
+            {
+              "description": "X coordinate",
+              "name": "X",
+              "type": "expression"
+            },
+            {
+              "description": "Y coordinate",
+              "name": "Y",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Generate a number from 3 dimensional simplex noise.",
+          "fullName": "3D noise",
+          "functionType": "Expression",
+          "name": "Noise3d",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "const x = eventsFunctionContext.getArgument(\"X\");\r",
+                "const y = eventsFunctionContext.getArgument(\"Y\");\r",
+                "const z = eventsFunctionContext.getArgument(\"Z\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._shakeObjectExtension.noiseManager.getGenerator(name).noise(x, y, z);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            },
+            {
+              "description": "X coordinate",
+              "name": "X",
+              "type": "expression"
+            },
+            {
+              "description": "Y coordinate",
+              "name": "Y",
+              "type": "expression"
+            },
+            {
+              "description": "Z coordinate",
+              "name": "Z",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Generate a number from 4 dimensional simplex noise.",
+          "fullName": "4D noise",
+          "functionType": "Expression",
+          "name": "Noise4d",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "const x = eventsFunctionContext.getArgument(\"X\");\r",
+                "const y = eventsFunctionContext.getArgument(\"Y\");\r",
+                "const z = eventsFunctionContext.getArgument(\"Z\");\r",
+                "const w = eventsFunctionContext.getArgument(\"W\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._shakeObjectExtension.noiseManager.getGenerator(name).noise(x, y, z, w);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            },
+            {
+              "description": "X coordinate",
+              "name": "X",
+              "type": "expression"
+            },
+            {
+              "description": "Y coordinate",
+              "name": "Y",
+              "type": "expression"
+            },
+            {
+              "description": "Z coordinate",
+              "name": "Z",
+              "type": "expression"
+            },
+            {
+              "description": "W coordinate",
+              "name": "W",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Create a noise generator with default settings (frequency = 1,  octaves = 1, persistence = 0.5, lacunarity = 2).",
+          "fullName": "Create a noise generator",
+          "functionType": "Action",
+          "name": "Create",
+          "private": true,
+          "sentence": "Create a noise generator named _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "gdjs._shakeObjectExtension.noiseManager.getGenerator(name);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Delete a noise generator and loose its settings.",
+          "fullName": "Delete a noise generator",
+          "functionType": "Action",
+          "name": "Delete",
+          "private": true,
+          "sentence": "Delete _PARAM1_ noise generator",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "gdjs._shakeObjectExtension.noiseManager.deleteGenerator(name);"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Delete all noise generators and loose their settings.",
+          "fullName": "Delete all noise generators",
+          "functionType": "Action",
+          "name": "DeleteAll",
+          "private": true,
+          "sentence": "Delete all noise generators",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "gdjs._shakeObjectExtension.noiseManager.deleteAllGenerators();",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "The seed is a number used to generate the random noise. Setting the same seed will result in the same random noise generation. It's for example useful to generate the same world, by saving this seed value and reusing it later to generate again a world.",
+          "fullName": "Noise seed",
+          "functionType": "Action",
+          "name": "SetSeed",
+          "private": true,
+          "sentence": "Change the noise seed to _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "gdjs._shakeObjectExtension.noiseManager.setSeed(eventsFunctionContext.getArgument(\"Seed\"));",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Seed",
+              "longDescription": "15 digits numbers maximum",
+              "name": "Seed",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Change the looping period on X used for noise generation. The noise will wrap-around on X.",
+          "fullName": "Noise looping period on X",
+          "functionType": "Action",
+          "name": "SetLoopPeriodX",
+          "private": true,
+          "sentence": "Change the looping period on X of _PARAM2_: _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "gdjs._shakeObjectExtension.noiseManager.getGenerator(name).xLoopPeriod = eventsFunctionContext.getArgument(\"LoopPeriod\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Looping period on X",
+              "name": "LoopPeriod",
+              "type": "expression"
+            },
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Change the looping period on Y used for noise generation. The noise will wrap-around on Y.",
+          "fullName": "Noise looping period on Y",
+          "functionType": "Action",
+          "name": "SetLoopPeriodY",
+          "private": true,
+          "sentence": "Change the looping period on Y of _PARAM2_: _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "gdjs._shakeObjectExtension.noiseManager.getGenerator(name).yLoopPeriod = eventsFunctionContext.getArgument(\"LoopPeriod\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Looping period on Y",
+              "name": "LoopPeriod",
+              "type": "expression"
+            },
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Change the base frequency used for noise generation. A lower frequency will zoom in the noise.",
+          "fullName": "Noise base frequency",
+          "functionType": "Action",
+          "name": "SetFrequency",
+          "private": true,
+          "sentence": "Change the noise frequency of _PARAM2_: _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "gdjs._shakeObjectExtension.noiseManager.getGenerator(name).frequency = eventsFunctionContext.getArgument(\"Frequency\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Frequency",
+              "name": "Frequency",
+              "type": "expression"
+            },
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Change the number of octaves used for noise generation. It can be seen as layers of noise with different zoom.",
+          "fullName": "Noise octaves",
+          "functionType": "Action",
+          "name": "SetOctaves",
+          "private": true,
+          "sentence": "Change the number of noise octaves of _PARAM2_: _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "gdjs._shakeObjectExtension.noiseManager.getGenerator(name).octaves = eventsFunctionContext.getArgument(\"Octaves\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Octaves",
+              "name": "Octaves",
+              "type": "expression"
+            },
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Change the persistence used for noise generation. At its default value \"0.5\", it halves the noise amplitude at each octave.",
+          "fullName": "Noise persistence",
+          "functionType": "Action",
+          "name": "SetPersistence",
+          "private": true,
+          "sentence": "Change the noise persistence of _PARAM2_: _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "gdjs._shakeObjectExtension.noiseManager.getGenerator(name).persistence = eventsFunctionContext.getArgument(\"Persistence\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Persistence",
+              "name": "Persistence",
+              "type": "expression"
+            },
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Change the lacunarity used for noise generation. At its default value \"2\", it doubles the frequency at each octave.",
+          "fullName": "Noise lacunarity",
+          "functionType": "Action",
+          "name": "SetLacunarity",
+          "private": true,
+          "sentence": "Change the noise lacunarity of _PARAM2_: _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "gdjs._shakeObjectExtension.noiseManager.getGenerator(name).lacunarity = eventsFunctionContext.getArgument(\"Lacunarity\");"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Lacunarity",
+              "name": "Lacunarity",
+              "type": "expression"
+            },
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "The seed used for noise generation.",
+          "fullName": "Noise seed",
+          "functionType": "Expression",
+          "name": "Seed",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = gdjs._shakeObjectExtension.noiseManager.seed;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "The base frequency used for noise generation.",
+          "fullName": "Noise base frequency",
+          "functionType": "Expression",
+          "name": "Frequency",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._shakeObjectExtension.noiseManager.getGenerator(name).frequency;"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "The number of octaves used for noise generation.",
+          "fullName": "Noise octaves number",
+          "functionType": "Expression",
+          "name": "Octaves",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._shakeObjectExtension.noiseManager.getGenerator(name).octaves;"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "The persistence used for noise generation.",
+          "fullName": "Noise persistence",
+          "functionType": "Expression",
+          "name": "Persistence",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._shakeObjectExtension.noiseManager.getGenerator(name).persistence;"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "The lacunarity used for noise generation.",
+          "fullName": "Noise lacunarity",
+          "functionType": "Expression",
+          "name": "Lacunarity",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const name = eventsFunctionContext.getArgument(\"Name\");\r",
+                "\r",
+                "eventsFunctionContext.returnValue = gdjs._shakeObjectExtension.noiseManager.getGenerator(name).lacunarity;"
+              ],
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [
+            {
+              "description": "Generator name",
+              "name": "Name",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [
+        {
+          "description": "Shake 3D objects with translation and rotation.",
+          "fullName": "3D shake",
+          "name": "ShakeModel3D",
+          "objectType": "",
+          "quickCustomizationVisibility": "hidden",
+          "eventsFunctions": [
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "onCreated",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "BooleanVariable"
+                      },
+                      "parameters": [
+                        "IsStartingAtCreation",
+                        "True",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "ShakeObject3D::DefineHelperClasses"
+                      },
+                      "parameters": [
+                        "",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ShakeObject3D::ShakeModel3D::StartShaking"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "0",
+                        ""
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPostEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Step time counters."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Time",
+                        "+",
+                        "TimeDelta()"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ShakeObject3D::ShakeModel3D::IsShaking"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "NoiseTime",
+                        "+",
+                        "TimeDelta() * Frequency"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ShakeObject3D::ShakeModel3D::SetSharedPropertyEasingFactor"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "=",
+                        "min(Object.Behavior::StartEasingFactor(), Object.Behavior::StopEasingFactor())"
+                      ]
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Comment",
+                      "color": {
+                        "b": 109,
+                        "g": 230,
+                        "r": 255,
+                        "textB": 0,
+                        "textG": 0,
+                        "textR": 0
+                      },
+                      "comment": "Shake the object.\nSave the object displacement to revert it in onScenePostEvents."
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "TranslationAmplitudeX",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DeltaX",
+                            "=",
+                            "ShakeObject3D::Noise2d(\"\", NoiseTime, 1000) * TranslationAmplitudeX * EasingFactor"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "MettreX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "+",
+                            "DeltaX"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "TranslationAmplitudeY",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DeltaY",
+                            "=",
+                            "ShakeObject3D::Noise2d(\"\", NoiseTime, 2000) * TranslationAmplitudeY * EasingFactor"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "MettreY"
+                          },
+                          "parameters": [
+                            "Object",
+                            "+",
+                            "DeltaY"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "TranslationAmplitudeZ",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DeltaZ",
+                            "=",
+                            "ShakeObject3D::Noise2d(\"\", NoiseTime, 3000) * TranslationAmplitudeZ * EasingFactor"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Scene3D::Base3DBehavior::SetZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Object3D",
+                            "+",
+                            "DeltaZ"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "RotationAmplitudeX",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DeltaAngleX",
+                            "=",
+                            "ShakeObject3D::Noise2d(\"\", NoiseTime, 4000) * RotationAmplitudeX * EasingFactor"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Scene3D::Base3DBehavior::SetRotationX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Object3D",
+                            "+",
+                            "DeltaAngleX"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "RotationAmplitudeY",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DeltaAngleY",
+                            "=",
+                            "ShakeObject3D::Noise2d(\"\", NoiseTime, 5000) * RotationAmplitudeY * EasingFactor"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "Scene3D::Base3DBehavior::SetRotationY"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Object3D",
+                            "+",
+                            "DeltaAngleY"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "RotationAmplitudeZ",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetNumberVariable"
+                          },
+                          "parameters": [
+                            "DeltaAngleZ",
+                            "=",
+                            "ShakeObject3D::Noise2d(\"\", NoiseTime, 6000) * RotationAmplitudeZ * EasingFactor"
+                          ]
+                        },
+                        {
+                          "type": {
+                            "value": "SetAngle"
+                          },
+                          "parameters": [
+                            "Object",
+                            "+",
+                            "DeltaAngleZ"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "Action",
+              "name": "doStepPreEvents",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Revert the shaking."
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ShakeObject3D::ShakeModel3D::IsShaking"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "TranslationAmplitudeX",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "MettreX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "-",
+                            "DeltaX"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "TranslationAmplitudeY",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "MettreY"
+                          },
+                          "parameters": [
+                            "Object",
+                            "-",
+                            "DeltaY"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "TranslationAmplitudeZ",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Scene3D::Base3DBehavior::SetZ"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Object3D",
+                            "-",
+                            "DeltaZ"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "RotationAmplitudeX",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Scene3D::Base3DBehavior::SetRotationX"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Object3D",
+                            "-",
+                            "DeltaAngleX"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "RotationAmplitudeY",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "Scene3D::Base3DBehavior::SetRotationY"
+                          },
+                          "parameters": [
+                            "Object",
+                            "Object3D",
+                            "-",
+                            "DeltaAngleY"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "RotationAmplitudeZ",
+                            "!=",
+                            "0"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetAngle"
+                          },
+                          "parameters": [
+                            "Object",
+                            "-",
+                            "DeltaAngleZ"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Shake the object with a linear easing at the start and the end.",
+              "fullName": "Shake",
+              "functionType": "Action",
+              "name": "Shake",
+              "sentence": "Shake _PARAM0_ for _PARAM2_ seconds with _PARAM3_ seconds of easing to start and _PARAM4_ seconds to stop",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Time",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "NoiseTime",
+                        "=",
+                        "TimeFromStart() * Frequency"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Duration",
+                        "=",
+                        "NewDuration"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StartEasingDuration",
+                        "=",
+                        "StartEaseDuration"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StopEasingDuration",
+                        "=",
+                        "StopEaseDuration"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "NewDuration",
+                        "<",
+                        "StartEaseDuration + StopEaseDuration"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StartEasingDuration",
+                        "=",
+                        "StartEaseDuration * NewDuration / (StartEaseDuration + StopEaseDuration)"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StopEasingDuration",
+                        "=",
+                        "StopEaseDuration * NewDuration / (StartEaseDuration + StopEaseDuration)"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                },
+                {
+                  "description": "Duration (in seconds)",
+                  "name": "NewDuration",
+                  "type": "expression"
+                },
+                {
+                  "description": "Ease duration to start (in seconds)",
+                  "name": "StartEaseDuration",
+                  "type": "expression"
+                },
+                {
+                  "description": "Ease duration to stop (in seconds)",
+                  "name": "StopEaseDuration",
+                  "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Shake the object with a linear easing at the start and keep shaking until the stop action is used.",
+              "fullName": "Start shaking",
+              "functionType": "Action",
+              "name": "StartShaking",
+              "sentence": "Start shaking _PARAM0_ with _PARAM2_ seconds of easing",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Time",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "NoiseTime",
+                        "=",
+                        "TimeFromStart() * Frequency"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Duration",
+                        "=",
+                        "1234567890"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StartEasingDuration",
+                        "=",
+                        "EaseDuration"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                },
+                {
+                  "description": "Ease duration (in seconds)",
+                  "name": "EaseDuration",
+                  "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Stop shaking the object with a linear easing.",
+              "fullName": "Stop shaking",
+              "functionType": "Action",
+              "name": "StopShaking",
+              "sentence": "Stop shaking _PARAM0_ with _PARAM2_ seconds of easing",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ShakeObject3D::ShakeModel3D::IsShaking"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Time",
+                        "=",
+                        "0"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Duration",
+                        "=",
+                        "EaseDuration"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "StopEasingDuration",
+                        "=",
+                        "EaseDuration"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                },
+                {
+                  "description": "Ease duration (in seconds)",
+                  "name": "EaseDuration",
+                  "type": "expression"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the object is shaking.",
+              "fullName": "Is shaking",
+              "functionType": "Condition",
+              "name": "IsShaking",
+              "sentence": "_PARAM0_ is shaking",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Time",
+                        "<",
+                        "Duration"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Time",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Check if the object is stopping to shake.",
+              "fullName": "Is stopping to shake",
+              "functionType": "Condition",
+              "name": "IsStopping",
+              "sentence": "_PARAM0_ is stopping to shake",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "ShakeObject3D::ShakeModel3D::IsShaking"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        ""
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "ShakeObject3D::ShakeModel3D::StopEasingFactor"
+                      },
+                      "parameters": [
+                        "Object",
+                        "Behavior",
+                        "<",
+                        "1",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnBoolean"
+                      },
+                      "parameters": [
+                        "True"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "the shaking frequency of the object.",
+              "fullName": "Shaking frequency",
+              "functionType": "ExpressionAndCondition",
+              "group": "ShakeObject3D configuration",
+              "name": "Frequency",
+              "sentence": "the shaking frequency",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "Frequency"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "fullName": "",
+              "functionType": "ActionWithOperator",
+              "getterName": "Frequency",
+              "name": "SetFrequency",
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetNumberVariable"
+                      },
+                      "parameters": [
+                        "Frequency",
+                        "=",
+                        "Value"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Return the easing factor according to start properties.",
+              "fullName": "Start easing factor",
+              "functionType": "Expression",
+              "name": "StartEasingFactor",
+              "private": true,
+              "sentence": "",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "StartEasingDuration",
+                        "<=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "1"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "StartEasingDuration",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "clamp(Time / StartEasingDuration, 0, 1)"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            },
+            {
+              "description": "Return the easing factor according to stop properties.",
+              "fullName": "Stop easing factor",
+              "functionType": "ExpressionAndCondition",
+              "name": "StopEasingFactor",
+              "private": true,
+              "sentence": "stop easing factor",
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "StopEasingDuration",
+                        "<=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Time",
+                            "<",
+                            "Duration"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetReturnNumber"
+                          },
+                          "parameters": [
+                            "1"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "value": "NumberVariable"
+                          },
+                          "parameters": [
+                            "Time",
+                            ">=",
+                            "Duration"
+                          ]
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "value": "SetReturnNumber"
+                          },
+                          "parameters": [
+                            "0"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "StopEasingDuration",
+                        ">",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "SetReturnNumber"
+                      },
+                      "parameters": [
+                        "clamp((Duration - Time) / StopEasingDuration, 0, 1)"
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "expressionType": {
+                "type": "expression"
+              },
+              "parameters": [
+                {
+                  "description": "Object",
+                  "name": "Object",
+                  "type": "object"
+                },
+                {
+                  "description": "Behavior",
+                  "name": "Behavior",
+                  "supplementaryInformation": "ShakeObject3D::ShakeModel3D",
+                  "type": "behavior"
+                }
+              ],
+              "objectGroups": []
+            }
+          ],
+          "propertyDescriptors": [
+            {
+              "value": "0",
+              "type": "Number",
+              "unit": "Pixel",
+              "label": "Translation amplitude on X axis",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "TranslationAmplitudeX"
+            },
+            {
+              "value": "0",
+              "type": "Number",
+              "unit": "Pixel",
+              "label": "Translation amplitude on Y axis",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "TranslationAmplitudeY"
+            },
+            {
+              "value": "0",
+              "type": "Number",
+              "unit": "Pixel",
+              "label": "Translation amplitude on Z axis",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "TranslationAmplitudeZ"
+            },
+            {
+              "value": "5",
+              "type": "Number",
+              "unit": "DegreeAngle",
+              "label": "Rotation amplitude around X axis",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "RotationAmplitudeX"
+            },
+            {
+              "value": "5",
+              "type": "Number",
+              "unit": "DegreeAngle",
+              "label": "Rotation amplitude around Y axis",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "RotationAmplitudeY"
+            },
+            {
+              "value": "5",
+              "type": "Number",
+              "unit": "DegreeAngle",
+              "label": "Rotation amplitude around Z axis",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "RotationAmplitudeZ"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "Time"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "Duration"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "StartEasingDuration"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "StopEasingDuration"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "Frequency",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "Frequency"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "DeltaX"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "DeltaY"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "DeltaZ"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "DeltaAngleX"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "DeltaAngleY"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "DeltaAngleZ"
+            },
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "NoiseTime"
+            },
+            {
+              "value": "",
+              "type": "Behavior",
+              "label": "3D capability",
+              "description": "",
+              "group": "",
+              "extraInformation": [
+                "Scene3D::Base3DBehavior"
+              ],
+              "name": "Object3D"
+            },
+            {
+              "value": "",
+              "type": "Boolean",
+              "label": "Start to shake at the object creation",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "name": "IsStartingAtCreation"
+            }
+          ],
+          "sharedPropertyDescriptors": [
+            {
+              "value": "",
+              "type": "Number",
+              "label": "",
+              "description": "",
+              "group": "",
+              "extraInformation": [],
+              "hidden": true,
+              "name": "EasingFactor"
+            }
+          ]
+        }
+      ],
       "eventsBasedObjects": []
     }
   ],
