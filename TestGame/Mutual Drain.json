@@ -230,15 +230,15 @@
   ],
   "layouts": [
     {
-      "b": 209,
+      "b": 255,
       "disableInputWhenNotFocused": true,
       "mangledName": "Main_32Scene",
       "name": "Main Scene",
-      "r": 209,
+      "r": 255,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
       "title": "Resident Not Evil",
-      "v": 209,
+      "v": 255,
       "uiSettings": {
         "grid": false,
         "gridType": "rectangular",
@@ -835,6 +835,42 @@
             "materialType": "StandardWithoutMetalness",
             "tint": "255;255;255"
           }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Camera_Trigger",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 100,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "",
+            "backFaceResourceName": "",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "",
+            "rightFaceResourceName": "",
+            "topFaceResourceName": "",
+            "bottomFaceResourceName": "",
+            "frontFaceVisible": true,
+            "backFaceVisible": false,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic",
+            "tint": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
@@ -879,6 +915,9 @@
           {
             "folderName": "Interact",
             "children": [
+              {
+                "objectName": "Camera_Trigger"
+              },
               {
                 "objectName": "Invisible_Wall"
               },
@@ -1179,6 +1218,26 @@
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Collision3D::AreInCollision"
+              },
+              "parameters": [
+                "",
+                "Camera_Trigger",
+                "Object3D",
+                "Player",
+                "Object3D",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -13147,7 +13206,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.4420823343614465,
+        "zoomFactor": 0.26881735094044634,
         "windowMask": false
       }
     },
@@ -13352,7 +13411,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 3.97024180061929,
+        "zoomFactor": 0.30887412163426714,
         "windowMask": false
       }
     }
