@@ -1,7 +1,7 @@
 {
   "firstLayout": "",
   "gdVersion": {
-    "build": 226,
+    "build": 228,
     "major": 5,
     "minor": 5,
     "revision": 0
@@ -172,6 +172,14 @@
         "name": "Light_Source_Top",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/New3DBox_Front.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "New3DBox_Front",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -205,7 +213,17 @@
       "value": 0
     },
     {
-      "name": "PlayerFacingAngle",
+      "name": "Attacking",
+      "type": "number",
+      "value": 0
+    },
+    {
+      "name": "CurrentLevel",
+      "type": "number",
+      "value": 1
+    },
+    {
+      "name": "CurrentRotation",
       "type": "number",
       "value": 0
     }
@@ -214,8 +232,8 @@
     {
       "b": 209,
       "disableInputWhenNotFocused": true,
-      "mangledName": "Test_32scene",
-      "name": "Test scene",
+      "mangledName": "Main_32Scene",
+      "name": "Main Scene",
       "r": 209,
       "standardSortMethod": true,
       "stopSoundsOnStartup": true,
@@ -231,30 +249,12 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.30318475271407463,
+        "zoomFactor": 0.263222312574066,
         "windowMask": false
       },
       "objectsGroups": [],
       "variables": [],
       "instances": [
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 55,
-          "height": 55,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Camera",
-          "persistentUuid": "ddad9ada-3fd4-433c-b391-fdc61225bb98",
-          "width": 55,
-          "x": 1174,
-          "y": 542,
-          "z": 222,
-          "zOrder": 6,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
         {
           "angle": 0,
           "customSize": false,
@@ -284,234 +284,6 @@
           "x": 1671,
           "y": 946,
           "zOrder": 8,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 26,
-          "height": 26,
-          "layer": "",
-          "name": "Light_Source",
-          "persistentUuid": "5a5ba9b4-30b6-409e-b3fd-f620a6de80a4",
-          "rotationY": 90,
-          "width": 26,
-          "x": 1070,
-          "y": -159,
-          "z": 329,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 663,
-          "layer": "",
-          "name": "Invisible_Wall",
-          "persistentUuid": "08f9c692-8e78-4d00-b2a2-c2191c4b6109",
-          "width": 461,
-          "x": 790,
-          "y": -509,
-          "z": -1,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "TrainStation_0",
-          "persistentUuid": "a4bbf0d3-a9c2-4b72-a7c5-80f08b4b9182",
-          "width": 0,
-          "x": 248,
-          "y": -471,
-          "z": -73,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 663,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Invisible_Wall",
-          "persistentUuid": "b8200a44-e06e-4d73-9902-6c3352d35f50",
-          "width": 246,
-          "x": 549,
-          "y": -510,
-          "z": -70,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 663,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Invisible_Wall",
-          "persistentUuid": "7cad9090-c8fd-4bcb-82ec-15a003216722",
-          "width": 246,
-          "x": 549,
-          "y": 152,
-          "z": -70,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 663,
-          "layer": "",
-          "name": "Invisible_Wall",
-          "persistentUuid": "394727e2-b478-4d5f-9e1c-b10f2940b86f",
-          "width": 461,
-          "x": 790,
-          "y": 153,
-          "z": -1,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "TrainStation_0",
-          "persistentUuid": "0d3ce0b1-2e5a-47a0-94e4-34a1d828d887",
-          "width": 0,
-          "x": 248,
-          "y": 191,
-          "z": -73,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": false,
-          "height": 0,
-          "keepRatio": true,
-          "layer": "",
-          "name": "TrainStation_0",
-          "persistentUuid": "e8496683-022e-4b92-b8f2-8ba0ce809bc5",
-          "width": 0,
-          "x": 248,
-          "y": 853,
-          "z": -73,
-          "zOrder": 12,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 663,
-          "layer": "",
-          "name": "Invisible_Wall",
-          "persistentUuid": "951fa0f6-794a-4252-a735-9da359cfb229",
-          "width": 461,
-          "x": 790,
-          "y": 815,
-          "z": -1,
-          "zOrder": 11,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 1,
-          "height": 663,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Invisible_Wall",
-          "persistentUuid": "5eff85c9-6105-4221-9f9b-d84cd1db5a6f",
-          "width": 246,
-          "x": 549,
-          "y": 814,
-          "z": -70,
-          "zOrder": 13,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 306.54220084549615,
-          "height": 1329.305039946219,
-          "keepRatio": true,
-          "layer": "",
-          "name": "Train",
-          "persistentUuid": "6cb0f7e6-f78f-4ae9-a4b6-331f315b027a",
-          "width": 480.367077829829,
-          "x": 1042,
-          "y": -578,
-          "z": -79,
-          "zOrder": 14,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 26,
-          "height": 26,
-          "layer": "",
-          "name": "Light_Source",
-          "persistentUuid": "a802aceb-d93f-4362-b646-01308f59bae0",
-          "rotationY": 90,
-          "width": 26,
-          "x": 1071,
-          "y": 722,
-          "z": 329,
-          "zOrder": 9,
-          "numberProperties": [],
-          "stringProperties": [],
-          "initialVariables": []
-        },
-        {
-          "angle": 0,
-          "customSize": true,
-          "depth": 26,
-          "height": 26,
-          "layer": "",
-          "name": "Light_Source",
-          "persistentUuid": "4ccd3e75-c34d-4b53-a234-1901768a65ed",
-          "rotationY": 90,
-          "width": 26,
-          "x": 1065,
-          "y": 299,
-          "z": 329,
-          "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -717,96 +489,6 @@
           }
         },
         {
-          "assetStoreId": "5aee4a060be9f7eca97e9dee9b0b41b093d3c2dfe7cfdac7fceef7ab49926f8e",
-          "name": "BlockLarge",
-          "type": "Scene3D::Model3DObject",
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Physics3D",
-              "type": "Physics3D::Physics3DBehavior",
-              "object3D": "Object3D",
-              "bodyType": "Static",
-              "bullet": false,
-              "fixedRotation": false,
-              "shape": "Box",
-              "shapeOrientation": "Z",
-              "shapeDimensionA": 0,
-              "shapeDimensionB": 0,
-              "shapeDimensionC": 0,
-              "density": 1,
-              "friction": 0.3,
-              "restitution": 0.1,
-              "linearDamping": 0.1,
-              "angularDamping": 0.1,
-              "gravityScale": 1,
-              "layers": 17,
-              "masks": 17
-            }
-          ],
-          "content": {
-            "centerLocation": "ModelOrigin",
-            "crossfadeDuration": 0,
-            "depth": 68,
-            "height": 68,
-            "keepAspectRatio": true,
-            "materialType": "StandardWithoutMetalness",
-            "modelResourceName": "blockLarge.glb",
-            "originLocation": "ModelOrigin",
-            "rotationX": 90,
-            "rotationY": 0,
-            "rotationZ": -90,
-            "width": 68,
-            "animations": []
-          }
-        },
-        {
-          "assetStoreId": "2342cb3c0edd59b1774698603669a107722c3aa475699c1e301b870a9e45c147",
-          "name": "Crate",
-          "type": "Scene3D::Model3DObject",
-          "variables": [],
-          "effects": [],
-          "behaviors": [
-            {
-              "name": "Physics3D",
-              "type": "Physics3D::Physics3DBehavior",
-              "object3D": "Object3D",
-              "bodyType": "Dynamic",
-              "bullet": false,
-              "fixedRotation": false,
-              "shape": "Box",
-              "shapeOrientation": "Z",
-              "shapeDimensionA": 0,
-              "shapeDimensionB": 0,
-              "shapeDimensionC": 0,
-              "density": 1,
-              "friction": 0.3,
-              "restitution": 0.1,
-              "linearDamping": 0.1,
-              "angularDamping": 0.1,
-              "gravityScale": 1,
-              "layers": 17,
-              "masks": 17
-            }
-          ],
-          "content": {
-            "centerLocation": "ModelOrigin",
-            "crossfadeDuration": 0,
-            "depth": 12,
-            "height": 12,
-            "keepAspectRatio": true,
-            "materialType": "StandardWithoutMetalness",
-            "modelResourceName": "Crate.glb",
-            "originLocation": "ModelOrigin",
-            "rotationX": 0,
-            "rotationY": 0,
-            "rotationZ": 0,
-            "width": 12,
-            "animations": []
-          }
-        },
-        {
           "assetStoreId": "",
           "name": "Camera",
           "type": "Scene3D::Cube3DObject",
@@ -957,7 +639,18 @@
           "type": "Scene3D::Model3DObject",
           "variables": [],
           "effects": [],
-          "behaviors": [],
+          "behaviors": [
+            {
+              "name": "A3I",
+              "type": "A3F::A3I",
+              "Capability3d": "Object3D",
+              "AxesHelper": false,
+              "Blend": "Keep model blend mode",
+              "Opacity": 255,
+              "CastShadow": false,
+              "ReceiveShadow": true
+            }
+          ],
           "content": {
             "centerLocation": "ModelOrigin",
             "crossfadeDuration": 0.10000000149011612,
@@ -1028,353 +721,307 @@
             "materialType": "StandardWithoutMetalness",
             "tint": "255;255;255"
           }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Trigger_Box",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [
+            {
+              "name": "Level",
+              "type": "number",
+              "value": 1
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 100,
+            "enableTextureTransparency": true,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "",
+            "backFaceResourceName": "",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "",
+            "rightFaceResourceName": "",
+            "topFaceResourceName": "",
+            "bottomFaceResourceName": "",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic",
+            "tint": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "StartPos",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "width": 30,
+            "height": 30,
+            "depth": 30,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "",
+            "backFaceResourceName": "",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "",
+            "rightFaceResourceName": "",
+            "topFaceResourceName": "",
+            "bottomFaceResourceName": "",
+            "frontFaceVisible": true,
+            "backFaceVisible": false,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic",
+            "tint": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "Black_Box",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 100,
+            "enableTextureTransparency": false,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "New3DBox_Front",
+            "backFaceResourceName": "New3DBox_Front",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "New3DBox_Front",
+            "rightFaceResourceName": "New3DBox_Front",
+            "topFaceResourceName": "New3DBox_Front",
+            "bottomFaceResourceName": "New3DBox_Front",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "StandardWithoutMetalness",
+            "tint": "255;255;255"
+          }
         }
       ],
       "objectsFolderStructure": {
         "folderName": "__ROOT",
         "children": [
           {
-            "objectName": "Player"
+            "folderName": "UI",
+            "children": [
+              {
+                "objectName": "NewBBText2"
+              }
+            ]
           },
           {
-            "objectName": "TrainStation_0"
+            "folderName": "Background",
+            "children": [
+              {
+                "objectName": "Train"
+              },
+              {
+                "objectName": "TrainStation_0"
+              },
+              {
+                "objectName": "Black_Box"
+              }
+            ]
           },
           {
-            "objectName": "BlockLarge"
+            "folderName": "Actors",
+            "children": [
+              {
+                "objectName": "Camera"
+              },
+              {
+                "objectName": "Light_Source"
+              },
+              {
+                "objectName": "Player"
+              }
+            ]
           },
           {
-            "objectName": "Invisible_Wall"
-          },
-          {
-            "objectName": "Train"
-          },
-          {
-            "objectName": "Crate"
-          },
-          {
-            "objectName": "Camera"
-          },
-          {
-            "objectName": "NewBBText2"
-          },
-          {
-            "objectName": "Light_Source"
+            "folderName": "Interact",
+            "children": [
+              {
+                "objectName": "Invisible_Wall"
+              },
+              {
+                "objectName": "StartPos"
+              },
+              {
+                "objectName": "Trigger_Box"
+              }
+            ]
           }
         ]
       },
       "events": [
         {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Initial State"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Initial State",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
             {
-              "type": {
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BuiltinExternalLayouts::CreateObjectsFromExternalLayout"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Station\"+ToString(CurrentLevel)",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Comment",
+                  "color": {
+                    "b": 109,
+                    "g": 230,
+                    "r": 255,
+                    "textB": 0,
+                    "textG": 0,
+                    "textR": 0
+                  },
+                  "comment": "Hide Collisions"
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Camera"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Invisible_Wall"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "Trigger_Box"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "StartPos"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "MettreXY"
+                      },
+                      "parameters": [
+                        "Player",
+                        "=",
+                        "StartPos.X()",
+                        "=",
+                        "StartPos.Y()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Scene3D::Base3DBehavior::SetCenterZ"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Object3D",
+                        "=",
+                        "StartPos.Object3D::Z()"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "SetAngle"
+                      },
+                      "parameters": [
+                        "Player",
+                        "=",
+                        "CurrentRotation"
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ],
-          "actions": [
-            {
-              "type": {
-                "value": "Cache"
-              },
-              "parameters": [
-                "Camera"
-              ]
-            },
-            {
-              "type": {
-                "value": "Cache"
-              },
-              "parameters": [
-                "Invisible_Wall"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Camera"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "FirstPersonCamera::LookFromObjectEyes"
-              },
-              "parameters": [
-                "",
-                "Camera",
-                "",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Scene3D::TurnCameraTowardPosition"
-              },
-              "parameters": [
-                "",
-                "Player.X()",
-                "Player.Y()",
-                "Player.Z() + 50",
-                "",
-                "",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Movement"
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "InputX",
-                "=",
-                "0"
-              ]
-            },
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "InputY",
-                "=",
-                "0"
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "w"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "InputY",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
-              },
-              "parameters": [
-                "Player",
-                "PhysicsCharacter3D"
-              ]
-            },
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
-              },
-              "parameters": [
-                "Player",
-                "Animation",
-                "=",
-                "\"Run\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "s"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "InputY",
-                "=",
-                "-1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Physics3D::PhysicsCharacter3D::SimulateBackwardKey"
-              },
-              "parameters": [
-                "Player",
-                "PhysicsCharacter3D"
-              ]
-            },
-            {
-              "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
-              },
-              "parameters": [
-                "Player",
-                "Animation",
-                "=",
-                "\"RunBack\""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "d"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "InputX",
-                "=",
-                "1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Rotate"
-              },
-              "parameters": [
-                "Player",
-                "InputX * 300",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyPressed"
-              },
-              "parameters": [
-                "",
-                "a"
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "SetNumberVariable"
-              },
-              "parameters": [
-                "InputX",
-                "=",
-                "-1"
-              ]
-            },
-            {
-              "type": {
-                "value": "Rotate"
-              },
-              "parameters": [
-                "Player",
-                "InputX * 300",
-                ""
-              ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "KeyFromTextPressed"
-              },
-              "parameters": [
-                "",
-                "\"Space\""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Physics3D::PhysicsCharacter3D::SimulateJumpKey"
-              },
-              "parameters": [
-                "Player",
-                "PhysicsCharacter3D"
-              ]
-            }
-          ]
+          "parameters": []
         },
         {
           "disabled": true,
@@ -1382,24 +1029,102 @@
           "conditions": [
             {
               "type": {
-                "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                "value": "Raycaster3D::RaycastBetweenPosition"
               },
               "parameters": [
                 "Player",
-                "PhysicsCharacter3D"
+                "TrainStation_0",
+                "Player.CenterY()",
+                "Player.CenterX()",
+                "Player.Object3D::Z()",
+                "Player.CenterX()",
+                "Player.Y()",
+                "Player.Object3D::Z()",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Collision3D::AreInCollision"
+              },
+              "parameters": [
+                "Player",
+                "Player",
+                "Object3D",
+                "TrainStation_0",
+                "Object3D",
+                "",
+                ""
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                "value": "Scene3D::Base3DBehavior::SetCenterZ"
               },
               "parameters": [
                 "Player",
-                "Animation",
+                "Object3D",
                 "=",
-                "\"Run\""
+                "Raycaster3D::IntersectionZ() + 16"
+              ]
+            }
+          ]
+        },
+        {
+          "disabled": true,
+          "folded": true,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "Raycaster3D::RaycastWithAngle"
+              },
+              "parameters": [
+                "Player",
+                "TrainStation_0",
+                "Player.CenterX()",
+                "Player.CenterY()",
+                "Player.Object3D::Z()",
+                "0",
+                "-90",
+                "9999",
+                ""
+              ]
+            },
+            {
+              "type": {
+                "value": "Collision3D::AreInCollision"
+              },
+              "parameters": [
+                "Player",
+                "Player",
+                "Object3D",
+                "TrainStation_0",
+                "Object3D",
+                "",
+                ""
+              ]
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Scene3D::Base3DBehavior::SetCenterZ"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Object3D",
+                    "=",
+                    "Raycaster3D::IntersectionZ() + 16"
+                  ]
+                }
               ]
             }
           ]
@@ -1409,51 +1134,48 @@
           "conditions": [
             {
               "type": {
-                "inverted": true,
-                "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                "value": "Collision3D::AreInCollision"
               },
               "parameters": [
+                "",
+                "Trigger_Box",
+                "Object3D",
                 "Player",
-                "PhysicsCharacter3D"
-              ]
-            },
-            {
-              "type": {
-                "value": "NumberVariable"
-              },
-              "parameters": [
-                "InputY",
-                "=",
-                "0"
+                "Object3D",
+                "",
+                ""
               ]
             }
           ],
           "actions": [
             {
               "type": {
-                "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                "value": "SetNumberVariable"
               },
               "parameters": [
-                "Player",
-                "Animation",
+                "CurrentRotation",
                 "=",
-                "\"Idle\""
+                "Player.Angle()"
               ]
-            }
-          ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [],
-          "actions": [
+            },
             {
               "type": {
-                "value": "BBText::SetBBText"
+                "value": "SetNumberVariable"
               },
               "parameters": [
-                "NewBBText2",
+                "CurrentLevel",
                 "=",
-                "\"Transform : \n\"+ToString(roundTo(Player.X(), 1))+\n\", \"+ToString(roundTo(Player.Y(), 1))+\n\", \"+ToString(roundTo(Player.Z(), 1))"
+                "Trigger_Box.Level"
+              ]
+            },
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Main Scene\"",
+                ""
               ]
             }
           ]
@@ -1481,23 +1203,30 @@
               "parameters": [
                 "Player",
                 "=",
-                "673",
+                "StartPos.X()",
                 "=",
-                "506"
+                "StartPos.Y()"
               ]
             },
             {
               "type": {
-                "value": "Scene3D::Base3DBehavior::SetZ"
+                "value": "ScalableCapability::ScalableBehavior::SetValue"
               },
               "parameters": [
                 "Player",
-                "Object3D",
+                "Scale",
                 "=",
-                "111"
+                "StartPos.Object3D::Z()"
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Link",
+          "include": {
+            "includeConfig": 0
+          },
+          "target": "PlayerMovement/Camera"
         }
       ],
       "layers": [
@@ -1631,7 +1360,456 @@
       ]
     }
   ],
-  "externalEvents": [],
+  "externalEvents": [
+    {
+      "associatedLayout": "Main Scene",
+      "name": "PlayerMovement/Camera",
+      "events": [
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Camera",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "FirstPersonCamera::LookFromObjectEyes"
+                  },
+                  "parameters": [
+                    "",
+                    "Camera",
+                    "",
+                    ""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Scene3D::TurnCameraTowardPosition"
+                  },
+                  "parameters": [
+                    "",
+                    "Player.X()",
+                    "Player.Y()",
+                    "Player.Z() + 50",
+                    "",
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "name": "Movement",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "InputX",
+                    "=",
+                    "0"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "InputY",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "w"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "InputY",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SimulateForwardKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"Run\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "s"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "InputY",
+                    "=",
+                    "-1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SimulateBackwardKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"RunBack\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "d"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "InputX",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Rotate"
+                  },
+                  "parameters": [
+                    "Player",
+                    "InputX * 300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "a"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "InputX",
+                    "=",
+                    "-1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Rotate"
+                  },
+                  "parameters": [
+                    "Player",
+                    "InputX * 300",
+                    ""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "MouseButtonFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Left\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"SwordSlash\""
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Attacking",
+                    "=",
+                    "1"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "Wait"
+                  },
+                  "parameters": [
+                    "2"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "SetNumberVariable"
+                  },
+                  "parameters": [
+                    "Attacking",
+                    "=",
+                    "0"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"Space\""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::SimulateJumpKey"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "KeyFromTextPressed"
+                  },
+                  "parameters": [
+                    "",
+                    "\"e\""
+                  ]
+                }
+              ],
+              "actions": []
+            },
+            {
+              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                  },
+                  "parameters": [
+                    "Player",
+                    "Animation",
+                    "=",
+                    "\"Run\""
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
+                  },
+                  "parameters": [
+                    "Player",
+                    "PhysicsCharacter3D"
+                  ]
+                },
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "InputY",
+                    "=",
+                    "0"
+                  ]
+                }
+              ],
+              "actions": [],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "NumberVariable"
+                      },
+                      "parameters": [
+                        "Attacking",
+                        "=",
+                        "0"
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                      },
+                      "parameters": [
+                        "Player",
+                        "Animation",
+                        "=",
+                        "\"Idle\""
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "disabled": true,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "BBText::SetBBText"
+                  },
+                  "parameters": [
+                    "NewBBText2",
+                    "=",
+                    "\"Transform : \n\"+ToString(roundTo(Player.X(), 1))+\n\", \"+ToString(roundTo(Player.Y(), 1))+\n\", \"+ToString(roundTo(Player.Z(), 1))"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        }
+      ]
+    }
+  ],
   "eventsFunctionsExtensions": [
     {
       "author": "",
@@ -11786,7 +11964,1397 @@
         }
       ],
       "eventsBasedObjects": []
+    },
+    {
+      "author": "",
+      "category": "General",
+      "extensionNamespace": "",
+      "fullName": "3D raycast",
+      "gdevelopVersion": ">=5.5.222",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLXJheS1zdGFydC1hcnJvdyIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiPjxwYXRoIGQ9Ik0yMywxMkwxOSwxNlYxM0g2LjgzQzYuNDIsMTQuMTcgNS4zMSwxNSA0LDE1QTMsMyAwIDAsMSAxLDEyQTMsMyAwIDAsMSA0LDlDNS4zMSw5IDYuNDIsOS44MyA2LjgzLDExSDE5VjhMMjMsMTJaIiAvPjwvc3ZnPg==",
+      "name": "Raycaster3D",
+      "previewIconUrl": "https://asset-resources.gdevelop.io/public-resources/Icons/8419f46b76bce482c14b4c03b4141a64d457e4cdc92686f3470381f5d2694abd_ray-start-arrow.svg",
+      "shortDescription": "Find 3D objects that cross a line.",
+      "version": "0.1.5",
+      "description": [
+        "It can be useful to:",
+        "- Find 3D objects under the pointer",
+        "- Target objects from a 1st person view",
+        "- Make AI that detect objects in their field of view"
+      ],
+      "origin": {
+        "identifier": "Raycaster3D",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "3d",
+        "recast",
+        "collision"
+      ],
+      "authorIds": [
+        "IWykYNRvhCZBN3vEgKEbBPOR3Oc2"
+      ],
+      "dependencies": [],
+      "globalVariables": [],
+      "sceneVariables": [],
+      "eventsFunctions": [
+        {
+          "fullName": "",
+          "functionType": "Action",
+          "name": "onFirstSceneLoaded",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "value": "Raycaster3D::DefineHelperClasses"
+                  },
+                  "parameters": [
+                    "",
+                    ""
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Define helper classes JavaScript code.",
+          "fullName": "Define helper classes",
+          "functionType": "Action",
+          "name": "DefineHelperClasses",
+          "private": true,
+          "sentence": "Define helper classes JavaScript code",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "GlobalVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "_Raycaster3DExtension_ClassesDefined",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "SetGlobalVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "_Raycaster3DExtension_ClassesDefined",
+                    "True"
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::JsCode",
+                  "inlineCode": [
+                    "gdjs.__raycaster3DExtension = gdjs.__raycaster3DExtension || {};",
+                    "",
+                    "class Raycaster {",
+                    "    raycaster = new THREE.Raycaster();",
+                    "    pointer = new THREE.Vector2();",
+                    "    raycastResults = [];",
+                    "    lastDistance = 0;",
+                    "    lastPositionX = 0;",
+                    "    lastPositionY = 0;",
+                    "    lastPositionZ = 0;",
+                    "    lastNormalX = 0;",
+                    "    lastNormalY = 0;",
+                    "    lastNormalZ = 0;",
+                    "",
+                    "    /**",
+                    "     * @param objectsLists {Hashtable<gdjs.RuntimeObject[]>}",
+                    "     * @param objects {gdjs.RuntimeObject[]}",
+                    "     * @param pointerX {number}",
+                    "     * @param pointerY {number}",
+                    "     * @param distanceMax {number}",
+                    "     */",
+                    "    recastFromCamera(objectsLists, objects, pointerX, pointerY, distanceMax) {",
+                    "        if (objects.length === 0) {",
+                    "            return false;",
+                    "        }",
+                    "        const object = objects[0];",
+                    "        const layer = object.getInstanceContainer().getLayer(object.getLayer());",
+                    "        const camera = layer.getRenderer().getThreeCamera();",
+                    "",
+                    "        const raycaster = this.raycaster;",
+                    "        const pointer = this.pointer;",
+                    "        pointer.x = -1 + 2 * pointerX;",
+                    "        pointer.y = 1 - 2 * pointerY;",
+                    "        raycaster.setFromCamera(pointer, camera);",
+                    "        raycaster.far = distanceMax;",
+                    "",
+                    "        return this._doRecast(objectsLists, objects);",
+                    "    }",
+                    "",
+                    "    /**",
+                    "     * @param objectsLists {Hashtable<gdjs.RuntimeObject[]>}",
+                    "     * @param objects {gdjs.RuntimeObject[]}",
+                    "     * @param originX {number}",
+                    "     * @param originY {number}",
+                    "     * @param originZ {number}",
+                    "     * @param rotationAngle {number}",
+                    "     * @param elevationAngle {number}",
+                    "     * @param distanceMax {number}",
+                    "     */",
+                    "    recastWithAngle(",
+                    "        objectsLists,",
+                    "        objects,",
+                    "        originX,",
+                    "        originY,",
+                    "        originZ,",
+                    "        rotationAngle,",
+                    "        elevationAngle,",
+                    "        distanceMax",
+                    "    ) {",
+                    "        if (objects.length === 0) {",
+                    "            return false;",
+                    "        }",
+                    "        const raycaster = this.raycaster;",
+                    "        raycaster.ray.origin.set(",
+                    "            originX,",
+                    "            -originY,",
+                    "            originZ,",
+                    "        );",
+                    "        const rotation = rotationAngle * Math.PI / 180;",
+                    "        const elevation = elevationAngle * Math.PI / 180;",
+                    "        const cosElevation = Math.cos(elevation);",
+                    "        raycaster.ray.direction.set(",
+                    "            Math.cos(rotation) * cosElevation,",
+                    "            -Math.sin(rotation) * cosElevation,",
+                    "            Math.sin(elevation),",
+                    "        );",
+                    "        raycaster.far = distanceMax;",
+                    "",
+                    "        return this._doRecast(objectsLists, objects);",
+                    "    }",
+                    "",
+                    "    /**",
+                    "     * @param objectsLists {Hashtable<gdjs.RuntimeObject[]>}",
+                    "     * @param objects {gdjs.RuntimeObject[]}",
+                    "     * @param originX {number}",
+                    "     * @param originY {number}",
+                    "     * @param originZ {number}",
+                    "     * @param targetX {number}",
+                    "     * @param targetY {number}",
+                    "     * @param targetZ {number}",
+                    "     * @param distanceMax {number}",
+                    "     */",
+                    "    recastBetweenPosition(",
+                    "        objectsLists,",
+                    "        objects,",
+                    "        originX,",
+                    "        originY,",
+                    "        originZ,",
+                    "        targetX,",
+                    "        targetY,",
+                    "        targetZ",
+                    "    ) {",
+                    "        if (objects.length === 0) {",
+                    "            return false;",
+                    "        }",
+                    "        const raycaster = this.raycaster;",
+                    "        raycaster.ray.origin.set(",
+                    "            originX,",
+                    "            -originY,",
+                    "            originZ,",
+                    "        );",
+                    "        const deltaX = targetX - originX;",
+                    "        const deltaY = targetY - originY;",
+                    "        const deltaZ = targetZ - originZ;",
+                    "        const deltaLength = Math.hypot(deltaX, deltaY, deltaZ);",
+                    "        raycaster.ray.direction.set(",
+                    "            deltaX / deltaLength,",
+                    "            -deltaY / deltaLength,",
+                    "            deltaZ / deltaLength,",
+                    "        );",
+                    "        raycaster.far = deltaLength;",
+                    "",
+                    "        return this._doRecast(objectsLists, objects);",
+                    "    }",
+                    "",
+                    "    /**",
+                    "     * @param objectsLists {Hashtable<gdjs.RuntimeObject[]>}",
+                    "     * @param objects {gdjs.RuntimeObject[]}",
+                    "     */",
+                    "    _doRecast(objectsLists, objects) {",
+                    "        const raycastResults = this.raycastResults;",
+                    "        let distanceMin = Number.MAX_VALUE;",
+                    "        let nearestObject = null;",
+                    "        for (const object of objects) {",
+                    "            raycastResults.length = 0;",
+                    "            const threeObject = object.get3DRendererObject();",
+                    "            if (!threeObject) {",
+                    "                continue;",
+                    "            }",
+                    "            this.raycaster.intersectObject(threeObject, true, raycastResults);",
+                    "            if (raycastResults.length > 0 && raycastResults[0].distance < distanceMin) {",
+                    "                const raycastResult = raycastResults[0];",
+                    "                distanceMin = raycastResult.distance;",
+                    "                nearestObject = object;",
+                    "                this.lastDistance = raycastResult.distance;",
+                    "                this.lastPositionX = raycastResult.point.x;",
+                    "                this.lastPositionY = -raycastResult.point.y;",
+                    "                this.lastPositionZ = raycastResult.point.z;",
+                    "                this.lastNormalX = raycastResult.normal.x;",
+                    "                this.lastNormalY = raycastResult.normal.y;",
+                    "                this.lastNormalZ = raycastResult.normal.z;",
+                    "            }",
+                    "        }",
+                    "        if (!nearestObject) {",
+                    "            return false;",
+                    "        }",
+                    "        raycastResults.length = 0;",
+                    "        gdjs.evtTools.object.pickOnly(",
+                    "            objectsLists,",
+                    "            nearestObject",
+                    "        );",
+                    "        return true;",
+                    "    }",
+                    "}",
+                    "",
+                    "gdjs.__raycaster3DExtension.Raycaster = Raycaster;",
+                    "gdjs.__raycaster3DExtension.raycaster = new Raycaster();",
+                    ""
+                  ],
+                  "parameterObjects": "",
+                  "useStrict": true,
+                  "eventsSheetExpanded": true
+                }
+              ]
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Sends a ray from the given source position and angle, intersecting the closest object. The intersected object will become the only one taken into account.",
+          "fullName": "Raycast",
+          "functionType": "Condition",
+          "group": "Collision",
+          "name": "RaycastWithAngle",
+          "sentence": "Cast a ray from _PARAM2_; _PARAM3_; _PARAM4_ toward a rotation of _PARAM5_°, an elevation of _PARAM6_° and max distance of _PARAM7_ against _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "eventsFunctionContext.returnValue =",
+                "    gdjs.__raycaster3DExtension.raycaster.recastWithAngle(",
+                "        eventsFunctionContext.getObjectsLists(\"Object\"),",
+                "        objects,",
+                "        eventsFunctionContext.getArgument(\"OriginX\"),",
+                "        eventsFunctionContext.getArgument(\"OriginY\"),",
+                "        eventsFunctionContext.getArgument(\"OriginZ\"),",
+                "        eventsFunctionContext.getArgument(\"RotationAngle\"),",
+                "        eventsFunctionContext.getArgument(\"ElevationAngle\"),",
+                "        eventsFunctionContext.getArgument(\"DistanceMax\")",
+                "    );",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Objects to test against the ray",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "Ray source X position",
+              "name": "OriginX",
+              "type": "expression"
+            },
+            {
+              "description": "Ray source Y position",
+              "name": "OriginY",
+              "type": "expression"
+            },
+            {
+              "description": "Ray source Z position",
+              "name": "OriginZ",
+              "type": "expression"
+            },
+            {
+              "description": "Rotation angle (in degrees)",
+              "name": "RotationAngle",
+              "type": "expression"
+            },
+            {
+              "description": "Elevation angle (in degrees)",
+              "name": "ElevationAngle",
+              "type": "expression"
+            },
+            {
+              "description": "Ray maximum distance (in pixels)",
+              "name": "DistanceMax",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Sends a ray from the given source position to the final point, intersecting the closest object. The intersected object will become the only one taken into account.",
+          "fullName": "Raycast to a position",
+          "functionType": "Condition",
+          "group": "Collision",
+          "name": "RaycastBetweenPosition",
+          "sentence": "Cast a ray from _PARAM2_; _PARAM3_; _PARAM4_ to _PARAM5_; _PARAM6_; _PARAM7_ against _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "eventsFunctionContext.returnValue =",
+                "    gdjs.__raycaster3DExtension.raycaster.recastBetweenPosition(",
+                "        eventsFunctionContext.getObjectsLists(\"Object\"),",
+                "        objects,",
+                "        eventsFunctionContext.getArgument(\"OriginX\"),",
+                "        eventsFunctionContext.getArgument(\"OriginY\"),",
+                "        eventsFunctionContext.getArgument(\"OriginZ\"),",
+                "        eventsFunctionContext.getArgument(\"TargetX\"),",
+                "        eventsFunctionContext.getArgument(\"TargetY\"),",
+                "        eventsFunctionContext.getArgument(\"TargetZ\")",
+                "    );",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Objects to test against the ray",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "Ray source X position",
+              "name": "OriginX",
+              "type": "expression"
+            },
+            {
+              "description": "Ray source Y position",
+              "name": "OriginY",
+              "type": "expression"
+            },
+            {
+              "description": "Ray source Z position",
+              "name": "OriginZ",
+              "type": "expression"
+            },
+            {
+              "description": "Ray target X position",
+              "name": "TargetX",
+              "type": "expression"
+            },
+            {
+              "description": "Ray target Y position",
+              "name": "TargetY",
+              "type": "expression"
+            },
+            {
+              "description": "Ray target Z position",
+              "name": "TargetZ",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Sends a ray from the center of the camera, intersecting the closest object. The intersected object will become the only one taken into account.",
+          "fullName": "Raycast from camera center",
+          "functionType": "Condition",
+          "group": "Collision",
+          "name": "RaycastFromCameraCenter",
+          "sentence": "Cast a ray from the camera center to a maximum distance of _PARAM2_ against _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "eventsFunctionContext.returnValue =",
+                "    gdjs.__raycaster3DExtension.raycaster.recastFromCamera(",
+                "        eventsFunctionContext.getObjectsLists(\"Object\"),",
+                "        objects,",
+                "        0.5,",
+                "        0.5,",
+                "        eventsFunctionContext.getArgument(\"DistanceMax\")",
+                "    );",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Objects to test against the ray",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "Ray maximum distance (in pixels)",
+              "name": "DistanceMax",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Sends a ray from the given source point on the camera screen, intersecting the closest object. The intersected object will become the only one taken into account.",
+          "fullName": "Raycast from a camera point",
+          "functionType": "Condition",
+          "group": "Collision",
+          "name": "RaycastFromCameraPoint",
+          "sentence": "Cast a ray from the camera point _PARAM2_; _PARAM3_ to a maximum distance of _PARAM4_ against _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "eventsFunctionContext.returnValue =",
+                "    gdjs.__raycaster3DExtension.raycaster.recastFromCamera(",
+                "        eventsFunctionContext.getObjectsLists(\"Object\"),",
+                "        objects,",
+                "        eventsFunctionContext.getArgument(\"PointerX\"),",
+                "        eventsFunctionContext.getArgument(\"PointerY\"),",
+                "        eventsFunctionContext.getArgument(\"DistanceMax\")",
+                "    );",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Objects to test against the ray",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "X position on the screen (from 0 to 1)",
+              "name": "PointerX",
+              "type": "expression"
+            },
+            {
+              "description": "Y position on the screen (from 0 to 1)",
+              "name": "PointerY",
+              "type": "expression"
+            },
+            {
+              "description": "Ray maximum distance (in pixels)",
+              "name": "DistanceMax",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Sends a ray from the cursor on the camera screen, intersecting the closest object. The intersected object will become the only one taken into account.",
+          "fullName": "Raycast from cursor",
+          "functionType": "Condition",
+          "group": "Collision",
+          "name": "RaycastFromCameraCursor",
+          "sentence": "Cast a ray from the cursor on 2D layer: _PARAM2_ to a maximum distance of _PARAM3_ against _PARAM1_",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": [
+                "const { camera, input } = gdjs.evtTools;",
+                "",
+                "const layer2D = eventsFunctionContext.getArgument(\"Layer2D\");",
+                "",
+                "const cameraMinX = camera.getCameraBorderLeft(runtimeScene, layer2D, 0);",
+                "const cameraMaxX = camera.getCameraBorderRight(runtimeScene, layer2D, 0);",
+                "const cameraMinY = camera.getCameraBorderTop(runtimeScene, layer2D, 0);",
+                "const cameraMaxY = camera.getCameraBorderBottom(runtimeScene, layer2D, 0);",
+                "",
+                "const cursorX = input.getCursorX(runtimeScene, layer2D, 0);",
+                "const cursorY = input.getCursorY(runtimeScene, layer2D, 0);",
+                "",
+                "eventsFunctionContext.returnValue =",
+                "    gdjs.__raycaster3DExtension.raycaster.recastFromCamera(",
+                "        eventsFunctionContext.getObjectsLists(\"Object\"),",
+                "        objects,",
+                "        (cursorX - cameraMinX) / (cameraMaxX - cameraMinX),",
+                "        (cursorY - cameraMinY) / (cameraMaxY - cameraMinY),",
+                "        eventsFunctionContext.getArgument(\"DistanceMax\")",
+                "    );",
+                ""
+              ],
+              "parameterObjects": "Object",
+              "useStrict": true,
+              "eventsSheetExpanded": true
+            }
+          ],
+          "parameters": [
+            {
+              "description": "Objects to test against the ray",
+              "name": "Object",
+              "type": "objectList"
+            },
+            {
+              "description": "2D layer",
+              "name": "Layer2D",
+              "type": "layer"
+            },
+            {
+              "description": "Ray maximum distance (in pixels)",
+              "name": "DistanceMax",
+              "type": "expression"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "the last recast intersection distance.",
+          "fullName": "Last recast distance",
+          "functionType": "ExpressionAndCondition",
+          "name": "Distance",
+          "sentence": "the last recast intersection distance",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = gdjs.__raycaster3DExtension.raycaster.lastDistance;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the last recast intersection position on X axis.",
+          "fullName": "Last recast X intersection",
+          "functionType": "Expression",
+          "name": "IntersectionX",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = gdjs.__raycaster3DExtension.raycaster.lastPositionX;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the last recast intersection position on Y axis.",
+          "fullName": "Last recast Y intersection",
+          "functionType": "Expression",
+          "name": "IntersectionY",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = gdjs.__raycaster3DExtension.raycaster.lastPositionY;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the last recast intersection position on Z axis.",
+          "fullName": "Last recast Z intersection",
+          "functionType": "Expression",
+          "name": "IntersectionZ",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = gdjs.__raycaster3DExtension.raycaster.lastPositionZ;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the last recast intersection normal on X axis.",
+          "fullName": "Last recast X normal",
+          "functionType": "Expression",
+          "name": "NormalX",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = gdjs.__raycaster3DExtension.raycaster.lastNormalX;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the last recast intersection normal on X axis.",
+          "fullName": "Last recast X normal",
+          "functionType": "Expression",
+          "name": "NormalY",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = gdjs.__raycaster3DExtension.raycaster.lastNormalY;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        },
+        {
+          "description": "Return the last recast intersection normal on Z axis.",
+          "fullName": "Last recast Z normal",
+          "functionType": "Expression",
+          "name": "NormalZ",
+          "sentence": "",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "eventsFunctionContext.returnValue = gdjs.__raycaster3DExtension.raycaster.lastNormalZ;",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "expressionType": {
+            "type": "expression"
+          },
+          "parameters": [],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": [],
+      "eventsBasedObjects": []
     }
   ],
-  "externalLayouts": []
+  "externalLayouts": [
+    {
+      "associatedLayout": "Main Scene",
+      "name": "Station1",
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 55,
+          "height": 55,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Camera",
+          "persistentUuid": "01a063ac-5631-46d9-b6b4-2ec53d9882fd",
+          "width": 55,
+          "x": 1080,
+          "y": 577,
+          "z": 222,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 26,
+          "height": 26,
+          "layer": "",
+          "locked": true,
+          "name": "Light_Source",
+          "persistentUuid": "a19b530d-328e-4814-b0a3-bcefef1d9106",
+          "rotationY": 90,
+          "sealed": true,
+          "width": 26,
+          "x": 1086,
+          "y": -251,
+          "z": 329,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 663,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "bfe24b46-22cd-49cc-bab5-9a2fcdd9be3f",
+          "sealed": true,
+          "width": 461,
+          "x": 804,
+          "y": -560,
+          "z": -1,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "TrainStation_0",
+          "persistentUuid": "d003b616-683a-452b-86c0-b697a8150981",
+          "sealed": true,
+          "width": 0,
+          "x": 262,
+          "y": -522,
+          "z": -73,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 663,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "e66bfd4a-e34c-463d-b95c-1095d2fe6248",
+          "sealed": true,
+          "width": 246,
+          "x": 563,
+          "y": -561,
+          "z": -70,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 663,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "f0756067-5415-4576-a2f1-d9b7894fda5b",
+          "sealed": true,
+          "width": 246,
+          "x": 563,
+          "y": 101,
+          "z": -70,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 663,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "d60e829c-f09a-4cf0-9c14-aaedc0a1d013",
+          "sealed": true,
+          "width": 461,
+          "x": 804,
+          "y": 102,
+          "z": -1,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "TrainStation_0",
+          "persistentUuid": "e87a9411-7aff-4f7f-8722-28ea10834f30",
+          "sealed": true,
+          "width": 0,
+          "x": 262,
+          "y": 140,
+          "z": -73,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "TrainStation_0",
+          "persistentUuid": "c823e449-8ddc-44b6-b42a-44029e61d874",
+          "sealed": true,
+          "width": 0,
+          "x": 262,
+          "y": 802,
+          "z": -73,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 663,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "e31ea514-a87f-4dfd-94dc-41842dd51ea1",
+          "sealed": true,
+          "width": 461,
+          "x": 811,
+          "y": 773,
+          "z": -1,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 663,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "1bb7a975-1b88-4bc5-97ae-2b6f9822e186",
+          "sealed": true,
+          "width": 246,
+          "x": 563,
+          "y": 764,
+          "z": -70,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 306.54220084549615,
+          "height": 1329.305039946219,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "Train",
+          "persistentUuid": "4f792c2e-5526-44e0-99de-0b894d0700f2",
+          "sealed": true,
+          "width": 480.367077829829,
+          "x": 1056,
+          "y": -629,
+          "z": -79,
+          "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 26,
+          "height": 26,
+          "layer": "",
+          "locked": true,
+          "name": "Light_Source",
+          "persistentUuid": "276ffd74-ce71-485f-846c-93f605ad38ca",
+          "rotationY": 90,
+          "sealed": true,
+          "width": 26,
+          "x": 1085,
+          "y": 671,
+          "z": 329,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 26,
+          "height": 26,
+          "layer": "",
+          "locked": true,
+          "name": "Light_Source",
+          "persistentUuid": "923875da-d8d2-4a17-acd4-b4e0fd3af8de",
+          "rotationY": 90,
+          "sealed": true,
+          "width": 26,
+          "x": 1079,
+          "y": 248,
+          "z": 329,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 86,
+          "height": 86,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Trigger_Box",
+          "persistentUuid": "e147ad11-b17f-4e4e-a0f0-6f7f6d06aeea",
+          "width": 86,
+          "x": 758,
+          "y": 111,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "Level",
+              "type": "number",
+              "value": 2
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 26,
+          "height": 26,
+          "layer": "",
+          "locked": true,
+          "name": "Light_Source",
+          "persistentUuid": "1d9c9883-2e4a-487a-a03d-7913db7a8a51",
+          "rotationY": 90,
+          "sealed": true,
+          "width": 26,
+          "x": 1086,
+          "y": -913,
+          "z": 329,
+          "zOrder": 9,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 663,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "fb9fb381-20e7-41a8-bf18-e1cc07fbfb65",
+          "sealed": true,
+          "width": 461,
+          "x": 804,
+          "y": -1222,
+          "z": -1,
+          "zOrder": 11,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 352,
+          "height": 717,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TrainStation_0",
+          "persistentUuid": "0af8cc39-73f0-4ebe-a07a-9911b3586bcc",
+          "width": 1000,
+          "x": 262,
+          "y": -2559,
+          "z": -73,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 663,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "e5856bce-6a22-4a7f-a711-34faf496da37",
+          "sealed": true,
+          "width": 246,
+          "x": 563,
+          "y": -1223,
+          "z": -70,
+          "zOrder": 13,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "StartPos",
+          "persistentUuid": "4613b136-522f-4e6f-9467-917c654e770e",
+          "width": 0,
+          "x": 1103,
+          "y": 120,
+          "z": 10,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TrainStation_0",
+          "persistentUuid": "6085bf51-a581-4f26-aa5c-606593f8dce5",
+          "width": 0,
+          "x": 262,
+          "y": -1184,
+          "z": -73,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "TrainStation_0",
+          "persistentUuid": "7e7304d1-4d02-4a32-a1dc-bc4fe2befe2b",
+          "width": 0,
+          "x": 262,
+          "y": -1846,
+          "z": -73,
+          "zOrder": 12,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 424,
+          "height": 100,
+          "layer": "",
+          "name": "Black_Box",
+          "persistentUuid": "232fbc2c-126b-4129-b9f0-b21f76892ab0",
+          "width": 790,
+          "x": 511,
+          "y": -2661,
+          "z": -101,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 424,
+          "height": 100,
+          "layer": "",
+          "name": "Black_Box",
+          "persistentUuid": "608ef7c3-6112-4906-b612-047fbdfa2ed0",
+          "width": 790,
+          "x": 515,
+          "y": 1371,
+          "z": -101,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "editionSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.4420823343614465,
+        "windowMask": false
+      }
+    },
+    {
+      "associatedLayout": "Main Scene",
+      "name": "Station2",
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 324.4101647835131,
+          "height": 1406.788578757092,
+          "keepRatio": true,
+          "layer": "",
+          "locked": true,
+          "name": "Train",
+          "persistentUuid": "8439858a-2904-49f0-8c78-0b9027cdc643",
+          "sealed": true,
+          "width": 508.367077829829,
+          "x": 1251,
+          "y": 75,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Camera",
+          "persistentUuid": "1a0beaf7-b7de-4853-8450-052a7b1c5d14",
+          "width": 0,
+          "x": 836,
+          "y": 1070,
+          "z": 249,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "StartPos",
+          "persistentUuid": "9bec1163-621b-40c0-8ff4-acb50f7534b6",
+          "width": 0,
+          "x": 919,
+          "y": 461,
+          "z": 96,
+          "zOrder": 3,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 8,
+          "height": 1421,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "ce802691-15c9-4705-89c2-79ebc694f801",
+          "sealed": true,
+          "width": 310,
+          "x": 710,
+          "y": -200,
+          "z": 312,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 8,
+          "height": 1421,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "48b6cb8c-a606-4e72-8a12-88ed61887150",
+          "rotationY": -89,
+          "sealed": true,
+          "width": 310,
+          "x": 589,
+          "y": -215,
+          "z": 158,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 8,
+          "height": 1421,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "0d107a26-2615-4691-843a-47cf0df52188",
+          "rotationY": -89,
+          "sealed": true,
+          "width": 310,
+          "x": 815,
+          "y": -217,
+          "z": 158,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 8,
+          "height": 1421,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "0a1be28b-cf07-4792-be12-ef0f4be96684",
+          "sealed": true,
+          "width": 310,
+          "x": 695,
+          "y": -197,
+          "z": 77,
+          "zOrder": 4,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Trigger_Box",
+          "persistentUuid": "d804e9a0-2207-45c0-8354-aa4fd85c1e43",
+          "width": 0,
+          "x": 947,
+          "y": 855,
+          "z": 72,
+          "zOrder": 5,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 161,
+          "height": 21,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "049e261a-3ac0-4138-b231-8ba2d7e1b24a",
+          "sealed": true,
+          "width": 226,
+          "x": 744,
+          "y": -225,
+          "z": 93,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 161,
+          "height": 21,
+          "layer": "",
+          "locked": true,
+          "name": "Invisible_Wall",
+          "persistentUuid": "391012de-4d4f-4354-88e7-9c6a9b5b9e1d",
+          "sealed": true,
+          "width": 226,
+          "x": 741,
+          "y": 1184,
+          "z": 93,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "editionSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 3.97024180061929,
+        "windowMask": false
+      }
+    }
+  ]
 }
