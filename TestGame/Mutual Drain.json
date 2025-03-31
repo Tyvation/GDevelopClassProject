@@ -19,7 +19,7 @@
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
     "version": "1.0.0",
-    "name": "Mutual Drain",
+    "name": "Last Train: Lockdown Station",
     "description": "",
     "author": "",
     "windowWidth": 1920,
@@ -77,8 +77,12 @@
       "placement": "bottom-left",
       "showWatermark": true
     },
-    "authorIds": [],
-    "authorUsernames": [],
+    "authorIds": [
+      "S5KhlJ2IH3S1ILAD25FfcomNdoD3"
+    ],
+    "authorUsernames": [
+      "Yourself (no username)"
+    ],
     "categories": [],
     "playableDevices": [],
     "extensionProperties": [],
