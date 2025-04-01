@@ -184,6 +184,46 @@
         "name": "New3DBox_Front",
         "smoothed": true,
         "userAdded": false
+      },
+      {
+        "file": "assets/Hit Trigger.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "Hit Trigger",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/InvisibleWall_Front.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "InvisibleWall_Front",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/Wireframe.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "Wireframe",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/StartPos.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{}}",
+        "name": "StartPos",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "file": "assets/TriggerBox.png",
+        "kind": "image",
+        "metadata": "{\"extension\":\".png\",\"pskl\":{},\"localFilePath\":\"assets/TriggerBox.png\"}",
+        "name": "TriggerBox",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -230,6 +270,11 @@
       "name": "CurrentRotation",
       "type": "number",
       "value": 0
+    },
+    {
+      "name": "CurrentCamera",
+      "type": "number",
+      "value": 0
     }
   ],
   "layouts": [
@@ -253,7 +298,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.263222312574066,
+        "zoomFactor": 0.5281860291530368,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -496,7 +541,13 @@
           "assetStoreId": "",
           "name": "Camera",
           "type": "Scene3D::Cube3DObject",
-          "variables": [],
+          "variables": [
+            {
+              "name": "CamIndex",
+              "type": "number",
+              "value": 0
+            }
+          ],
           "effects": [],
           "behaviors": [],
           "content": {
@@ -547,7 +598,7 @@
         },
         {
           "assetStoreId": "",
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "type": "Scene3D::Cube3DObject",
           "variables": [],
           "effects": [],
@@ -580,25 +631,25 @@
             "depth": 100,
             "enableTextureTransparency": false,
             "facesOrientation": "Y",
-            "frontFaceResourceName": "",
-            "backFaceResourceName": "",
+            "frontFaceResourceName": "InvisibleWall_Front",
+            "backFaceResourceName": "InvisibleWall_Front",
             "backFaceUpThroughWhichAxisRotation": "X",
-            "leftFaceResourceName": "",
-            "rightFaceResourceName": "",
-            "topFaceResourceName": "",
-            "bottomFaceResourceName": "",
+            "leftFaceResourceName": "InvisibleWall_Front",
+            "rightFaceResourceName": "InvisibleWall_Front",
+            "topFaceResourceName": "InvisibleWall_Front",
+            "bottomFaceResourceName": "InvisibleWall_Front",
             "frontFaceVisible": true,
             "backFaceVisible": true,
             "leftFaceVisible": true,
             "rightFaceVisible": true,
             "topFaceVisible": true,
             "bottomFaceVisible": true,
-            "frontFaceResourceRepeat": false,
-            "backFaceResourceRepeat": false,
-            "leftFaceResourceRepeat": false,
-            "rightFaceResourceRepeat": false,
-            "topFaceResourceRepeat": false,
-            "bottomFaceResourceRepeat": false,
+            "frontFaceResourceRepeat": true,
+            "backFaceResourceRepeat": true,
+            "leftFaceResourceRepeat": true,
+            "rightFaceResourceRepeat": true,
+            "topFaceResourceRepeat": true,
+            "bottomFaceResourceRepeat": true,
             "materialType": "Basic",
             "tint": "255;255;255"
           }
@@ -728,7 +779,7 @@
         },
         {
           "assetStoreId": "",
-          "name": "Trigger_Box",
+          "name": "TriggerBox",
           "type": "Scene3D::Cube3DObject",
           "variables": [
             {
@@ -745,13 +796,13 @@
             "depth": 100,
             "enableTextureTransparency": true,
             "facesOrientation": "Y",
-            "frontFaceResourceName": "",
-            "backFaceResourceName": "",
+            "frontFaceResourceName": "TriggerBox",
+            "backFaceResourceName": "TriggerBox",
             "backFaceUpThroughWhichAxisRotation": "X",
-            "leftFaceResourceName": "",
-            "rightFaceResourceName": "",
-            "topFaceResourceName": "",
-            "bottomFaceResourceName": "",
+            "leftFaceResourceName": "TriggerBox",
+            "rightFaceResourceName": "TriggerBox",
+            "topFaceResourceName": "TriggerBox",
+            "bottomFaceResourceName": "TriggerBox",
             "frontFaceVisible": true,
             "backFaceVisible": true,
             "leftFaceVisible": true,
@@ -781,13 +832,13 @@
             "depth": 30,
             "enableTextureTransparency": false,
             "facesOrientation": "Y",
-            "frontFaceResourceName": "",
-            "backFaceResourceName": "",
+            "frontFaceResourceName": "StartPos",
+            "backFaceResourceName": "StartPos",
             "backFaceUpThroughWhichAxisRotation": "X",
-            "leftFaceResourceName": "",
-            "rightFaceResourceName": "",
-            "topFaceResourceName": "",
-            "bottomFaceResourceName": "",
+            "leftFaceResourceName": "StartPos",
+            "rightFaceResourceName": "StartPos",
+            "topFaceResourceName": "StartPos",
+            "bottomFaceResourceName": "StartPos",
             "frontFaceVisible": true,
             "backFaceVisible": false,
             "leftFaceVisible": true,
@@ -842,9 +893,93 @@
         },
         {
           "assetStoreId": "",
-          "name": "Camera_Trigger",
+          "name": "CameraTrigger",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [
+            {
+              "name": "CamIndex",
+              "type": "number",
+              "value": 0
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 100,
+            "enableTextureTransparency": true,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "Wireframe",
+            "backFaceResourceName": "Wireframe",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "Wireframe",
+            "rightFaceResourceName": "Wireframe",
+            "topFaceResourceName": "Wireframe",
+            "bottomFaceResourceName": "Wireframe",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic",
+            "tint": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "HitTrigger",
           "type": "Scene3D::Cube3DObject",
           "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "content": {
+            "width": 100,
+            "height": 100,
+            "depth": 100,
+            "enableTextureTransparency": true,
+            "facesOrientation": "Y",
+            "frontFaceResourceName": "Hit Trigger",
+            "backFaceResourceName": "Hit Trigger",
+            "backFaceUpThroughWhichAxisRotation": "X",
+            "leftFaceResourceName": "Hit Trigger",
+            "rightFaceResourceName": "Hit Trigger",
+            "topFaceResourceName": "Hit Trigger",
+            "bottomFaceResourceName": "Hit Trigger",
+            "frontFaceVisible": true,
+            "backFaceVisible": true,
+            "leftFaceVisible": true,
+            "rightFaceVisible": true,
+            "topFaceVisible": true,
+            "bottomFaceVisible": true,
+            "frontFaceResourceRepeat": false,
+            "backFaceResourceRepeat": false,
+            "leftFaceResourceRepeat": false,
+            "rightFaceResourceRepeat": false,
+            "topFaceResourceRepeat": false,
+            "bottomFaceResourceRepeat": false,
+            "materialType": "Basic",
+            "tint": "255;255;255"
+          }
+        },
+        {
+          "assetStoreId": "",
+          "name": "button",
+          "type": "Scene3D::Cube3DObject",
+          "variables": [
+            {
+              "name": "Function",
+              "type": "string",
+              "value": "\"Button\""
+            }
+          ],
           "effects": [],
           "behaviors": [],
           "content": {
@@ -917,19 +1052,28 @@
             ]
           },
           {
-            "folderName": "Interact",
+            "folderName": "Items"
+          },
+          {
+            "folderName": "Interactable",
             "children": [
               {
-                "objectName": "Camera_Trigger"
+                "objectName": "button"
               },
               {
-                "objectName": "Invisible_Wall"
+                "objectName": "HitTrigger"
+              },
+              {
+                "objectName": "CameraTrigger"
+              },
+              {
+                "objectName": "InvisibleWall"
               },
               {
                 "objectName": "StartPos"
               },
               {
-                "objectName": "Trigger_Box"
+                "objectName": "TriggerBox"
               }
             ]
           }
@@ -982,7 +1126,7 @@
                     "textG": 0,
                     "textR": 0
                   },
-                  "comment": "Hide Collisions"
+                  "comment": "Hide Objects"
                 },
                 {
                   "type": "BuiltinCommonInstructions::Standard",
@@ -1001,7 +1145,7 @@
                         "value": "Cache"
                       },
                       "parameters": [
-                        "Invisible_Wall"
+                        "InvisibleWall"
                       ]
                     },
                     {
@@ -1009,7 +1153,7 @@
                         "value": "Cache"
                       },
                       "parameters": [
-                        "Trigger_Box"
+                        "TriggerBox"
                       ]
                     },
                     {
@@ -1018,6 +1162,14 @@
                       },
                       "parameters": [
                         "StartPos"
+                      ]
+                    },
+                    {
+                      "type": {
+                        "value": "Cache"
+                      },
+                      "parameters": [
+                        "CameraTrigger"
                       ]
                     }
                   ]
@@ -1067,112 +1219,6 @@
           "parameters": []
         },
         {
-          "disabled": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Raycaster3D::RaycastBetweenPosition"
-              },
-              "parameters": [
-                "Player",
-                "TrainStation_0",
-                "Player.CenterY()",
-                "Player.CenterX()",
-                "Player.Object3D::Z()",
-                "Player.CenterX()",
-                "Player.Y()",
-                "Player.Object3D::Z()",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Collision3D::AreInCollision"
-              },
-              "parameters": [
-                "Player",
-                "Player",
-                "Object3D",
-                "TrainStation_0",
-                "Object3D",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "value": "Scene3D::Base3DBehavior::SetCenterZ"
-              },
-              "parameters": [
-                "Player",
-                "Object3D",
-                "=",
-                "Raycaster3D::IntersectionZ() + 16"
-              ]
-            }
-          ]
-        },
-        {
-          "disabled": true,
-          "folded": true,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "value": "Raycaster3D::RaycastWithAngle"
-              },
-              "parameters": [
-                "Player",
-                "TrainStation_0",
-                "Player.CenterX()",
-                "Player.CenterY()",
-                "Player.Object3D::Z()",
-                "0",
-                "-90",
-                "9999",
-                ""
-              ]
-            },
-            {
-              "type": {
-                "value": "Collision3D::AreInCollision"
-              },
-              "parameters": [
-                "Player",
-                "Player",
-                "Object3D",
-                "TrainStation_0",
-                "Object3D",
-                "",
-                ""
-              ]
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "value": "Scene3D::Base3DBehavior::SetCenterZ"
-                  },
-                  "parameters": [
-                    "Player",
-                    "Object3D",
-                    "=",
-                    "Raycaster3D::IntersectionZ() + 16"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
           "type": "BuiltinCommonInstructions::Standard",
           "conditions": [
             {
@@ -1181,7 +1227,7 @@
               },
               "parameters": [
                 "",
-                "Trigger_Box",
+                "TriggerBox",
                 "Object3D",
                 "Player",
                 "Object3D",
@@ -1208,7 +1254,17 @@
               "parameters": [
                 "CurrentLevel",
                 "=",
-                "Trigger_Box.Level"
+                "TriggerBox.Level"
+              ]
+            },
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentCamera",
+                "=",
+                "0"
               ]
             },
             {
@@ -1232,7 +1288,7 @@
               },
               "parameters": [
                 "",
-                "Camera_Trigger",
+                "CameraTrigger",
                 "Object3D",
                 "Player",
                 "Object3D",
@@ -1241,7 +1297,18 @@
               ]
             }
           ],
-          "actions": []
+          "actions": [
+            {
+              "type": {
+                "value": "SetNumberVariable"
+              },
+              "parameters": [
+                "CurrentCamera",
+                "=",
+                "CameraTrigger.CamIndex"
+              ]
+            }
+          ]
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1433,14 +1500,25 @@
           "colorG": 176,
           "colorR": 74,
           "creationTime": 0,
-          "folded": true,
           "name": "Camera",
           "source": "",
           "type": "BuiltinCommonInstructions::Group",
           "events": [
             {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "Camera",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "NumberVariable"
+                  },
+                  "parameters": [
+                    "CurrentCamera",
+                    "=",
+                    "Camera.CamIndex"
+                  ]
+                }
+              ],
               "actions": [
                 {
                   "type": {
@@ -1672,6 +1750,7 @@
               ]
             },
             {
+              "disabled": true,
               "type": "BuiltinCommonInstructions::Standard",
               "conditions": [
                 {
@@ -1764,32 +1843,97 @@
                   ]
                 }
               ],
-              "actions": []
-            },
-            {
-              "disabled": true,
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "value": "Physics3D::PhysicsCharacter3D::IsMovingEvenALittle"
-                  },
-                  "parameters": [
-                    "Player",
-                    "PhysicsCharacter3D"
-                  ]
-                }
-              ],
               "actions": [
                 {
                   "type": {
-                    "value": "AnimatableCapability::AnimatableBehavior::SetName"
+                    "value": "Create"
                   },
                   "parameters": [
-                    "Player",
-                    "Animation",
-                    "=",
-                    "\"Run\""
+                    "",
+                    "HitTrigger",
+                    "Player.CenterX() - 50",
+                    "Player.CenterY() -50",
+                    ""
+                  ]
+                }
+              ],
+              "events": [
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "value": "Collision3D::AreInCollision"
+                      },
+                      "parameters": [
+                        "",
+                        "HitTrigger",
+                        "Object3D",
+                        "button",
+                        "Object3D",
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "NewBBText2",
+                        "=",
+                        "\"Hitting : \" + button.Function"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": true,
+                        "value": "Collision3D::AreInCollision"
+                      },
+                      "parameters": [
+                        "",
+                        "HitTrigger",
+                        "Object3D",
+                        "button",
+                        "Object3D",
+                        "",
+                        ""
+                      ]
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "BBText::SetBBText"
+                      },
+                      "parameters": [
+                        "NewBBText2",
+                        "=",
+                        "\"Hitting : Nothing\""
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "value": "Delete"
+                      },
+                      "parameters": [
+                        "HitTrigger",
+                        ""
+                      ]
+                    }
                   ]
                 }
               ]
@@ -1866,6 +2010,11 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": []
             }
           ],
           "parameters": []
@@ -12752,13 +12901,19 @@
           "name": "Camera",
           "persistentUuid": "01a063ac-5631-46d9-b6b4-2ec53d9882fd",
           "width": 55,
-          "x": 1080,
-          "y": 577,
+          "x": 1099,
+          "y": -775,
           "z": 222,
           "zOrder": 6,
           "numberProperties": [],
           "stringProperties": [],
-          "initialVariables": []
+          "initialVariables": [
+            {
+              "name": "CamIndex",
+              "type": "number",
+              "value": 1
+            }
+          ]
         },
         {
           "angle": 0,
@@ -12787,7 +12942,7 @@
           "height": 663,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "bfe24b46-22cd-49cc-bab5-9a2fcdd9be3f",
           "sealed": true,
           "width": 461,
@@ -12826,7 +12981,7 @@
           "keepRatio": true,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "e66bfd4a-e34c-463d-b95c-1095d2fe6248",
           "sealed": true,
           "width": 246,
@@ -12846,7 +13001,7 @@
           "keepRatio": true,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "f0756067-5415-4576-a2f1-d9b7894fda5b",
           "sealed": true,
           "width": 246,
@@ -12865,7 +13020,7 @@
           "height": 663,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "d60e829c-f09a-4cf0-9c14-aaedc0a1d013",
           "sealed": true,
           "width": 461,
@@ -12922,7 +13077,7 @@
           "height": 663,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "e31ea514-a87f-4dfd-94dc-41842dd51ea1",
           "sealed": true,
           "width": 461,
@@ -12942,7 +13097,7 @@
           "keepRatio": true,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "1bb7a975-1b88-4bc5-97ae-2b6f9822e186",
           "sealed": true,
           "width": 246,
@@ -13021,7 +13176,7 @@
           "height": 86,
           "keepRatio": true,
           "layer": "",
-          "name": "Trigger_Box",
+          "name": "TriggerBox",
           "persistentUuid": "e147ad11-b17f-4e4e-a0f0-6f7f6d06aeea",
           "width": 86,
           "x": 758,
@@ -13064,7 +13219,7 @@
           "height": 663,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "fb9fb381-20e7-41a8-bf18-e1cc07fbfb65",
           "sealed": true,
           "width": 461,
@@ -13102,7 +13257,7 @@
           "keepRatio": true,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "e5856bce-6a22-4a7f-a711-34faf496da37",
           "sealed": true,
           "width": 246,
@@ -13137,8 +13292,10 @@
           "height": 0,
           "keepRatio": true,
           "layer": "",
+          "locked": true,
           "name": "TrainStation_0",
           "persistentUuid": "6085bf51-a581-4f26-aa5c-606593f8dce5",
+          "sealed": true,
           "width": 0,
           "x": 262,
           "y": -1184,
@@ -13154,8 +13311,10 @@
           "height": 0,
           "keepRatio": true,
           "layer": "",
+          "locked": true,
           "name": "TrainStation_0",
           "persistentUuid": "7e7304d1-4d02-4a32-a1dc-bc4fe2befe2b",
+          "sealed": true,
           "width": 0,
           "x": 262,
           "y": -1846,
@@ -13171,8 +13330,10 @@
           "depth": 424,
           "height": 100,
           "layer": "",
+          "locked": true,
           "name": "Black_Box",
           "persistentUuid": "232fbc2c-126b-4129-b9f0-b21f76892ab0",
+          "sealed": true,
           "width": 790,
           "x": 511,
           "y": -2661,
@@ -13188,13 +13349,126 @@
           "depth": 424,
           "height": 100,
           "layer": "",
+          "locked": true,
           "name": "Black_Box",
           "persistentUuid": "608ef7c3-6112-4906-b612-047fbdfa2ed0",
+          "sealed": true,
           "width": 790,
           "x": 515,
           "y": 1371,
           "z": -101,
           "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 100,
+          "height": 19,
+          "keepRatio": true,
+          "layer": "",
+          "name": "button",
+          "persistentUuid": "f0a4c4ba-0abc-4ea9-abe7-583b305c9a52",
+          "width": 18,
+          "x": 999,
+          "y": 18,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 55,
+          "height": 55,
+          "keepRatio": true,
+          "layer": "",
+          "name": "Camera",
+          "persistentUuid": "f2b52465-01e3-4c50-8e57-e63cd205e7d6",
+          "width": 55,
+          "x": 1080,
+          "y": 577,
+          "z": 222,
+          "zOrder": 6,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 100,
+          "height": 40,
+          "layer": "",
+          "name": "CameraTrigger",
+          "persistentUuid": "41fa0e19-4e7b-4db9-919e-7c8ba6490f15",
+          "width": 462,
+          "x": 835,
+          "y": 70,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "CamIndex",
+              "type": "number",
+              "value": 0
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 100,
+          "height": 40,
+          "layer": "",
+          "name": "CameraTrigger",
+          "persistentUuid": "fd2cd805-b6ec-4131-9972-972b06e8292f",
+          "width": 462,
+          "x": 839,
+          "y": -93,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": [
+            {
+              "name": "CamIndex",
+              "type": "number",
+              "value": 1
+            }
+          ]
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 269,
+          "height": 3958,
+          "layer": "",
+          "name": "InvisibleWall",
+          "persistentUuid": "f23f65d6-292a-4c27-863a-f7bc7a96e0ed",
+          "width": 39,
+          "x": 535,
+          "y": -2494,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 269,
+          "height": 3958,
+          "layer": "",
+          "name": "InvisibleWall",
+          "persistentUuid": "8e0bebf5-254c-4f3e-afe2-60e893dcb363",
+          "width": 39,
+          "x": 1257,
+          "y": -2541,
+          "zOrder": 20,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -13210,7 +13484,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.26881735094044634,
+        "zoomFactor": 0.44208233436145034,
         "windowMask": false
       }
     },
@@ -13278,7 +13552,7 @@
           "height": 1421,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "ce802691-15c9-4705-89c2-79ebc694f801",
           "sealed": true,
           "width": 310,
@@ -13297,7 +13571,7 @@
           "height": 1421,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "48b6cb8c-a606-4e72-8a12-88ed61887150",
           "rotationY": -89,
           "sealed": true,
@@ -13317,7 +13591,7 @@
           "height": 1421,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "0d107a26-2615-4691-843a-47cf0df52188",
           "rotationY": -89,
           "sealed": true,
@@ -13337,7 +13611,7 @@
           "height": 1421,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "0a1be28b-cf07-4792-be12-ef0f4be96684",
           "sealed": true,
           "width": 310,
@@ -13355,7 +13629,7 @@
           "height": 0,
           "keepRatio": true,
           "layer": "",
-          "name": "Trigger_Box",
+          "name": "TriggerBox",
           "persistentUuid": "d804e9a0-2207-45c0-8354-aa4fd85c1e43",
           "width": 0,
           "x": 947,
@@ -13373,7 +13647,7 @@
           "height": 21,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "049e261a-3ac0-4138-b231-8ba2d7e1b24a",
           "sealed": true,
           "width": 226,
@@ -13392,7 +13666,7 @@
           "height": 21,
           "layer": "",
           "locked": true,
-          "name": "Invisible_Wall",
+          "name": "InvisibleWall",
           "persistentUuid": "391012de-4d4f-4354-88e7-9c6a9b5b9e1d",
           "sealed": true,
           "width": 226,
@@ -13415,7 +13689,60 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.30887412163426714,
+        "zoomFactor": 4.385570837212641,
+        "windowMask": false
+      }
+    },
+    {
+      "associatedLayout": "Main Scene",
+      "name": "UI",
+      "instances": [
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 43,
+          "keepRatio": true,
+          "layer": "",
+          "name": "NewBBText2",
+          "persistentUuid": "12bf3941-56cd-48f7-b7f1-437a9d6a42e8",
+          "width": 176,
+          "x": 1634,
+          "y": 864,
+          "zOrder": 1,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "depth": 1,
+          "height": 41,
+          "keepRatio": true,
+          "layer": "",
+          "name": "NewBBText2",
+          "persistentUuid": "a8d44c03-3168-4873-a9ac-17a8b23c48df",
+          "width": 178,
+          "x": 1636,
+          "y": 941,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        }
+      ],
+      "editionSettings": {
+        "grid": false,
+        "gridType": "rectangular",
+        "gridWidth": 32,
+        "gridHeight": 32,
+        "gridOffsetX": 0,
+        "gridOffsetY": 0,
+        "gridColor": 10401023,
+        "gridAlpha": 0.8,
+        "snap": false,
+        "zoomFactor": 0.5250860067782501,
         "windowMask": false
       }
     }
