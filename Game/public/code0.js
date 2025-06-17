@@ -228,7 +228,7 @@ gdjs.StartSceneCode.eventsList0 = function(runtimeScene) {
 {
 const asyncObjectsList = new gdjs.LongLivedObjectsList();
 asyncObjectsList.backupLocalVariablesContainers(gdjs.StartSceneCode.localVariables);
-runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("http://127.0.0.1/rank", runtimeScene.getGame().getVariables().getFromIndex(15).getAsString(), "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(6), runtimeScene.getScene().getVariables().getFromIndex(6)), (runtimeScene) => (gdjs.StartSceneCode.asyncCallback19268772(runtimeScene, asyncObjectsList)));
+runtimeScene.getAsyncTasksManager().addTask(gdjs.evtTools.network.sendAwaitableAsyncRequest("/rank", runtimeScene.getGame().getVariables().getFromIndex(15).getAsString(), "GET", "application/json", runtimeScene.getScene().getVariables().getFromIndex(6), runtimeScene.getScene().getVariables().getFromIndex(6)), (runtimeScene) => (gdjs.StartSceneCode.asyncCallback19268772(runtimeScene, asyncObjectsList)));
 }
 }
 
@@ -3100,7 +3100,7 @@ gdjs.StartSceneCode.eventsList43(runtimeScene);} //End of subevents
 
 };gdjs.StartSceneCode.eventsList45 = function(runtimeScene) {
 
-};gdjs.StartSceneCode.userFunc0xe79ed0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.StartSceneCode.userFunc0x16009d0 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const difficulty = runtimeScene.getGame().getVariables().get("LevelDifficulty").getAsString();
 const leaderboard = runtimeScene.getGame().getVariables().get("LeaderBoardList").getChild(difficulty);
@@ -3146,7 +3146,7 @@ gdjs.StartSceneCode.eventsList46 = function(runtimeScene) {
 {
 
 
-gdjs.StartSceneCode.userFunc0xe79ed0(runtimeScene);
+gdjs.StartSceneCode.userFunc0x16009d0(runtimeScene);
 
 }
 
@@ -3325,7 +3325,7 @@ if (isConditionTrue_0) {
 {gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(0).setString(runtimeScene.getGame().getVariables().getFromIndex(19).getChild(runtimeScene.getGame().getVariables().getFromIndex(15).getAsString()).getChild(0).getChild("PlayerName").getAsString());
 }{gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(1).setString(runtimeScene.getGame().getVariables().getFromIndex(19).getChild(runtimeScene.getGame().getVariables().getFromIndex(15).getAsString()).getChild(0).getChild("FinishTime").getAsString());
 }{gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(2).setString(runtimeScene.getGame().getVariables().getFromIndex(19).getChild(runtimeScene.getGame().getVariables().getFromIndex(15).getAsString()).getChild(0).getChild("Rating").getAsString());
-}{gdjs.evtTools.network.sendAsyncRequest("http://127.0.0.1/postscore", "{\"Difficulty\":\"" + runtimeScene.getGame().getVariables().getFromIndex(15).getAsString() + "\",\n\"PlayerName\":\"" + gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(0).getAsString() + "\",\n\"ClearTime\":" + gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(1).getAsString() + ",\n\"Rating\":\"" + gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(2).getAsString() + "\"}", "POST", "application/json", runtimeScene.getScene().getVariables().getFromIndex(6), runtimeScene.getScene().getVariables().getFromIndex(6));
+}{gdjs.evtTools.network.sendAsyncRequest("/postscore", "{\"Difficulty\":\"" + runtimeScene.getGame().getVariables().getFromIndex(15).getAsString() + "\",\n\"PlayerName\":\"" + gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(0).getAsString() + "\",\n\"ClearTime\":" + gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(1).getAsString() + ",\n\"Rating\":\"" + gdjs.StartSceneCode.localVariables[1].getFromIndex(0).getChild(2).getAsString() + "\"}", "POST", "application/json", runtimeScene.getScene().getVariables().getFromIndex(6), runtimeScene.getScene().getVariables().getFromIndex(6));
 }}
 gdjs.StartSceneCode.localVariables.pop();
 
@@ -3362,7 +3362,7 @@ isConditionTrue_0 = false;
 }
 }
 if (isConditionTrue_0) {
-{gdjs.evtTools.network.sendAsyncRequest("http://127.0.0.1/postscore", "{\"Difficulty\":\"Normal\",\n\"PlayerName\":\"PLayer\",\n\"ClearTime\":" + gdjs.evtTools.common.toString(gdjs.evtTools.common.roundTo(gdjs.randomFloatInRange(0, 3000), 2)) + ",\n\"Rating\":\"" + runtimeScene.getGame().getVariables().getFromIndex(17).getChild(gdjs.random(10)).getAsString() + "\"}", "POST", "application/json", runtimeScene.getScene().getVariables().getFromIndex(6), runtimeScene.getScene().getVariables().getFromIndex(6));
+{gdjs.evtTools.network.sendAsyncRequest("/postscore", "{\"Difficulty\":\"Normal\",\n\"PlayerName\":\"PLayer\",\n\"ClearTime\":" + gdjs.evtTools.common.toString(gdjs.evtTools.common.roundTo(gdjs.randomFloatInRange(0, 3000), 2)) + ",\n\"Rating\":\"" + runtimeScene.getGame().getVariables().getFromIndex(17).getChild(gdjs.random(10)).getAsString() + "\"}", "POST", "application/json", runtimeScene.getScene().getVariables().getFromIndex(6), runtimeScene.getScene().getVariables().getFromIndex(6));
 }}
 
 }
