@@ -3105,7 +3105,7 @@ gdjs.StartSceneCode.eventsList43(runtimeScene);} //End of subevents
 
 };gdjs.StartSceneCode.eventsList45 = function(runtimeScene) {
 
-};gdjs.StartSceneCode.userFunc0x8b07f0 = function GDJSInlineCode(runtimeScene) {
+};gdjs.StartSceneCode.userFunc0x960c38 = function GDJSInlineCode(runtimeScene) {
 "use strict";
 const difficulty = runtimeScene.getGame().getVariables().get("LevelDifficulty").getAsString();
 const leaderboard = runtimeScene.getGame().getVariables().get("LeaderBoardList").getChild(difficulty);
@@ -3151,7 +3151,7 @@ gdjs.StartSceneCode.eventsList46 = function(runtimeScene) {
 {
 
 
-gdjs.StartSceneCode.userFunc0x8b07f0(runtimeScene);
+gdjs.StartSceneCode.userFunc0x960c38(runtimeScene);
 
 }
 
@@ -3453,7 +3453,7 @@ gdjs.copyArray(runtimeScene.getObjects("TileTomato"), gdjs.StartSceneCode.GDTile
 
 let isConditionTrue_0 = false;
 isConditionTrue_0 = false;
-{isConditionTrue_0 = (runtimeScene.getGame().getVariables().getFromIndex(20).getAsNumber() == 1);
+{isConditionTrue_0 = !(runtimeScene.getGame().getVariables().getFromIndex(20).getAsNumber() == 99);
 }
 if (isConditionTrue_0) {
 
