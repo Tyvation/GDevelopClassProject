@@ -1,6 +1,0 @@
-POST http://127.0.0.1/postscore
-Content-Type: application/json
-
-{
-    "w":2
-}
